@@ -53,7 +53,6 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 			super.getPropertyDescriptors(object);
 
 			addMedPropertyDescriptor(object);
-			addDatosPropertyDescriptor(object);
 			addPinPropertyDescriptor(object);
 			addActPropertyDescriptor(object);
 		}
@@ -74,21 +73,6 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 								"_UI_Sensores_type"),
 						ArduinoPackage.Literals.SENSORES__MED, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Datos feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatosPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Sensores_datos_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Sensores_datos_feature",
-								"_UI_Sensores_type"),
-						ArduinoPackage.Literals.SENSORES__DATOS, true, false, true, null, null, null));
 	}
 
 	/**

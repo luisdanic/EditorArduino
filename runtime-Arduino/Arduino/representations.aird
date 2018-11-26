@@ -16,291 +16,136 @@
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_GHiRYOMAEeiI-f2g9Zo12A" source="GMF_DIAGRAMS">
       <data xmi:type="notation:Diagram" xmi:id="_GHiRYeMAEeiI-f2g9Zo12A" type="Sirius" element="_GHcKwOMAEeiI-f2g9Zo12A" measurementUnit="Pixel">
-        <children xmi:type="notation:Node" xmi:id="_5yM0UONrEei30tLOFBiwMw" type="2001" element="_5yGtsONrEei30tLOFBiwMw">
-          <children xmi:type="notation:Node" xmi:id="_5yM0U-NrEei30tLOFBiwMw" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_5yM0VONrEei30tLOFBiwMw" x="25" y="2"/>
+        <children xmi:type="notation:Node" xmi:id="_UIResPGaEeiyZ7tpioxnDQ" type="2001" element="_UH0ywPGaEeiyZ7tpioxnDQ">
+          <children xmi:type="notation:Node" xmi:id="_UIT68PGaEeiyZ7tpioxnDQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_UIT68fGaEeiyZ7tpioxnDQ" x="25" y="2"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_5yM0ZONrEei30tLOFBiwMw" type="3005" element="_5yGtseNrEei30tLOFBiwMw">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_5yM0ZeNrEei30tLOFBiwMw" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5yM0ZuNrEei30tLOFBiwMw"/>
+          <children xmi:type="notation:Node" xmi:id="_UIb2wPGaEeiyZ7tpioxnDQ" type="3005" element="_UH2A4PGaEeiyZ7tpioxnDQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_UIb2wfGaEeiyZ7tpioxnDQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UIb2wvGaEeiyZ7tpioxnDQ"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_5yM0UeNrEei30tLOFBiwMw" fontName="Segoe UI" fontHeight="10" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5yM0UuNrEei30tLOFBiwMw" x="100" y="55" width="24" height="24"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_UIResfGaEeiyZ7tpioxnDQ" fontName="Segoe UI" fontHeight="10" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UIResvGaEeiyZ7tpioxnDQ" x="535" y="35" width="24" height="24"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_Yc1gMONtEeiCIONUefmHUw" type="2001" element="_YcjMUONtEeiCIONUefmHUw">
-          <children xmi:type="notation:Node" xmi:id="_YdBtcONtEeiCIONUefmHUw" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_YdBtceNtEeiCIONUefmHUw" x="25" y="2"/>
+        <children xmi:type="notation:Node" xmi:id="_UUFtIPGaEeiyZ7tpioxnDQ" type="2001" element="_UTl94PGaEeiyZ7tpioxnDQ">
+          <children xmi:type="notation:Node" xmi:id="_UUG7QPGaEeiyZ7tpioxnDQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_UUG7QfGaEeiyZ7tpioxnDQ" x="25" y="2"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_YdN6sONtEeiCIONUefmHUw" type="3005" element="_YcpS8ONtEeiCIONUefmHUw">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_YdN6seNtEeiCIONUefmHUw" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YdN6suNtEeiCIONUefmHUw"/>
+          <children xmi:type="notation:Node" xmi:id="_UUHiUPGaEeiyZ7tpioxnDQ" type="3005" element="_UTmk8PGaEeiyZ7tpioxnDQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_UUHiUfGaEeiyZ7tpioxnDQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UUHiUvGaEeiyZ7tpioxnDQ"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_Yc1gMeNtEeiCIONUefmHUw" fontName="Segoe UI" fontHeight="10" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yc1gMuNtEeiCIONUefmHUw" x="114" y="18" width="24" height="24"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_UUFtIfGaEeiyZ7tpioxnDQ" fontName="Segoe UI" fontHeight="10" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UUFtIvGaEeiyZ7tpioxnDQ" x="385" y="40" width="24" height="24"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_Y50-MONtEeiCIONUefmHUw" type="2001" element="_Y5ow8ONtEeiCIONUefmHUw">
-          <children xmi:type="notation:Node" xmi:id="_Y50-M-NtEeiCIONUefmHUw" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_Y50-NONtEeiCIONUefmHUw" x="25" y="2"/>
+        <children xmi:type="notation:Node" xmi:id="_Ue-ugPGaEeiyZ7tpioxnDQ" type="2001" element="_UefmUPGaEeiyZ7tpioxnDQ">
+          <children xmi:type="notation:Node" xmi:id="_Ue_VkPGaEeiyZ7tpioxnDQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Ue_VkfGaEeiyZ7tpioxnDQ" x="-1"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_Y50-NeNtEeiCIONUefmHUw" type="3005" element="_Y5ow8eNtEeiCIONUefmHUw">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_Y50-NuNtEeiCIONUefmHUw" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y50-N-NtEeiCIONUefmHUw"/>
+          <children xmi:type="notation:Node" xmi:id="_Ue_8oPGaEeiyZ7tpioxnDQ" type="3005" element="_UefmUfGaEeiyZ7tpioxnDQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Ue_8ofGaEeiyZ7tpioxnDQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ue_8ovGaEeiyZ7tpioxnDQ"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_Y50-MeNtEeiCIONUefmHUw" fontName="Segoe UI" fontHeight="10" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y50-MuNtEeiCIONUefmHUw" x="47" y="185" width="24" height="24"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Ue-ugfGaEeiyZ7tpioxnDQ" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ue-ugvGaEeiyZ7tpioxnDQ" x="500" y="125" width="32" height="32"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_xul3gOOdEei8c88mxuot_w" type="2001" element="_xo3qAOOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xuz58OOdEei8c88mxuot_w" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_xuz58eOdEei8c88mxuot_w" x="-1"/>
+        <children xmi:type="notation:Node" xmi:id="_Ut2Q8PGaEeiyZ7tpioxnDQ" type="2001" element="_UtPM8PGaEeiyZ7tpioxnDQ">
+          <children xmi:type="notation:Node" xmi:id="_Ut24APGaEeiyZ7tpioxnDQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Ut24AfGaEeiyZ7tpioxnDQ" x="25" y="2"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_xvEYoOOdEei8c88mxuot_w" type="3005" element="_xo3qAeOdEei8c88mxuot_w">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_xvEYoeOdEei8c88mxuot_w" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvEYouOdEei8c88mxuot_w"/>
+          <children xmi:type="notation:Node" xmi:id="_Ut3fEPGaEeiyZ7tpioxnDQ" type="3005" element="_UtP0APGaEeiyZ7tpioxnDQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Ut3fEfGaEeiyZ7tpioxnDQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ut3fEvGaEeiyZ7tpioxnDQ"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_xul3geOdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xul3guOdEei8c88mxuot_w" x="305" y="180" width="32" height="32"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Ut2Q8fGaEeiyZ7tpioxnDQ" fontName="Segoe UI" fontHeight="8" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ut2Q8vGaEeiyZ7tpioxnDQ" x="397" y="150" width="24" height="24"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_xvAHMOOdEei8c88mxuot_w" type="2001" element="_xo5fMOOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xvAHM-OdEei8c88mxuot_w" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_xvAHNOOdEei8c88mxuot_w" x="-1"/>
+        <children xmi:type="notation:Node" xmi:id="_U5v-8PGaEeiyZ7tpioxnDQ" type="2001" element="_U5eSIPGaEeiyZ7tpioxnDQ">
+          <children xmi:type="notation:Node" xmi:id="_U5v-8_GaEeiyZ7tpioxnDQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_U5v-9PGaEeiyZ7tpioxnDQ" x="25" y="2"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_xvEYo-OdEei8c88mxuot_w" type="3005" element="_xo5fMeOdEei8c88mxuot_w">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_xvEYpOOdEei8c88mxuot_w" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvEYpeOdEei8c88mxuot_w"/>
+          <children xmi:type="notation:Node" xmi:id="_U5wmAPGaEeiyZ7tpioxnDQ" type="3005" element="_U5e5MPGaEeiyZ7tpioxnDQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_U5wmAfGaEeiyZ7tpioxnDQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U5wmAvGaEeiyZ7tpioxnDQ"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_xvAHMeOdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvAHMuOdEei8c88mxuot_w" x="130" y="120" width="32" height="32"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_U5v-8fGaEeiyZ7tpioxnDQ" fontName="Segoe UI" fontHeight="10" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U5v-8vGaEeiyZ7tpioxnDQ" x="290" y="90" width="24" height="24"/>
         </children>
-        <children xmi:type="notation:Node" xmi:id="_xvAHNeOdEei8c88mxuot_w" type="2001" element="_xo5fMuOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xvAHOOOdEei8c88mxuot_w" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_xvAHOeOdEei8c88mxuot_w" x="25" y="2"/>
+        <children xmi:type="notation:Node" xmi:id="_VZ2bUPGaEeiyZ7tpioxnDQ" type="2001" element="_VZTowPGaEeiyZ7tpioxnDQ">
+          <children xmi:type="notation:Node" xmi:id="_VZ3CYvGaEeiyZ7tpioxnDQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_VZ3CY_GaEeiyZ7tpioxnDQ" x="-1" y="4"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_xvEYpuOdEei8c88mxuot_w" type="3005" element="_xo5fM-OdEei8c88mxuot_w">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_xvEYp-OdEei8c88mxuot_w" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvEYqOOdEei8c88mxuot_w"/>
+          <children xmi:type="notation:Node" xmi:id="_VZ4QgPGaEeiyZ7tpioxnDQ" type="3005" element="_VZTowfGaEeiyZ7tpioxnDQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_VZ4QgfGaEeiyZ7tpioxnDQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VZ4QgvGaEeiyZ7tpioxnDQ"/>
           </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_xvAHNuOdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="8" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvAHN-OdEei8c88mxuot_w" x="220" y="125" width="24" height="24"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_xvAHOuOdEei8c88mxuot_w" type="2001" element="_xo9woOOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xvAHPeOdEei8c88mxuot_w" type="5002">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_xvAHPuOdEei8c88mxuot_w" x="25" y="2"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvEYqeOdEei8c88mxuot_w" type="3005" element="_xo9woeOdEei8c88mxuot_w">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_xvEYquOdEei8c88mxuot_w" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvEYq-OdEei8c88mxuot_w"/>
-          </children>
-          <styles xmi:type="notation:ShapeStyle" xmi:id="_xvAHO-OdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="10" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvAHPOOdEei8c88mxuot_w" x="215" y="55" width="24" height="24"/>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_VZ3CYPGaEeiyZ7tpioxnDQ" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VZ3CYfGaEeiyZ7tpioxnDQ" x="575" y="141" width="32" height="32"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_GHiRYuMAEeiI-f2g9Zo12A"/>
-        <edges xmi:type="notation:Edge" xmi:id="_xvEYrOOdEei8c88mxuot_w" type="4001" element="_xo_l0OOdEei8c88mxuot_w" source="_5yM0UONrEei30tLOFBiwMw" target="_xvAHOuOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xvEYsOOdEei8c88mxuot_w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvEYseOdEei8c88mxuot_w" x="2" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvLtYOOdEei8c88mxuot_w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvLtYeOdEei8c88mxuot_w" x="7" y="7"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvLtYuOdEei8c88mxuot_w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvLtY-OdEei8c88mxuot_w" x="-2" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_xvEYreOdEei8c88mxuot_w"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_xvEYruOdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xvEYr-OdEei8c88mxuot_w" points="[-5, 0, -96, 0]$[11, 18, -80, 18]$[106, 0, 15, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvYhsOOdEei8c88mxuot_w" id="(1.0,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvYhseOdEei8c88mxuot_w" id="(0.0,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_xvYhsuOdEei8c88mxuot_w" type="4001" element="_xo_l0-OdEei8c88mxuot_w" source="_Y50-MONtEeiCIONUefmHUw" target="_xvAHMOOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xvYhtuOdEei8c88mxuot_w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvYht-OdEei8c88mxuot_w" x="2" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvYhuOOdEei8c88mxuot_w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvYhueOdEei8c88mxuot_w" x="-10" y="1"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvYhuuOdEei8c88mxuot_w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvYhu-OdEei8c88mxuot_w" x="-2" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_xvYhs-OdEei8c88mxuot_w"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_xvYhtOOdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xvYhteOdEei8c88mxuot_w" points="[-5, 0, -64, 61]$[0, -47, -59, 14]$[59, -61, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvczIOOdEei8c88mxuot_w" id="(1.0,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvczIeOdEei8c88mxuot_w" id="(0.0,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_xvczIuOdEei8c88mxuot_w" type="4001" element="_xo_l1uOdEei8c88mxuot_w" source="_Y50-MONtEeiCIONUefmHUw" target="_xul3gOOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xvdaMOOdEei8c88mxuot_w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaMeOdEei8c88mxuot_w" x="1" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvdaMuOdEei8c88mxuot_w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaM-OdEei8c88mxuot_w" x="5" y="9"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvdaNOOdEei8c88mxuot_w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaNeOdEei8c88mxuot_w" x="-1" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_xvczI-OdEei8c88mxuot_w"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_xvczJOOdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xvczJeOdEei8c88mxuot_w" points="[-5, 0, -239, 1]$[27, 18, -207, 19]$[234, -1, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvdaNuOdEei8c88mxuot_w" id="(1.0,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvdaN-OdEei8c88mxuot_w" id="(0.0,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_xvdaOOOdEei8c88mxuot_w" type="4001" element="_xpD3QOOdEei8c88mxuot_w" source="_xvAHMOOdEei8c88mxuot_w" target="_xvAHNeOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xvdaPOOdEei8c88mxuot_w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaPeOdEei8c88mxuot_w" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvdaPuOdEei8c88mxuot_w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaP-OdEei8c88mxuot_w" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvdaQOOdEei8c88mxuot_w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaQeOdEei8c88mxuot_w" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_xvdaOeOdEei8c88mxuot_w"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_xvdaOuOdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xvdaO-OdEei8c88mxuot_w" points="[0, 0, -60, -4]$[60, 4, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvdaQuOdEei8c88mxuot_w" id="(1.0,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvdaQ-OdEei8c88mxuot_w" id="(0.0,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_xvdaROOdEei8c88mxuot_w" type="4001" element="_xpIvwOOdEei8c88mxuot_w" source="_xvAHNeOdEei8c88mxuot_w" target="_xul3gOOdEei8c88mxuot_w">
-          <children xmi:type="notation:Node" xmi:id="_xvdaSOOdEei8c88mxuot_w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaSeOdEei8c88mxuot_w" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvdaSuOdEei8c88mxuot_w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaS-OdEei8c88mxuot_w" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_xvdaTOOdEei8c88mxuot_w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xvdaTeOdEei8c88mxuot_w" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_xvdaReOdEei8c88mxuot_w"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_xvdaRuOdEei8c88mxuot_w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xvdaR-OdEei8c88mxuot_w" points="[0, 0, -60, -57]$[60, 57, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvdaTuOdEei8c88mxuot_w" id="(1.0,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xvdaT-OdEei8c88mxuot_w" id="(0.0,0.5)"/>
-        </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_5yGtsONrEei30tLOFBiwMw" name="3D-LED" outgoingEdges="_xo_l0OOdEei8c88mxuot_w" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UH0ywPGaEeiyZ7tpioxnDQ" name="0D-LED" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="arduino:Led" href="My.arduino#//@actuadores.0"/>
       <semanticElements xmi:type="arduino:Led" href="My.arduino#//@actuadores.0"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_5yGtseNrEei30tLOFBiwMw" labelSize="10" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/Led.png">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_UH2A4PGaEeiyZ7tpioxnDQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/Led.png">
         <labelFormat>bold</labelFormat>
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Led']/@style"/>
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Led']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Y5ow8ONtEeiCIONUefmHUw" name="13D-LED" outgoingEdges="_xo_l0-OdEei8c88mxuot_w _xo_l1uOdEei8c88mxuot_w" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_U5eSIPGaEeiyZ7tpioxnDQ" name="0D-LED" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="arduino:Led" href="My.arduino#//@actuadores.1"/>
       <semanticElements xmi:type="arduino:Led" href="My.arduino#//@actuadores.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_Y5ow8eNtEeiCIONUefmHUw" labelSize="10" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/Led.png">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_U5e5MPGaEeiyZ7tpioxnDQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/Led.png">
         <labelFormat>bold</labelFormat>
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Led']/@style"/>
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Led']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_YcjMUONtEeiCIONUefmHUw" name="1A-LDR" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UTl94PGaEeiyZ7tpioxnDQ" name="0A-LDR" width="-1" height="-1" resizeKind="NSEW">
       <target xmi:type="arduino:LDR" href="My.arduino#//@sensores.0"/>
       <semanticElements xmi:type="arduino:LDR" href="My.arduino#//@sensores.0"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_YcpS8ONtEeiCIONUefmHUw" labelSize="10" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/LDR.png">
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_UTmk8PGaEeiyZ7tpioxnDQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/LDR.png">
         <labelFormat>bold</labelFormat>
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='LDR']/@style"/>
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='LDR']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_xo3qAOOdEei8c88mxuot_w" incomingEdges="_xo_l1uOdEei8c88mxuot_w _xpIvwOOdEei8c88mxuot_w" width="-1" height="-1" resizeKind="NSEW">
-      <target xmi:type="arduino:Apagar" href="My.arduino#//@actuadores.1/@instrucciones.2"/>
-      <semanticElements xmi:type="arduino:Apagar" href="My.arduino#//@actuadores.1/@instrucciones.2"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_xo3qAeOdEei8c88mxuot_w" showIcon="false" workspacePath="/Arduino.design/icons/Apagar.png">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Apagar']/@style"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UefmUPGaEeiyZ7tpioxnDQ" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="arduino:Apagar" href="My.arduino#//@instrucciones.0"/>
+      <semanticElements xmi:type="arduino:Apagar" href="My.arduino#//@instrucciones.0"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_UefmUfGaEeiyZ7tpioxnDQ" showIcon="false" workspacePath="/Arduino.design/icons/Apagar.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Apagar']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Apagar']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Apagar']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_xo5fMOOdEei8c88mxuot_w" outgoingEdges="_xpD3QOOdEei8c88mxuot_w" incomingEdges="_xo_l0-OdEei8c88mxuot_w" width="-1" height="-1" resizeKind="NSEW">
-      <target xmi:type="arduino:Encender" href="My.arduino#//@actuadores.1/@instrucciones.0"/>
-      <semanticElements xmi:type="arduino:Encender" href="My.arduino#//@actuadores.1/@instrucciones.0"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_xo5fMeOdEei8c88mxuot_w" showIcon="false" workspacePath="/Arduino.design/icons/Encender.png">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Encender']/@style"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Encender']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_xo5fMuOdEei8c88mxuot_w" name="2 seg" outgoingEdges="_xpIvwOOdEei8c88mxuot_w" incomingEdges="_xpD3QOOdEei8c88mxuot_w" width="-1" height="-1" resizeKind="NSEW">
-      <target xmi:type="arduino:Esperar" href="My.arduino#//@actuadores.1/@instrucciones.1"/>
-      <semanticElements xmi:type="arduino:Esperar" href="My.arduino#//@actuadores.1/@instrucciones.1"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_xo5fM-OdEei8c88mxuot_w" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/Esperar.png">
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_UtPM8PGaEeiyZ7tpioxnDQ" name="0 seg" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="arduino:Esperar" href="My.arduino#//@instrucciones.1"/>
+      <semanticElements xmi:type="arduino:Esperar" href="My.arduino#//@instrucciones.1"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_UtP0APGaEeiyZ7tpioxnDQ" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/Esperar.png">
         <labelFormat>bold</labelFormat>
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Esperar']/@style"/>
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Esperar']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_xo9woOOdEei8c88mxuot_w" name="255V" incomingEdges="_xo_l0OOdEei8c88mxuot_w" width="-1" height="-1" resizeKind="NSEW">
-      <target xmi:type="arduino:Variar" href="My.arduino#//@actuadores.0/@instrucciones.0"/>
-      <semanticElements xmi:type="arduino:Variar" href="My.arduino#//@actuadores.0/@instrucciones.0"/>
-      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_xo9woeOdEei8c88mxuot_w" labelSize="10" showIcon="false" labelAlignment="RIGHT" workspacePath="/Arduino.design/icons/Variar.png">
-        <labelFormat>bold</labelFormat>
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Variar']/@style"/>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_VZTowPGaEeiyZ7tpioxnDQ" width="-1" height="-1" resizeKind="NSEW">
+      <target xmi:type="arduino:Encender" href="My.arduino#//@instrucciones.2"/>
+      <semanticElements xmi:type="arduino:Encender" href="My.arduino#//@instrucciones.2"/>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_VZTowfGaEeiyZ7tpioxnDQ" showIcon="false" workspacePath="/Arduino.design/icons/Encender.png">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender']/@style"/>
       </ownedStyle>
-      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@nodeMappings[name='Variar']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xo_l0OOdEei8c88mxuot_w" sourceNode="_5yGtsONrEei30tLOFBiwMw" targetNode="_xo9woOOdEei8c88mxuot_w">
-      <target xmi:type="arduino:Led" href="My.arduino#//@actuadores.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xo_l0eOdEei8c88mxuot_w" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_xo_l0uOdEei8c88mxuot_w"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xo_l0-OdEei8c88mxuot_w" sourceNode="_Y5ow8ONtEeiCIONUefmHUw" targetNode="_xo5fMOOdEei8c88mxuot_w">
-      <target xmi:type="arduino:Led" href="My.arduino#//@actuadores.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xo_l1OOdEei8c88mxuot_w" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_xo_l1eOdEei8c88mxuot_w"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xo_l1uOdEei8c88mxuot_w" sourceNode="_Y5ow8ONtEeiCIONUefmHUw" targetNode="_xo3qAOOdEei8c88mxuot_w">
-      <target xmi:type="arduino:Led" href="My.arduino#//@actuadores.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xo_l1-OdEei8c88mxuot_w" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_xo_l2OOdEei8c88mxuot_w"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xpD3QOOdEei8c88mxuot_w" sourceNode="_xo5fMOOdEei8c88mxuot_w" targetNode="_xo5fMuOdEei8c88mxuot_w">
-      <target xmi:type="arduino:Encender" href="My.arduino#//@actuadores.1/@instrucciones.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xpD3QeOdEei8c88mxuot_w" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='On']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_xpD3QuOdEei8c88mxuot_w"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='On']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xpIvwOOdEei8c88mxuot_w" sourceNode="_xo5fMuOdEei8c88mxuot_w" targetNode="_xo3qAOOdEei8c88mxuot_w">
-      <target xmi:type="arduino:Esperar" href="My.arduino#//@actuadores.1/@instrucciones.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xpIvweOdEei8c88mxuot_w" targetArrow="NoDecoration" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='Off']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_xpIvwuOdEei8c88mxuot_w"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='Off']"/>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_GHcKxuMAEeiI-f2g9Zo12A"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/resource/Arduino.design/description/project.odesign#//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']"/>
     <target xmi:type="arduino:Sketch" href="My.arduino#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

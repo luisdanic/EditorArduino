@@ -5,18 +5,13 @@ package arduino.impl;
 import arduino.Actuadores;
 import arduino.ArduinoPackage;
 import arduino.Sensores;
-
-import arduino.Variar;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +22,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link arduino.impl.SensoresImpl#getMed <em>Med</em>}</li>
- *   <li>{@link arduino.impl.SensoresImpl#getDatos <em>Datos</em>}</li>
  *   <li>{@link arduino.impl.SensoresImpl#getPin <em>Pin</em>}</li>
  *   <li>{@link arduino.impl.SensoresImpl#getAct <em>Act</em>}</li>
  * </ul>
@@ -54,15 +48,6 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	protected int med = MED_EDEFAULT;
 
-	/**
-	 * The cached value of the '{@link #getDatos() <em>Datos</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatos()
-	 * @generated
-	 * @ordered
-	 */
-	protected Variar datos;
 	/**
 	 * The default value of the '{@link #getPin() <em>Pin</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -136,45 +121,6 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variar getDatos() {
-		if (datos != null && datos.eIsProxy()) {
-			InternalEObject oldDatos = (InternalEObject) datos;
-			datos = (Variar) eResolveProxy(oldDatos);
-			if (datos != oldDatos) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.SENSORES__DATOS, oldDatos,
-							datos));
-			}
-		}
-		return datos;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Variar basicGetDatos() {
-		return datos;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDatos(Variar newDatos) {
-		Variar oldDatos = datos;
-		datos = newDatos;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.SENSORES__DATOS, oldDatos, datos));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getPin() {
 		return pin;
 	}
@@ -198,39 +144,9 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public EList<Actuadores> getAct() {
 		if (act == null) {
-			act = new EObjectWithInverseResolvingEList<Actuadores>(Actuadores.class, this, ArduinoPackage.SENSORES__ACT,
-					ArduinoPackage.ACTUADORES__SEN);
+			act = new EObjectResolvingEList<Actuadores>(Actuadores.class, this, ArduinoPackage.SENSORES__ACT);
 		}
 		return act;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case ArduinoPackage.SENSORES__ACT:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAct()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case ArduinoPackage.SENSORES__ACT:
-			return ((InternalEList<?>) getAct()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -243,10 +159,6 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 		case ArduinoPackage.SENSORES__MED:
 			return getMed();
-		case ArduinoPackage.SENSORES__DATOS:
-			if (resolve)
-				return getDatos();
-			return basicGetDatos();
 		case ArduinoPackage.SENSORES__PIN:
 			return getPin();
 		case ArduinoPackage.SENSORES__ACT:
@@ -266,9 +178,6 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 		case ArduinoPackage.SENSORES__MED:
 			setMed((Integer) newValue);
-			return;
-		case ArduinoPackage.SENSORES__DATOS:
-			setDatos((Variar) newValue);
 			return;
 		case ArduinoPackage.SENSORES__PIN:
 			setPin((Integer) newValue);
@@ -292,9 +201,6 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 		case ArduinoPackage.SENSORES__MED:
 			setMed(MED_EDEFAULT);
 			return;
-		case ArduinoPackage.SENSORES__DATOS:
-			setDatos((Variar) null);
-			return;
 		case ArduinoPackage.SENSORES__PIN:
 			setPin(PIN_EDEFAULT);
 			return;
@@ -315,8 +221,6 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 		case ArduinoPackage.SENSORES__MED:
 			return med != MED_EDEFAULT;
-		case ArduinoPackage.SENSORES__DATOS:
-			return datos != null;
 		case ArduinoPackage.SENSORES__PIN:
 			return pin != PIN_EDEFAULT;
 		case ArduinoPackage.SENSORES__ACT:

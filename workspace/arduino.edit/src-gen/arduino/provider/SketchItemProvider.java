@@ -57,7 +57,6 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 			super.getPropertyDescriptors(object);
 
 			addNombrePropertyDescriptor(object);
-			addInsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,20 +77,6 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Ins feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Sketch_ins_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Sketch_ins_feature", "_UI_Sketch_type"),
-						ArduinoPackage.Literals.SKETCH__INS, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -105,6 +90,7 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__SENSORES);
 			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__ACTUADORES);
+			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES);
 		}
 		return childrenFeatures;
 	}
@@ -173,6 +159,7 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 			return;
 		case ArduinoPackage.SKETCH__SENSORES:
 		case ArduinoPackage.SKETCH__ACTUADORES:
+		case ArduinoPackage.SKETCH__INSTRUCCIONES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -195,6 +182,18 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 
 		newChildDescriptors.add(
 				createChildParameter(ArduinoPackage.Literals.SKETCH__ACTUADORES, ArduinoFactory.eINSTANCE.createLed()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES,
+				ArduinoFactory.eINSTANCE.createApagar()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES,
+				ArduinoFactory.eINSTANCE.createVariar()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES,
+				ArduinoFactory.eINSTANCE.createEsperar()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES,
+				ArduinoFactory.eINSTANCE.createEncender()));
 	}
 
 	/**

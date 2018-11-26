@@ -45,6 +45,7 @@ public class VariarItemProvider extends InstruccionesItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPwmPropertyDescriptor(object);
+			addDatosPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -62,6 +63,20 @@ public class VariarItemProvider extends InstruccionesItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Variar_pwm_feature", "_UI_Variar_type"),
 						ArduinoPackage.Literals.VARIAR__PWM, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Datos feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatosPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Variar_datos_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Variar_datos_feature", "_UI_Variar_type"),
+						ArduinoPackage.Literals.VARIAR__DATOS, true, false, true, null, null, null));
 	}
 
 	/**

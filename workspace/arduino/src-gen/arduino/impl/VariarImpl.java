@@ -3,11 +3,13 @@
 package arduino.impl;
 
 import arduino.ArduinoPackage;
+import arduino.Sensores;
 import arduino.Variar;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link arduino.impl.VariarImpl#getPwm <em>Pwm</em>}</li>
+ *   <li>{@link arduino.impl.VariarImpl#getDatos <em>Datos</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +46,16 @@ public class VariarImpl extends InstruccionesImpl implements Variar {
 	 * @ordered
 	 */
 	protected int pwm = PWM_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDatos() <em>Datos</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDatos()
+	 * @generated
+	 * @ordered
+	 */
+	protected Sensores datos;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,11 +102,54 @@ public class VariarImpl extends InstruccionesImpl implements Variar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Sensores getDatos() {
+		if (datos != null && datos.eIsProxy()) {
+			InternalEObject oldDatos = (InternalEObject) datos;
+			datos = (Sensores) eResolveProxy(oldDatos);
+			if (datos != oldDatos) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.VARIAR__DATOS, oldDatos,
+							datos));
+			}
+		}
+		return datos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Sensores basicGetDatos() {
+		return datos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDatos(Sensores newDatos) {
+		Sensores oldDatos = datos;
+		datos = newDatos;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.VARIAR__DATOS, oldDatos, datos));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case ArduinoPackage.VARIAR__PWM:
 			return getPwm();
+		case ArduinoPackage.VARIAR__DATOS:
+			if (resolve)
+				return getDatos();
+			return basicGetDatos();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,6 +164,9 @@ public class VariarImpl extends InstruccionesImpl implements Variar {
 		switch (featureID) {
 		case ArduinoPackage.VARIAR__PWM:
 			setPwm((Integer) newValue);
+			return;
+		case ArduinoPackage.VARIAR__DATOS:
+			setDatos((Sensores) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,6 +183,9 @@ public class VariarImpl extends InstruccionesImpl implements Variar {
 		case ArduinoPackage.VARIAR__PWM:
 			setPwm(PWM_EDEFAULT);
 			return;
+		case ArduinoPackage.VARIAR__DATOS:
+			setDatos((Sensores) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,6 +200,8 @@ public class VariarImpl extends InstruccionesImpl implements Variar {
 		switch (featureID) {
 		case ArduinoPackage.VARIAR__PWM:
 			return pwm != PWM_EDEFAULT;
+		case ArduinoPackage.VARIAR__DATOS:
+			return datos != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -3,7 +3,6 @@
 package arduino.provider;
 
 import arduino.Actuadores;
-import arduino.ArduinoFactory;
 import arduino.ArduinoPackage;
 import java.util.Collection;
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -53,7 +51,7 @@ public class ActuadoresItemProvider extends ItemProviderAdapter implements IEdit
 			super.getPropertyDescriptors(object);
 
 			addPinPropertyDescriptor(object);
-			addSenPropertyDescriptor(object);
+			addInstruccionactuadorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,48 +73,18 @@ public class ActuadoresItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This adds a property descriptor for the Sen feature.
+	 * This adds a property descriptor for the Instruccionactuador feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSenPropertyDescriptor(Object object) {
+	protected void addInstruccionactuadorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Actuadores_sen_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Actuadores_sen_feature",
+						getResourceLocator(), getString("_UI_Actuadores_instruccionactuador_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Actuadores_instruccionactuador_feature",
 								"_UI_Actuadores_type"),
-						ArduinoPackage.Literals.ACTUADORES__SEN, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ArduinoPackage.Literals.ACTUADORES__INSTRUCCIONES);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+						ArduinoPackage.Literals.ACTUADORES__INSTRUCCIONACTUADOR, true, false, true, null, null, null));
 	}
 
 	/**
@@ -167,9 +135,6 @@ public class ActuadoresItemProvider extends ItemProviderAdapter implements IEdit
 		case ArduinoPackage.ACTUADORES__PIN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case ArduinoPackage.ACTUADORES__INSTRUCCIONES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -184,18 +149,6 @@ public class ActuadoresItemProvider extends ItemProviderAdapter implements IEdit
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.ACTUADORES__INSTRUCCIONES,
-				ArduinoFactory.eINSTANCE.createApagar()));
-
-		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.ACTUADORES__INSTRUCCIONES,
-				ArduinoFactory.eINSTANCE.createVariar()));
-
-		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.ACTUADORES__INSTRUCCIONES,
-				ArduinoFactory.eINSTANCE.createEsperar()));
-
-		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.ACTUADORES__INSTRUCCIONES,
-				ArduinoFactory.eINSTANCE.createEncender()));
 	}
 
 	/**

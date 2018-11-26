@@ -94,13 +94,13 @@ public interface ArduinoPackage extends EPackage {
 	int SKETCH__ACTUADORES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Ins</b></em>' reference list.
+	 * The feature id for the '<em><b>Instrucciones</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SKETCH__INS = 3;
+	int SKETCH__INSTRUCCIONES = 3;
 
 	/**
 	 * The number of structural features of the '<em>Sketch</em>' class.
@@ -131,31 +131,22 @@ public interface ArduinoPackage extends EPackage {
 	int ACTUADORES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Instrucciones</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTUADORES__INSTRUCCIONES = 0;
-
-	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTUADORES__PIN = 1;
+	int ACTUADORES__PIN = 0;
 
 	/**
-	 * The feature id for the '<em><b>Sen</b></em>' reference.
+	 * The feature id for the '<em><b>Instruccionactuador</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTUADORES__SEN = 2;
+	int ACTUADORES__INSTRUCCIONACTUADOR = 1;
 
 	/**
 	 * The number of structural features of the '<em>Actuadores</em>' class.
@@ -164,7 +155,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTUADORES_FEATURE_COUNT = 3;
+	int ACTUADORES_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Actuadores</em>' class.
@@ -195,22 +186,13 @@ public interface ArduinoPackage extends EPackage {
 	int SENSORES__MED = 0;
 
 	/**
-	 * The feature id for the '<em><b>Datos</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SENSORES__DATOS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSORES__PIN = 2;
+	int SENSORES__PIN = 1;
 
 	/**
 	 * The feature id for the '<em><b>Act</b></em>' reference list.
@@ -219,7 +201,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSORES__ACT = 3;
+	int SENSORES__ACT = 2;
 
 	/**
 	 * The number of structural features of the '<em>Sensores</em>' class.
@@ -228,7 +210,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSORES_FEATURE_COUNT = 4;
+	int SENSORES_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Sensores</em>' class.
@@ -250,15 +232,6 @@ public interface ArduinoPackage extends EPackage {
 	int LED = 3;
 
 	/**
-	 * The feature id for the '<em><b>Instrucciones</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LED__INSTRUCCIONES = ACTUADORES__INSTRUCCIONES;
-
-	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -268,13 +241,13 @@ public interface ArduinoPackage extends EPackage {
 	int LED__PIN = ACTUADORES__PIN;
 
 	/**
-	 * The feature id for the '<em><b>Sen</b></em>' reference.
+	 * The feature id for the '<em><b>Instruccionactuador</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LED__SEN = ACTUADORES__SEN;
+	int LED__INSTRUCCIONACTUADOR = ACTUADORES__INSTRUCCIONACTUADOR;
 
 	/**
 	 * The number of structural features of the '<em>Led</em>' class.
@@ -312,15 +285,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int LDR__MED = SENSORES__MED;
-
-	/**
-	 * The feature id for the '<em><b>Datos</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LDR__DATOS = SENSORES__DATOS;
 
 	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
@@ -397,22 +361,13 @@ public interface ArduinoPackage extends EPackage {
 	int APAGAR = 6;
 
 	/**
-	 * The feature id for the '<em><b>Off</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APAGAR__OFF = INSTRUCCIONES_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Apagar</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APAGAR_FEATURE_COUNT = INSTRUCCIONES_FEATURE_COUNT + 1;
+	int APAGAR_FEATURE_COUNT = INSTRUCCIONES_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Apagar</em>' class.
@@ -443,13 +398,22 @@ public interface ArduinoPackage extends EPackage {
 	int VARIAR__PWM = INSTRUCCIONES_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Datos</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIAR__DATOS = INSTRUCCIONES_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Variar</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIAR_FEATURE_COUNT = INSTRUCCIONES_FEATURE_COUNT + 1;
+	int VARIAR_FEATURE_COUNT = INSTRUCCIONES_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Variar</em>' class.
@@ -517,22 +481,13 @@ public interface ArduinoPackage extends EPackage {
 	int ENCENDER = 9;
 
 	/**
-	 * The feature id for the '<em><b>On</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCENDER__ON = INSTRUCCIONES_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Esperar</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCENDER__ESPERAR = INSTRUCCIONES_FEATURE_COUNT + 1;
+	int ENCENDER__ESPERAR = INSTRUCCIONES_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Encender</em>' class.
@@ -541,7 +496,7 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCENDER_FEATURE_COUNT = INSTRUCCIONES_FEATURE_COUNT + 2;
+	int ENCENDER_FEATURE_COUNT = INSTRUCCIONES_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Encender</em>' class.
@@ -596,15 +551,15 @@ public interface ArduinoPackage extends EPackage {
 	EReference getSketch_Actuadores();
 
 	/**
-	 * Returns the meta object for the reference list '{@link arduino.Sketch#getIns <em>Ins</em>}'.
+	 * Returns the meta object for the containment reference list '{@link arduino.Sketch#getInstrucciones <em>Instrucciones</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Ins</em>'.
-	 * @see arduino.Sketch#getIns()
+	 * @return the meta object for the containment reference list '<em>Instrucciones</em>'.
+	 * @see arduino.Sketch#getInstrucciones()
 	 * @see #getSketch()
 	 * @generated
 	 */
-	EReference getSketch_Ins();
+	EReference getSketch_Instrucciones();
 
 	/**
 	 * Returns the meta object for class '{@link arduino.Actuadores <em>Actuadores</em>}'.
@@ -615,17 +570,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getActuadores();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link arduino.Actuadores#getInstrucciones <em>Instrucciones</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instrucciones</em>'.
-	 * @see arduino.Actuadores#getInstrucciones()
-	 * @see #getActuadores()
-	 * @generated
-	 */
-	EReference getActuadores_Instrucciones();
 
 	/**
 	 * Returns the meta object for the attribute '{@link arduino.Actuadores#getPin <em>Pin</em>}'.
@@ -639,15 +583,15 @@ public interface ArduinoPackage extends EPackage {
 	EAttribute getActuadores_Pin();
 
 	/**
-	 * Returns the meta object for the reference '{@link arduino.Actuadores#getSen <em>Sen</em>}'.
+	 * Returns the meta object for the reference '{@link arduino.Actuadores#getInstruccionactuador <em>Instruccionactuador</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sen</em>'.
-	 * @see arduino.Actuadores#getSen()
+	 * @return the meta object for the reference '<em>Instruccionactuador</em>'.
+	 * @see arduino.Actuadores#getInstruccionactuador()
 	 * @see #getActuadores()
 	 * @generated
 	 */
-	EReference getActuadores_Sen();
+	EReference getActuadores_Instruccionactuador();
 
 	/**
 	 * Returns the meta object for class '{@link arduino.Sensores <em>Sensores</em>}'.
@@ -669,17 +613,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSensores_Med();
-
-	/**
-	 * Returns the meta object for the reference '{@link arduino.Sensores#getDatos <em>Datos</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Datos</em>'.
-	 * @see arduino.Sensores#getDatos()
-	 * @see #getSensores()
-	 * @generated
-	 */
-	EReference getSensores_Datos();
 
 	/**
 	 * Returns the meta object for the attribute '{@link arduino.Sensores#getPin <em>Pin</em>}'.
@@ -744,17 +677,6 @@ public interface ArduinoPackage extends EPackage {
 	EClass getApagar();
 
 	/**
-	 * Returns the meta object for the attribute '{@link arduino.Apagar#getOff <em>Off</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Off</em>'.
-	 * @see arduino.Apagar#getOff()
-	 * @see #getApagar()
-	 * @generated
-	 */
-	EAttribute getApagar_Off();
-
-	/**
 	 * Returns the meta object for class '{@link arduino.Variar <em>Variar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -774,6 +696,17 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVariar_Pwm();
+
+	/**
+	 * Returns the meta object for the reference '{@link arduino.Variar#getDatos <em>Datos</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Datos</em>'.
+	 * @see arduino.Variar#getDatos()
+	 * @see #getVariar()
+	 * @generated
+	 */
+	EReference getVariar_Datos();
 
 	/**
 	 * Returns the meta object for class '{@link arduino.Esperar <em>Esperar</em>}'.
@@ -816,17 +749,6 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEncender();
-
-	/**
-	 * Returns the meta object for the attribute '{@link arduino.Encender#getOn <em>On</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>On</em>'.
-	 * @see arduino.Encender#getOn()
-	 * @see #getEncender()
-	 * @generated
-	 */
-	EAttribute getEncender_On();
 
 	/**
 	 * Returns the meta object for the reference '{@link arduino.Encender#getEsperar <em>Esperar</em>}'.
@@ -897,12 +819,12 @@ public interface ArduinoPackage extends EPackage {
 		EReference SKETCH__ACTUADORES = eINSTANCE.getSketch_Actuadores();
 
 		/**
-		 * The meta object literal for the '<em><b>Ins</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Instrucciones</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SKETCH__INS = eINSTANCE.getSketch_Ins();
+		EReference SKETCH__INSTRUCCIONES = eINSTANCE.getSketch_Instrucciones();
 
 		/**
 		 * The meta object literal for the '{@link arduino.impl.ActuadoresImpl <em>Actuadores</em>}' class.
@@ -915,14 +837,6 @@ public interface ArduinoPackage extends EPackage {
 		EClass ACTUADORES = eINSTANCE.getActuadores();
 
 		/**
-		 * The meta object literal for the '<em><b>Instrucciones</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTUADORES__INSTRUCCIONES = eINSTANCE.getActuadores_Instrucciones();
-
-		/**
 		 * The meta object literal for the '<em><b>Pin</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -931,12 +845,12 @@ public interface ArduinoPackage extends EPackage {
 		EAttribute ACTUADORES__PIN = eINSTANCE.getActuadores_Pin();
 
 		/**
-		 * The meta object literal for the '<em><b>Sen</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Instruccionactuador</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTUADORES__SEN = eINSTANCE.getActuadores_Sen();
+		EReference ACTUADORES__INSTRUCCIONACTUADOR = eINSTANCE.getActuadores_Instruccionactuador();
 
 		/**
 		 * The meta object literal for the '{@link arduino.impl.SensoresImpl <em>Sensores</em>}' class.
@@ -955,14 +869,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SENSORES__MED = eINSTANCE.getSensores_Med();
-
-		/**
-		 * The meta object literal for the '<em><b>Datos</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SENSORES__DATOS = eINSTANCE.getSensores_Datos();
 
 		/**
 		 * The meta object literal for the '<em><b>Pin</b></em>' attribute feature.
@@ -1021,14 +927,6 @@ public interface ArduinoPackage extends EPackage {
 		EClass APAGAR = eINSTANCE.getApagar();
 
 		/**
-		 * The meta object literal for the '<em><b>Off</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute APAGAR__OFF = eINSTANCE.getApagar_Off();
-
-		/**
 		 * The meta object literal for the '{@link arduino.impl.VariarImpl <em>Variar</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1045,6 +943,14 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VARIAR__PWM = eINSTANCE.getVariar_Pwm();
+
+		/**
+		 * The meta object literal for the '<em><b>Datos</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIAR__DATOS = eINSTANCE.getVariar_Datos();
 
 		/**
 		 * The meta object literal for the '{@link arduino.impl.EsperarImpl <em>Esperar</em>}' class.
@@ -1081,14 +987,6 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENCENDER = eINSTANCE.getEncender();
-
-		/**
-		 * The meta object literal for the '<em><b>On</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENCENDER__ON = eINSTANCE.getEncender_On();
 
 		/**
 		 * The meta object literal for the '<em><b>Esperar</b></em>' reference feature.

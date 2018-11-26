@@ -7,40 +7,31 @@
         eType="#//Sensores" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuadores" upperBound="-1"
         eType="#//Actuadores" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ins" lowerBound="1" upperBound="-1"
-        eType="#//Instrucciones"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actuadores" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instrucciones" upperBound="-1"
         eType="#//Instrucciones" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actuadores" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sen" eType="#//Sensores"
-        eOpposite="#//Sensores/act"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instruccionactuador" eType="#//Instrucciones"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sensores" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="med" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="datos" eType="#//Variar"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="act" upperBound="-1" eType="#//Actuadores"
-        eOpposite="#//Actuadores/sen"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="act" upperBound="-1" eType="#//Actuadores"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Led" eSuperTypes="#//Actuadores"/>
   <eClassifiers xsi:type="ecore:EClass" name="LDR" eSuperTypes="#//Sensores"/>
   <eClassifiers xsi:type="ecore:EClass" name="Instrucciones" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Apagar" eSuperTypes="#//Instrucciones">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="off" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="LOW"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Apagar" eSuperTypes="#//Instrucciones"/>
   <eClassifiers xsi:type="ecore:EClass" name="Variar" eSuperTypes="#//Instrucciones">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pwm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datos" eType="#//Sensores"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Esperar" eSuperTypes="#//Instrucciones">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="segundos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="apagar" eType="#//Apagar"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Encender" eSuperTypes="#//Instrucciones">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="on" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="HIGH"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="esperar" eType="#//Esperar"/>
   </eClassifiers>
 </ecore:EPackage>

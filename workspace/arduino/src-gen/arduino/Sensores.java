@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link arduino.Sensores#getMed <em>Med</em>}</li>
- *   <li>{@link arduino.Sensores#getDatos <em>Datos</em>}</li>
  *   <li>{@link arduino.Sensores#getPin <em>Pin</em>}</li>
  *   <li>{@link arduino.Sensores#getAct <em>Act</em>}</li>
  * </ul>
@@ -53,32 +52,6 @@ public interface Sensores extends EObject {
 	void setMed(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Datos</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Datos</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Datos</em>' reference.
-	 * @see #setDatos(Variar)
-	 * @see arduino.ArduinoPackage#getSensores_Datos()
-	 * @model
-	 * @generated
-	 */
-	Variar getDatos();
-
-	/**
-	 * Sets the value of the '{@link arduino.Sensores#getDatos <em>Datos</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Datos</em>' reference.
-	 * @see #getDatos()
-	 * @generated
-	 */
-	void setDatos(Variar value);
-
-	/**
 	 * Returns the value of the '<em><b>Pin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -107,7 +80,6 @@ public interface Sensores extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Act</b></em>' reference list.
 	 * The list contents are of type {@link arduino.Actuadores}.
-	 * It is bidirectional and its opposite is '{@link arduino.Actuadores#getSen <em>Sen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Act</em>' reference list isn't clear,
@@ -116,8 +88,7 @@ public interface Sensores extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Act</em>' reference list.
 	 * @see arduino.ArduinoPackage#getSensores_Act()
-	 * @see arduino.Actuadores#getSen
-	 * @model opposite="sen"
+	 * @model
 	 * @generated
 	 */
 	EList<Actuadores> getAct();
