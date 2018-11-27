@@ -88,7 +88,7 @@ public interface Sensores extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Act</em>' reference list.
 	 * @see arduino.ArduinoPackage#getSensores_Act()
-	 * @model
+	 * @model upper="12"
 	 * @generated
 	 */
 	EList<Actuadores> getAct();

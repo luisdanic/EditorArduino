@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <arduino:Sketch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.example.org/arduino" Nombre="Programa1">
-  <sensores xsi:type="arduino:LDR"/>
-  <actuadores xsi:type="arduino:Led"/>
-  <actuadores xsi:type="arduino:Led"/>
+  <sensores xsi:type="arduino:LDR" act="//@actuadores.1"/>
+  <actuadores xsi:type="arduino:Led" pin="4" instruccionactuador="//@instrucciones.2"/>
+  <actuadores xsi:type="arduino:Led" pin="3" instruccionactuador="//@instrucciones.3"/>
   <instrucciones xsi:type="arduino:Apagar"/>
-  <instrucciones xsi:type="arduino:Esperar"/>
-  <instrucciones xsi:type="arduino:Encender"/>
+  <instrucciones xsi:type="arduino:Esperar" apagar="//@instrucciones.0"/>
+  <instrucciones xsi:type="arduino:Encender" esperar="//@instrucciones.1"/>
+  <instrucciones xsi:type="arduino:Variar"/>
 </arduino:Sketch>

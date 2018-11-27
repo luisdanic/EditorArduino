@@ -17,7 +17,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Sensores" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="med" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="act" upperBound="-1" eType="#//Actuadores"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="act" upperBound="12" eType="#//Actuadores"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Led" eSuperTypes="#//Actuadores"/>
   <eClassifiers xsi:type="ecore:EClass" name="LDR" eSuperTypes="#//Sensores"/>
