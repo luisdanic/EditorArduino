@@ -31,7 +31,7 @@ public interface Esperar extends Instrucciones {
 	 * @return the value of the '<em>Segundos</em>' attribute.
 	 * @see #setSegundos(int)
 	 * @see arduino.ArduinoPackage#getEsperar_Segundos()
-	 * @model
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
 	 * @generated
 	 */
 	int getSegundos();

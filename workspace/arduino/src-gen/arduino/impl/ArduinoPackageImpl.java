@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,6 +148,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 				: new ArduinoPackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theArduinoPackage.createPackageContents();
@@ -466,6 +470,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
+				.getEPackage(XMLTypePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -494,16 +502,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(actuadoresEClass, Actuadores.class, "Actuadores", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActuadores_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, Actuadores.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActuadores_Pin(), theXMLTypePackage.getInt(), "pin", null, 0, 1, Actuadores.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActuadores_Instruccionactuador(), this.getInstrucciones(), null, "instruccionactuador", null,
 				0, 1, Actuadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensoresEClass, Sensores.class, "Sensores", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSensores_Med(), ecorePackage.getEInt(), "med", null, 0, 1, Sensores.class, !IS_TRANSIENT,
+		initEAttribute(getSensores_Med(), theXMLTypePackage.getInt(), "med", null, 0, 1, Sensores.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSensores_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, Sensores.class, !IS_TRANSIENT,
+		initEAttribute(getSensores_Pin(), theXMLTypePackage.getInt(), "pin", null, 0, 1, Sensores.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensores_Act(), this.getActuadores(), null, "act", null, 0, 12, Sensores.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -519,14 +527,14 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEClass(apagarEClass, Apagar.class, "Apagar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(variarEClass, Variar.class, "Variar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariar_Pwm(), ecorePackage.getEInt(), "pwm", null, 0, 1, Variar.class, !IS_TRANSIENT,
+		initEAttribute(getVariar_Pwm(), theXMLTypePackage.getInt(), "pwm", null, 0, 1, Variar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariar_Datos(), this.getSensores(), null, "datos", null, 0, 1, Variar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		initEClass(esperarEClass, Esperar.class, "Esperar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEsperar_Segundos(), ecorePackage.getEInt(), "segundos", null, 0, 1, Esperar.class,
+		initEAttribute(getEsperar_Segundos(), theXMLTypePackage.getInt(), "segundos", null, 0, 1, Esperar.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEsperar_Apagar(), this.getApagar(), null, "apagar", null, 0, 1, Esperar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,

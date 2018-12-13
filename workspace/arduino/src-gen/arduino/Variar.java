@@ -31,7 +31,7 @@ public interface Variar extends Instrucciones {
 	 * @return the value of the '<em>Pwm</em>' attribute.
 	 * @see #setPwm(int)
 	 * @see arduino.ArduinoPackage#getVariar_Pwm()
-	 * @model
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
 	 * @generated
 	 */
 	int getPwm();

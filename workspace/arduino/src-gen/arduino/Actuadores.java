@@ -34,7 +34,7 @@ public interface Actuadores extends EObject {
 	 * @return the value of the '<em>Pin</em>' attribute.
 	 * @see #setPin(int)
 	 * @see arduino.ArduinoPackage#getActuadores_Pin()
-	 * @model
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
 	 * @generated
 	 */
 	int getPin();
@@ -74,4 +74,7 @@ public interface Actuadores extends EObject {
 	 * @generated
 	 */
 	void setInstruccionactuador(Instrucciones value);
+
+	EObject getElemento();
+
 } // Actuadores

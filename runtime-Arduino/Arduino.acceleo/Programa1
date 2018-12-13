@@ -1,0 +1,30 @@
+
+//Actuadores
+int pinLed3= 3;
+int pinLed13= 13;
+int pinLed0= 0;
+
+//Sensores
+int medLDR3 = 0;
+int pinLDR3 = 3;
+
+//Instrucciones
+int pwmLed3=0;
+int segundosLed13 = 3;
+int segundosLed0 = 5;
+
+
+void setup(){
+
+
+
+	
+}
+
+void loop(){
+
+
+}
+
+
+

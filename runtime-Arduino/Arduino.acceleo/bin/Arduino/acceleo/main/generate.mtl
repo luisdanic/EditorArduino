@@ -1,0 +1,63 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/arduino', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+
+[template public generateElement(sk : Sketch)]
+[comment @main/]
+[file (sk.Nombre, false, 'UTF-8')]
+
+//Actuadores
+[for (it : Actuadores | sk.actuadores)]
+[it.eClass().eAllAttributes.eAttributeType.name.toLowerFirst().concat(' ')/][it.eClass().eAllAttributes.name/][it.eClass().name/][it.pin.toString().concat('= '+it.pin.toString())/];
+[/for]
+
+//Sensores
+[for (it: Sensores | sk.sensores)]
+	[for (a : String | it.eClass().eAllAttributes.name)]
+		[if (a='med')]
+int [a/][it.eClass().name/][it.pin.toString().concat(' = 0;')/]
+		[/if]
+		[if (a='pin')]
+int [a/][it.eClass().name/][it.pin.toString().concat(' = ')/][it.pin.toString().concat(';')/]
+		[/if]
+	[/for]	
+[/for]
+
+//Instrucciones
+[for (it : Actuadores | sk.actuadores)]
+	[for (o : Instrucciones | it.instruccionactuador)]
+		[if (o.eClass().name='Variar')]
+			[for (a : String | o.eClass().eAllAttributes.name)]
+int [a/][it.eClass().name/][it.pin/]=0;
+			[/for]	
+		[/if]
+	[/for]
+[/for]
+[for (it : Actuadores | sk.actuadores)]
+	[for (o : Instrucciones | it.instruccionactuador)]
+		[if (o.eClass().name='Encender')]
+int [o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/] = [o.eGet('esperar').segundos/];
+		[/if]		
+	[/for]
+[/for]
+
+
+void setup(){
+
+
+
+	
+}
+
+void loop(){
+
+
+}
+
+
+
+[/file]
+[/template]
+
+
+

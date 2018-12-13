@@ -5,7 +5,6 @@ package arduino.impl;
 import arduino.Apagar;
 import arduino.ArduinoPackage;
 import arduino.Esperar;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 

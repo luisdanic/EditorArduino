@@ -36,7 +36,7 @@ public interface Sensores extends EObject {
 	 * @return the value of the '<em>Med</em>' attribute.
 	 * @see #setMed(int)
 	 * @see arduino.ArduinoPackage#getSensores_Med()
-	 * @model
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
 	 * @generated
 	 */
 	int getMed();
@@ -62,7 +62,7 @@ public interface Sensores extends EObject {
 	 * @return the value of the '<em>Pin</em>' attribute.
 	 * @see #setPin(int)
 	 * @see arduino.ArduinoPackage#getSensores_Pin()
-	 * @model
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
 	 * @generated
 	 */
 	int getPin();

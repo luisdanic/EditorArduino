@@ -8,6 +8,7 @@ import arduino.ArduinoPackage;
 import arduino.Instrucciones;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -134,6 +135,11 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.ACTUADORES__INSTRUCCIONACTUADOR,
 					oldInstruccionactuador, instruccionactuador));
+	}
+
+	public EObject getElemento() {
+
+		return this;
 	}
 
 	/**

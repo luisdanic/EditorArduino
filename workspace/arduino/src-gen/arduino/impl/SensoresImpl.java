@@ -104,6 +104,14 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 		return med;
 	}
 
+	public String getTipoPin() {
+		return "int";
+	}
+
+	public String getTipoMed() {
+		return "int";
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
