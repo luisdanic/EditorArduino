@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link arduino.Sketch#getNombre <em>Nombre</em>}</li>
  *   <li>{@link arduino.Sketch#getSensores <em>Sensores</em>}</li>
  *   <li>{@link arduino.Sketch#getActuadores <em>Actuadores</em>}</li>
- *   <li>{@link arduino.Sketch#getIns <em>Ins</em>}</li>
+ *   <li>{@link arduino.Sketch#getInstrucciones <em>Instrucciones</em>}</li>
  * </ul>
  *
  * @see arduino.ArduinoPackage#getSketch()
@@ -85,19 +85,19 @@ public interface Sketch extends EObject {
 	EList<Actuadores> getActuadores();
 
 	/**
-	 * Returns the value of the '<em><b>Ins</b></em>' reference list.
+	 * Returns the value of the '<em><b>Instrucciones</b></em>' containment reference list.
 	 * The list contents are of type {@link arduino.Instrucciones}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ins</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Instrucciones</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ins</em>' reference list.
-	 * @see arduino.ArduinoPackage#getSketch_Ins()
-	 * @model required="true"
+	 * @return the value of the '<em>Instrucciones</em>' containment reference list.
+	 * @see arduino.ArduinoPackage#getSketch_Instrucciones()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Instrucciones> getIns();
+	EList<Instrucciones> getInstrucciones();
 
 } // Sketch

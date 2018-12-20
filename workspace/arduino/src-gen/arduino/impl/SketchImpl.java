@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -36,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link arduino.impl.SketchImpl#getNombre <em>Nombre</em>}</li>
  *   <li>{@link arduino.impl.SketchImpl#getSensores <em>Sensores</em>}</li>
  *   <li>{@link arduino.impl.SketchImpl#getActuadores <em>Actuadores</em>}</li>
- *   <li>{@link arduino.impl.SketchImpl#getIns <em>Ins</em>}</li>
+ *   <li>{@link arduino.impl.SketchImpl#getInstrucciones <em>Instrucciones</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,14 +82,14 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 	protected EList<Actuadores> actuadores;
 
 	/**
-	 * The cached value of the '{@link #getIns() <em>Ins</em>}' reference list.
+	 * The cached value of the '{@link #getInstrucciones() <em>Instrucciones</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIns()
+	 * @see #getInstrucciones()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Instrucciones> ins;
+	protected EList<Instrucciones> instrucciones;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,11 +161,12 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Instrucciones> getIns() {
-		if (ins == null) {
-			ins = new EObjectResolvingEList<Instrucciones>(Instrucciones.class, this, ArduinoPackage.SKETCH__INS);
+	public EList<Instrucciones> getInstrucciones() {
+		if (instrucciones == null) {
+			instrucciones = new EObjectContainmentEList<Instrucciones>(Instrucciones.class, this,
+					ArduinoPackage.SKETCH__INSTRUCCIONES);
 		}
-		return ins;
+		return instrucciones;
 	}
 
 	/**
@@ -181,6 +181,8 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 			return ((InternalEList<?>) getSensores()).basicRemove(otherEnd, msgs);
 		case ArduinoPackage.SKETCH__ACTUADORES:
 			return ((InternalEList<?>) getActuadores()).basicRemove(otherEnd, msgs);
+		case ArduinoPackage.SKETCH__INSTRUCCIONES:
+			return ((InternalEList<?>) getInstrucciones()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -199,8 +201,8 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 			return getSensores();
 		case ArduinoPackage.SKETCH__ACTUADORES:
 			return getActuadores();
-		case ArduinoPackage.SKETCH__INS:
-			return getIns();
+		case ArduinoPackage.SKETCH__INSTRUCCIONES:
+			return getInstrucciones();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,9 +227,9 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 			getActuadores().clear();
 			getActuadores().addAll((Collection<? extends Actuadores>) newValue);
 			return;
-		case ArduinoPackage.SKETCH__INS:
-			getIns().clear();
-			getIns().addAll((Collection<? extends Instrucciones>) newValue);
+		case ArduinoPackage.SKETCH__INSTRUCCIONES:
+			getInstrucciones().clear();
+			getInstrucciones().addAll((Collection<? extends Instrucciones>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,8 +252,8 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 		case ArduinoPackage.SKETCH__ACTUADORES:
 			getActuadores().clear();
 			return;
-		case ArduinoPackage.SKETCH__INS:
-			getIns().clear();
+		case ArduinoPackage.SKETCH__INSTRUCCIONES:
+			getInstrucciones().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -271,8 +273,8 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 			return sensores != null && !sensores.isEmpty();
 		case ArduinoPackage.SKETCH__ACTUADORES:
 			return actuadores != null && !actuadores.isEmpty();
-		case ArduinoPackage.SKETCH__INS:
-			return ins != null && !ins.isEmpty();
+		case ArduinoPackage.SKETCH__INSTRUCCIONES:
+			return instrucciones != null && !instrucciones.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

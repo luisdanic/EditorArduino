@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,6 +149,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theArduinoPackage.createPackageContents();
 
@@ -203,7 +207,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSketch_Ins() {
+	public EReference getSketch_Instrucciones() {
 		return (EReference) sketchEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -221,17 +225,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActuadores_Instrucciones() {
-		return (EReference) actuadoresEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getActuadores_Pin() {
-		return (EAttribute) actuadoresEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) actuadoresEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -239,8 +234,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActuadores_Sen() {
-		return (EReference) actuadoresEClass.getEStructuralFeatures().get(2);
+	public EReference getActuadores_Instruccionactuador() {
+		return (EReference) actuadoresEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -258,24 +253,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	public EAttribute getSensores_Med() {
-		return (EAttribute) sensoresEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSensores_Datos() {
-		return (EReference) sensoresEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSensores_Pin() {
 		return (EAttribute) sensoresEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -284,8 +261,17 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSensores_Pin() {
+		return (EAttribute) sensoresEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getSensores_Act() {
-		return (EReference) sensoresEClass.getEStructuralFeatures().get(3);
+		return (EReference) sensoresEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -329,15 +315,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getApagar_Off() {
-		return (EAttribute) apagarEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getVariar() {
 		return variarEClass;
 	}
@@ -356,6 +333,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getVariar_Datos() {
+		return (EReference) variarEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEsperar() {
 		return esperarEClass;
 	}
@@ -365,7 +351,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEsperar_Segundos() {
+	public EAttribute getEsperar_Miliseg() {
 		return (EAttribute) esperarEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -392,17 +378,8 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEncender_On() {
-		return (EAttribute) encenderEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getEncender_Esperar() {
-		return (EReference) encenderEClass.getEStructuralFeatures().get(1);
+		return (EReference) encenderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -438,18 +415,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEAttribute(sketchEClass, SKETCH__NOMBRE);
 		createEReference(sketchEClass, SKETCH__SENSORES);
 		createEReference(sketchEClass, SKETCH__ACTUADORES);
-		createEReference(sketchEClass, SKETCH__INS);
+		createEReference(sketchEClass, SKETCH__INSTRUCCIONES);
 
 		actuadoresEClass = createEClass(ACTUADORES);
-		createEReference(actuadoresEClass, ACTUADORES__INSTRUCCIONES);
 		createEAttribute(actuadoresEClass, ACTUADORES__PIN);
-		createEReference(actuadoresEClass, ACTUADORES__SEN);
+		createEReference(actuadoresEClass, ACTUADORES__INSTRUCCIONACTUADOR);
 
 		sensoresEClass = createEClass(SENSORES);
-		createEAttribute(sensoresEClass, SENSORES__MED);
-		createEReference(sensoresEClass, SENSORES__DATOS);
 		createEAttribute(sensoresEClass, SENSORES__PIN);
 		createEReference(sensoresEClass, SENSORES__ACT);
+		createEAttribute(sensoresEClass, SENSORES__MED);
 
 		ledEClass = createEClass(LED);
 
@@ -458,17 +433,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		instruccionesEClass = createEClass(INSTRUCCIONES);
 
 		apagarEClass = createEClass(APAGAR);
-		createEAttribute(apagarEClass, APAGAR__OFF);
 
 		variarEClass = createEClass(VARIAR);
 		createEAttribute(variarEClass, VARIAR__PWM);
+		createEReference(variarEClass, VARIAR__DATOS);
 
 		esperarEClass = createEClass(ESPERAR);
-		createEAttribute(esperarEClass, ESPERAR__SEGUNDOS);
+		createEAttribute(esperarEClass, ESPERAR__MILISEG);
 		createEReference(esperarEClass, ESPERAR__APAGAR);
 
 		encenderEClass = createEClass(ENCENDER);
-		createEAttribute(encenderEClass, ENCENDER__ON);
 		createEReference(encenderEClass, ENCENDER__ESPERAR);
 	}
 
@@ -496,6 +470,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
+				.getEPackage(XMLTypePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -518,32 +496,26 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getSketch_Actuadores(), this.getActuadores(), null, "actuadores", null, 0, -1, Sketch.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSketch_Ins(), this.getInstrucciones(), null, "ins", null, 1, -1, Sketch.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getSketch_Instrucciones(), this.getInstrucciones(), null, "instrucciones", null, 0, -1,
+				Sketch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuadoresEClass, Actuadores.class, "Actuadores", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActuadores_Instrucciones(), this.getInstrucciones(), null, "instrucciones", null, 0, -1,
-				Actuadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActuadores_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, Actuadores.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActuadores_Sen(), this.getSensores(), this.getSensores_Act(), "sen", null, 0, 1,
-				Actuadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEAttribute(getActuadores_Pin(), theXMLTypePackage.getInt(), "pin", null, 0, 1, Actuadores.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActuadores_Instruccionactuador(), this.getInstrucciones(), null, "instruccionactuador", null,
+				0, 1, Actuadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensoresEClass, Sensores.class, "Sensores", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSensores_Med(), ecorePackage.getEInt(), "med", null, 0, 1, Sensores.class, !IS_TRANSIENT,
+		initEAttribute(getSensores_Pin(), theXMLTypePackage.getInt(), "pin", null, 0, 1, Sensores.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensores_Datos(), this.getVariar(), null, "datos", null, 0, 1, Sensores.class, !IS_TRANSIENT,
+		initEReference(getSensores_Act(), this.getActuadores(), null, "act", null, 0, 12, Sensores.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getSensores_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, Sensores.class, !IS_TRANSIENT,
+		initEAttribute(getSensores_Med(), theXMLTypePackage.getInt(), "med", null, 0, 1, Sensores.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSensores_Act(), this.getActuadores(), this.getActuadores_Sen(), "act", null, 0, -1,
-				Sensores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ledEClass, Led.class, "Led", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -553,15 +525,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(apagarEClass, Apagar.class, "Apagar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getApagar_Off(), ecorePackage.getEString(), "off", "LOW", 0, 1, Apagar.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variarEClass, Variar.class, "Variar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariar_Pwm(), ecorePackage.getEInt(), "pwm", null, 0, 1, Variar.class, !IS_TRANSIENT,
+		initEAttribute(getVariar_Pwm(), theXMLTypePackage.getInt(), "pwm", null, 0, 1, Variar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariar_Datos(), this.getSensores(), null, "datos", null, 0, 1, Variar.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(esperarEClass, Esperar.class, "Esperar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEsperar_Segundos(), ecorePackage.getEInt(), "segundos", null, 0, 1, Esperar.class,
+		initEAttribute(getEsperar_Miliseg(), theXMLTypePackage.getInt(), "miliseg", null, 0, 1, Esperar.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEsperar_Apagar(), this.getApagar(), null, "apagar", null, 0, 1, Esperar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -569,8 +542,6 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 
 		initEClass(encenderEClass, Encender.class, "Encender", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEncender_On(), ecorePackage.getEString(), "on", "HIGH", 0, 1, Encender.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEncender_Esperar(), this.getEsperar(), null, "esperar", null, 0, 1, Encender.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

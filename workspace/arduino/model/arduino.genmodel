@@ -13,34 +13,30 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Sketch/Nombre"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduino.ecore#//Sketch/sensores"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduino.ecore#//Sketch/actuadores"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduino.ecore#//Sketch/ins"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduino.ecore#//Sketch/instrucciones"/>
     </genClasses>
     <genClasses ecoreClass="arduino.ecore#//Actuadores">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arduino.ecore#//Actuadores/instrucciones"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Actuadores/pin"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduino.ecore#//Actuadores/sen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduino.ecore#//Actuadores/instruccionactuador"/>
     </genClasses>
     <genClasses ecoreClass="arduino.ecore#//Sensores">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Sensores/med"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduino.ecore#//Sensores/datos"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Sensores/pin"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduino.ecore#//Sensores/act"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Sensores/med"/>
     </genClasses>
     <genClasses ecoreClass="arduino.ecore#//Led"/>
     <genClasses ecoreClass="arduino.ecore#//LDR"/>
     <genClasses ecoreClass="arduino.ecore#//Instrucciones"/>
-    <genClasses ecoreClass="arduino.ecore#//Apagar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Apagar/off"/>
-    </genClasses>
+    <genClasses ecoreClass="arduino.ecore#//Apagar"/>
     <genClasses ecoreClass="arduino.ecore#//Variar">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Variar/pwm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduino.ecore#//Variar/datos"/>
     </genClasses>
     <genClasses ecoreClass="arduino.ecore#//Esperar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Esperar/segundos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Esperar/miliseg"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduino.ecore#//Esperar/apagar"/>
     </genClasses>
     <genClasses ecoreClass="arduino.ecore#//Encender">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arduino.ecore#//Encender/on"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arduino.ecore#//Encender/esperar"/>
     </genClasses>
   </genPackages>

@@ -2,7 +2,6 @@
  */
 package arduino;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,9 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link arduino.Actuadores#getInstrucciones <em>Instrucciones</em>}</li>
  *   <li>{@link arduino.Actuadores#getPin <em>Pin</em>}</li>
- *   <li>{@link arduino.Actuadores#getSen <em>Sen</em>}</li>
+ *   <li>{@link arduino.Actuadores#getInstruccionactuador <em>Instruccionactuador</em>}</li>
  * </ul>
  *
  * @see arduino.ArduinoPackage#getActuadores()
@@ -24,22 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Actuadores extends EObject {
-
-	/**
-	 * Returns the value of the '<em><b>Instrucciones</b></em>' containment reference list.
-	 * The list contents are of type {@link arduino.Instrucciones}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Instrucciones</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instrucciones</em>' containment reference list.
-	 * @see arduino.ArduinoPackage#getActuadores_Instrucciones()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Instrucciones> getInstrucciones();
 
 	/**
 	 * Returns the value of the '<em><b>Pin</b></em>' attribute.
@@ -52,7 +34,7 @@ public interface Actuadores extends EObject {
 	 * @return the value of the '<em>Pin</em>' attribute.
 	 * @see #setPin(int)
 	 * @see arduino.ArduinoPackage#getActuadores_Pin()
-	 * @model
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
 	 * @generated
 	 */
 	int getPin();
@@ -68,30 +50,31 @@ public interface Actuadores extends EObject {
 	void setPin(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Sen</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link arduino.Sensores#getAct <em>Act</em>}'.
+	 * Returns the value of the '<em><b>Instruccionactuador</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sen</em>' reference isn't clear,
+	 * If the meaning of the '<em>Instruccionactuador</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sen</em>' reference.
-	 * @see #setSen(Sensores)
-	 * @see arduino.ArduinoPackage#getActuadores_Sen()
-	 * @see arduino.Sensores#getAct
-	 * @model opposite="act"
+	 * @return the value of the '<em>Instruccionactuador</em>' reference.
+	 * @see #setInstruccionactuador(Instrucciones)
+	 * @see arduino.ArduinoPackage#getActuadores_Instruccionactuador()
+	 * @model
 	 * @generated
 	 */
-	Sensores getSen();
+	Instrucciones getInstruccionactuador();
 
 	/**
-	 * Sets the value of the '{@link arduino.Actuadores#getSen <em>Sen</em>}' reference.
+	 * Sets the value of the '{@link arduino.Actuadores#getInstruccionactuador <em>Instruccionactuador</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sen</em>' reference.
-	 * @see #getSen()
+	 * @param value the new value of the '<em>Instruccionactuador</em>' reference.
+	 * @see #getInstruccionactuador()
 	 * @generated
 	 */
-	void setSen(Sensores value);
+	void setInstruccionactuador(Instrucciones value);
+
+	EObject getElemento();
+
 } // Actuadores

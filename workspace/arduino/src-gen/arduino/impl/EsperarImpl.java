@@ -5,7 +5,6 @@ package arduino.impl;
 import arduino.Apagar;
 import arduino.ArduinoPackage;
 import arduino.Esperar;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link arduino.impl.EsperarImpl#getSegundos <em>Segundos</em>}</li>
+ *   <li>{@link arduino.impl.EsperarImpl#getMiliseg <em>Miliseg</em>}</li>
  *   <li>{@link arduino.impl.EsperarImpl#getApagar <em>Apagar</em>}</li>
  * </ul>
  *
@@ -28,24 +27,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	/**
-	 * The default value of the '{@link #getSegundos() <em>Segundos</em>}' attribute.
+	 * The default value of the '{@link #getMiliseg() <em>Miliseg</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSegundos()
+	 * @see #getMiliseg()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int SEGUNDOS_EDEFAULT = 0;
+	protected static final int MILISEG_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getSegundos() <em>Segundos</em>}' attribute.
+	 * The cached value of the '{@link #getMiliseg() <em>Miliseg</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSegundos()
+	 * @see #getMiliseg()
 	 * @generated
 	 * @ordered
 	 */
-	protected int segundos = SEGUNDOS_EDEFAULT;
+	protected int miliseg = MILISEG_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getApagar() <em>Apagar</em>}' reference.
@@ -81,8 +80,8 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getSegundos() {
-		return segundos;
+	public int getMiliseg() {
+		return miliseg;
 	}
 
 	/**
@@ -90,12 +89,12 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSegundos(int newSegundos) {
-		int oldSegundos = segundos;
-		segundos = newSegundos;
+	public void setMiliseg(int newMiliseg) {
+		int oldMiliseg = miliseg;
+		miliseg = newMiliseg;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.ESPERAR__SEGUNDOS, oldSegundos,
-					segundos));
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.ESPERAR__MILISEG, oldMiliseg,
+					miliseg));
 	}
 
 	/**
@@ -145,8 +144,8 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ArduinoPackage.ESPERAR__SEGUNDOS:
-			return getSegundos();
+		case ArduinoPackage.ESPERAR__MILISEG:
+			return getMiliseg();
 		case ArduinoPackage.ESPERAR__APAGAR:
 			if (resolve)
 				return getApagar();
@@ -163,8 +162,8 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ArduinoPackage.ESPERAR__SEGUNDOS:
-			setSegundos((Integer) newValue);
+		case ArduinoPackage.ESPERAR__MILISEG:
+			setMiliseg((Integer) newValue);
 			return;
 		case ArduinoPackage.ESPERAR__APAGAR:
 			setApagar((Apagar) newValue);
@@ -181,8 +180,8 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ArduinoPackage.ESPERAR__SEGUNDOS:
-			setSegundos(SEGUNDOS_EDEFAULT);
+		case ArduinoPackage.ESPERAR__MILISEG:
+			setMiliseg(MILISEG_EDEFAULT);
 			return;
 		case ArduinoPackage.ESPERAR__APAGAR:
 			setApagar((Apagar) null);
@@ -199,8 +198,8 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ArduinoPackage.ESPERAR__SEGUNDOS:
-			return segundos != SEGUNDOS_EDEFAULT;
+		case ArduinoPackage.ESPERAR__MILISEG:
+			return miliseg != MILISEG_EDEFAULT;
 		case ArduinoPackage.ESPERAR__APAGAR:
 			return apagar != null;
 		}
@@ -218,8 +217,8 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (segundos: ");
-		result.append(segundos);
+		result.append(" (miliseg: ");
+		result.append(miliseg);
 		result.append(')');
 		return result.toString();
 	}

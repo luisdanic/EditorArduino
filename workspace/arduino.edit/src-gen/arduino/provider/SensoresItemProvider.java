@@ -52,10 +52,9 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMedPropertyDescriptor(object);
-			addDatosPropertyDescriptor(object);
 			addPinPropertyDescriptor(object);
 			addActPropertyDescriptor(object);
+			addMedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,21 +73,6 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 								"_UI_Sensores_type"),
 						ArduinoPackage.Literals.SENSORES__MED, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Datos feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatosPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Sensores_datos_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Sensores_datos_feature",
-								"_UI_Sensores_type"),
-						ArduinoPackage.Literals.SENSORES__DATOS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -152,7 +136,7 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 	@Override
 	public String getText(Object object) {
 		Sensores sensores = (Sensores) object;
-		return getString("_UI_Sensores_type") + " " + sensores.getMed();
+		return getString("_UI_Sensores_type") + " " + sensores.getPin();
 	}
 
 	/**
@@ -167,8 +151,8 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Sensores.class)) {
-		case ArduinoPackage.SENSORES__MED:
 		case ArduinoPackage.SENSORES__PIN:
+		case ArduinoPackage.SENSORES__MED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

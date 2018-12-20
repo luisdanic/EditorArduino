@@ -2,19 +2,12 @@
  */
 package arduino.provider;
 
-import arduino.Apagar;
-import arduino.ArduinoPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link arduino.Apagar} object.
@@ -44,24 +37,8 @@ public class ApagarItemProvider extends InstruccionesItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOffPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Off feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOffPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Apagar_off_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Apagar_off_feature", "_UI_Apagar_type"),
-						ArduinoPackage.Literals.APAGAR__OFF, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -93,9 +70,7 @@ public class ApagarItemProvider extends InstruccionesItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Apagar) object).getOff();
-		return label == null || label.length() == 0 ? getString("_UI_Apagar_type")
-				: getString("_UI_Apagar_type") + " " + label;
+		return getString("_UI_Apagar_type");
 	}
 
 	/**
@@ -108,12 +83,6 @@ public class ApagarItemProvider extends InstruccionesItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Apagar.class)) {
-		case ArduinoPackage.APAGAR__OFF:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 
