@@ -1,2 +1,0 @@
-El proyecto sobre el editor grafico con generacion de codigo para arduino se encuentra finalizado en su primera etapa.
-Cuenta solo con un sensor y un actuador, lo que para el siguiente avance se incrementara.
