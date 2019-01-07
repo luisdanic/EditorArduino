@@ -127,7 +127,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Led-Instrucciones" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Led)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Actuador-Instrucciones" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Led)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>

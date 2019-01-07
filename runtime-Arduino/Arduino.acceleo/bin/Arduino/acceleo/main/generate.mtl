@@ -48,7 +48,6 @@ void setup(){
 		[if (o.eClass().name='Variar')]
 				[for (a : String | it.eClass().eAllAttributes.name)]
 pinMode([a/][it.eClass().name/][it.pin/], OUTPUT);
-
 				[/for]	
 		[/if]
 		[if (o.eClass().name='Encender')]
@@ -64,7 +63,8 @@ digitalWrite([a/][it.eClass().name/][it.pin/], LOW);
 void loop(){
 
 [for (it : Actuadores | sk.actuadores)]
-	[for (o : Instrucciones | it.instruccionactuador)]
+[if (it.eClass().name = 'Led')]
+		[for (o : Instrucciones | it.instruccionactuador)]
 		[if (o.eClass().name='Encender')]
 				[for (a : String | it.eClass().eAllAttributes.name)]
 digitalWrite([a/][it.eClass().name/][it.pin/], HIGH);
@@ -75,18 +75,22 @@ delay([o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pi
 				[/for]	
 		[/if]
 	[/for]
+[/if]
 [/for]
 [for (it : Sensores | sk.sensores)]
-	[for (o : Instrucciones | it.act.instruccionactuador)]
+[if (it.eClass().name = 'LDR')]
+[it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/] = analogRead(A[it.eClass().eAllAttributes.name.substitute('med', '')/][it.eClass().name/][it.pin/]);
+	[for (aux : Actuadores | it.act)]
+	[for (o : Instrucciones | aux.instruccionactuador)]
 		[if (o.eClass().name='Variar')]
 				[for (a : String | o.eClass().eAllAttributes.name)]
-[it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/] = analogRead(A[it.eClass().eAllAttributes.name.substitute('med', '')/][it.eClass().name/][it.pin/]);
-[a/][it.act.eClass().name/][it.act.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/]/4;
-analogWrite([it.act.eClass().eAllAttributes.name/][it.act.eClass().name/][it.act.pin/], [a/][it.act.eClass().name/][it.act.pin/]);
-				
+[a/][aux.eClass().name/][aux.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/]/4;
+analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);		
 				[/for]	
 		[/if]
 	[/for]
+[/for]
+[/if]
 [/for]
 
 }
