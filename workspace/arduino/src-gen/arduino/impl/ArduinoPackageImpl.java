@@ -6,16 +6,24 @@ import arduino.Actuadores;
 import arduino.Apagar;
 import arduino.ArduinoFactory;
 import arduino.ArduinoPackage;
+import arduino.Bloques;
+import arduino.DoWhile;
 import arduino.Encender;
 import arduino.Esperar;
+import arduino.For;
+import arduino.If;
 import arduino.Instrucciones;
 import arduino.Led;
 import arduino.Sensores;
 import arduino.Sketch;
 import arduino.Variar;
 
+import arduino.While;
+import arduino.forAccion;
+import arduino.operandos;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -98,6 +106,55 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	private EClass encenderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bloquesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass doWhileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ifEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass forEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass whileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum operandosEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum forAccionEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -216,6 +273,15 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSketch_Bloques() {
+		return (EReference) sketchEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getActuadores() {
 		return actuadoresEClass;
 	}
@@ -253,7 +319,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	public EAttribute getSensores_Med() {
-		return (EAttribute) sensoresEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) sensoresEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -262,7 +328,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	public EAttribute getSensores_Pin() {
-		return (EAttribute) sensoresEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) sensoresEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -271,7 +337,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * @generated
 	 */
 	public EReference getSensores_Act() {
-		return (EReference) sensoresEClass.getEStructuralFeatures().get(2);
+		return (EReference) sensoresEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -351,7 +417,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEsperar_Segundos() {
+	public EAttribute getEsperar_Miliseg() {
 		return (EAttribute) esperarEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -380,6 +446,231 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 	 */
 	public EReference getEncender_Esperar() {
 		return (EReference) encenderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBloques() {
+		return bloquesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBloques_Bloq() {
+		return (EReference) bloquesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBloques_Bactuadores() {
+		return (EReference) bloquesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBloques_Bsensores() {
+		return (EReference) bloquesEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBloques_Binstrucciones() {
+		return (EReference) bloquesEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDoWhile() {
+		return doWhileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDoWhile_Operando() {
+		return (EAttribute) doWhileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDoWhile_Referencia() {
+		return (EAttribute) doWhileEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDoWhile_Valor() {
+		return (EAttribute) doWhileEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIf() {
+		return ifEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIf_Operando() {
+		return (EAttribute) ifEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIf_Referencia() {
+		return (EAttribute) ifEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIf_Valor() {
+		return (EAttribute) ifEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFor() {
+		return forEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFor_Iterador() {
+		return (EAttribute) forEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFor_ValorInicial() {
+		return (EAttribute) forEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFor_ValorFinal() {
+		return (EAttribute) forEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFor_ValorAccion() {
+		return (EAttribute) forEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFor_Accion() {
+		return (EAttribute) forEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getWhile() {
+		return whileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWhile_Operando() {
+		return (EAttribute) whileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWhile_Referencia() {
+		return (EAttribute) whileEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWhile_Valor() {
+		return (EAttribute) whileEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getoperandos() {
+		return operandosEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getforAccion() {
+		return forAccionEEnum;
 	}
 
 	/**
@@ -416,15 +707,16 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEReference(sketchEClass, SKETCH__SENSORES);
 		createEReference(sketchEClass, SKETCH__ACTUADORES);
 		createEReference(sketchEClass, SKETCH__INSTRUCCIONES);
+		createEReference(sketchEClass, SKETCH__BLOQUES);
 
 		actuadoresEClass = createEClass(ACTUADORES);
 		createEAttribute(actuadoresEClass, ACTUADORES__PIN);
 		createEReference(actuadoresEClass, ACTUADORES__INSTRUCCIONACTUADOR);
 
 		sensoresEClass = createEClass(SENSORES);
-		createEAttribute(sensoresEClass, SENSORES__MED);
 		createEAttribute(sensoresEClass, SENSORES__PIN);
 		createEReference(sensoresEClass, SENSORES__ACT);
+		createEAttribute(sensoresEClass, SENSORES__MED);
 
 		ledEClass = createEClass(LED);
 
@@ -439,11 +731,43 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		createEReference(variarEClass, VARIAR__DATOS);
 
 		esperarEClass = createEClass(ESPERAR);
-		createEAttribute(esperarEClass, ESPERAR__SEGUNDOS);
+		createEAttribute(esperarEClass, ESPERAR__MILISEG);
 		createEReference(esperarEClass, ESPERAR__APAGAR);
 
 		encenderEClass = createEClass(ENCENDER);
 		createEReference(encenderEClass, ENCENDER__ESPERAR);
+
+		bloquesEClass = createEClass(BLOQUES);
+		createEReference(bloquesEClass, BLOQUES__BLOQ);
+		createEReference(bloquesEClass, BLOQUES__BACTUADORES);
+		createEReference(bloquesEClass, BLOQUES__BSENSORES);
+		createEReference(bloquesEClass, BLOQUES__BINSTRUCCIONES);
+
+		doWhileEClass = createEClass(DO_WHILE);
+		createEAttribute(doWhileEClass, DO_WHILE__OPERANDO);
+		createEAttribute(doWhileEClass, DO_WHILE__REFERENCIA);
+		createEAttribute(doWhileEClass, DO_WHILE__VALOR);
+
+		ifEClass = createEClass(IF);
+		createEAttribute(ifEClass, IF__OPERANDO);
+		createEAttribute(ifEClass, IF__REFERENCIA);
+		createEAttribute(ifEClass, IF__VALOR);
+
+		forEClass = createEClass(FOR);
+		createEAttribute(forEClass, FOR__ITERADOR);
+		createEAttribute(forEClass, FOR__VALOR_INICIAL);
+		createEAttribute(forEClass, FOR__VALOR_FINAL);
+		createEAttribute(forEClass, FOR__VALOR_ACCION);
+		createEAttribute(forEClass, FOR__ACCION);
+
+		whileEClass = createEClass(WHILE);
+		createEAttribute(whileEClass, WHILE__OPERANDO);
+		createEAttribute(whileEClass, WHILE__REFERENCIA);
+		createEAttribute(whileEClass, WHILE__VALOR);
+
+		// Create enums
+		operandosEEnum = createEEnum(OPERANDOS);
+		forAccionEEnum = createEEnum(FOR_ACCION);
 	}
 
 	/**
@@ -485,6 +809,10 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		variarEClass.getESuperTypes().add(this.getInstrucciones());
 		esperarEClass.getESuperTypes().add(this.getInstrucciones());
 		encenderEClass.getESuperTypes().add(this.getInstrucciones());
+		doWhileEClass.getESuperTypes().add(this.getBloques());
+		ifEClass.getESuperTypes().add(this.getBloques());
+		forEClass.getESuperTypes().add(this.getBloques());
+		whileEClass.getESuperTypes().add(this.getBloques());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(sketchEClass, Sketch.class, "Sketch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -499,6 +827,9 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getSketch_Instrucciones(), this.getInstrucciones(), null, "instrucciones", null, 0, -1,
 				Sketch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSketch_Bloques(), this.getBloques(), null, "bloques", null, 0, -1, Sketch.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuadoresEClass, Actuadores.class, "Actuadores", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -509,13 +840,13 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensoresEClass, Sensores.class, "Sensores", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSensores_Med(), theXMLTypePackage.getInt(), "med", null, 0, 1, Sensores.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSensores_Pin(), theXMLTypePackage.getInt(), "pin", null, 0, 1, Sensores.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSensores_Act(), this.getActuadores(), null, "act", null, 0, 12, Sensores.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEAttribute(getSensores_Med(), theXMLTypePackage.getInt(), "med", null, 0, 1, Sensores.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ledEClass, Led.class, "Led", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -534,7 +865,7 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 				IS_ORDERED);
 
 		initEClass(esperarEClass, Esperar.class, "Esperar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEsperar_Segundos(), theXMLTypePackage.getInt(), "segundos", null, 0, 1, Esperar.class,
+		initEAttribute(getEsperar_Miliseg(), theXMLTypePackage.getInt(), "miliseg", null, 0, 1, Esperar.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEsperar_Apagar(), this.getApagar(), null, "apagar", null, 0, 1, Esperar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -545,6 +876,69 @@ public class ArduinoPackageImpl extends EPackageImpl implements ArduinoPackage {
 		initEReference(getEncender_Esperar(), this.getEsperar(), null, "esperar", null, 0, 1, Encender.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bloquesEClass, Bloques.class, "Bloques", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBloques_Bloq(), this.getBloques(), null, "bloq", null, 0, -1, Bloques.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getBloques_Bactuadores(), this.getActuadores(), null, "bactuadores", null, 0, -1, Bloques.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBloques_Bsensores(), this.getSensores(), null, "bsensores", null, 0, -1, Bloques.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBloques_Binstrucciones(), this.getInstrucciones(), null, "binstrucciones", null, 0, -1,
+				Bloques.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(doWhileEClass, DoWhile.class, "DoWhile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDoWhile_Operando(), this.getoperandos(), "operando", null, 0, 1, DoWhile.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDoWhile_Referencia(), theXMLTypePackage.getString(), "referencia", null, 0, 1, DoWhile.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDoWhile_Valor(), theXMLTypePackage.getString(), "valor", null, 0, 1, DoWhile.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIf_Operando(), this.getoperandos(), "operando", null, 0, 1, If.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIf_Referencia(), theXMLTypePackage.getString(), "referencia", null, 0, 1, If.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIf_Valor(), theXMLTypePackage.getString(), "valor", null, 0, 1, If.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(forEClass, For.class, "For", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFor_Iterador(), theXMLTypePackage.getString(), "iterador", null, 0, 1, For.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFor_ValorInicial(), theXMLTypePackage.getInt(), "valorInicial", null, 0, 1, For.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFor_ValorFinal(), theXMLTypePackage.getInt(), "valorFinal", null, 0, 1, For.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFor_ValorAccion(), theXMLTypePackage.getInt(), "valorAccion", null, 0, 1, For.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFor_Accion(), this.getforAccion(), "accion", null, 0, 1, For.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWhile_Operando(), this.getoperandos(), "operando", null, 0, 1, While.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWhile_Referencia(), theXMLTypePackage.getString(), "referencia", null, 0, 1, While.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWhile_Valor(), theXMLTypePackage.getString(), "valor", null, 0, 1, While.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(operandosEEnum, operandos.class, "operandos");
+		addEEnumLiteral(operandosEEnum, operandos.MENOR);
+		addEEnumLiteral(operandosEEnum, operandos.MAYOR);
+		addEEnumLiteral(operandosEEnum, operandos.MENORIGUAL);
+		addEEnumLiteral(operandosEEnum, operandos.MAYORIGUAL);
+		addEEnumLiteral(operandosEEnum, operandos.IGUAL);
+		addEEnumLiteral(operandosEEnum, operandos.DIFERENTE);
+
+		initEEnum(forAccionEEnum, forAccion.class, "forAccion");
+		addEEnumLiteral(forAccionEEnum, forAccion.INCREMENTO);
+		addEEnumLiteral(forAccionEEnum, forAccion.DECREMENTO);
 
 		// Create resource
 		createResource(eNS_URI);

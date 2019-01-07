@@ -52,9 +52,9 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMedPropertyDescriptor(object);
 			addPinPropertyDescriptor(object);
 			addActPropertyDescriptor(object);
+			addMedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -136,7 +136,7 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 	@Override
 	public String getText(Object object) {
 		Sensores sensores = (Sensores) object;
-		return getString("_UI_Sensores_type") + " " + sensores.getMed();
+		return getString("_UI_Sensores_type") + " " + sensores.getPin();
 	}
 
 	/**
@@ -151,8 +151,8 @@ public class SensoresItemProvider extends ItemProviderAdapter implements IEditin
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Sensores.class)) {
-		case ArduinoPackage.SENSORES__MED:
 		case ArduinoPackage.SENSORES__PIN:
+		case ArduinoPackage.SENSORES__MED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

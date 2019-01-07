@@ -73,7 +73,7 @@ public class LDRItemProvider extends SensoresItemProvider {
 	@Override
 	public String getText(Object object) {
 		LDR ldr = (LDR) object;
-		return getString("_UI_LDR_type") + " " + ldr.getMed();
+		return getString("_UI_LDR_type") + " " + ldr.getPin();
 	}
 
 	/**

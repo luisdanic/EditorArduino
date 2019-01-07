@@ -234,6 +234,98 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link arduino.DoWhile} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DoWhileItemProvider doWhileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.DoWhile}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDoWhileAdapter() {
+		if (doWhileItemProvider == null) {
+			doWhileItemProvider = new DoWhileItemProvider(this);
+		}
+
+		return doWhileItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.If} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfItemProvider ifItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.If}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIfAdapter() {
+		if (ifItemProvider == null) {
+			ifItemProvider = new IfItemProvider(this);
+		}
+
+		return ifItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.For} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ForItemProvider forItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.For}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createForAdapter() {
+		if (forItemProvider == null) {
+			forItemProvider = new ForItemProvider(this);
+		}
+
+		return forItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.While} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WhileItemProvider whileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.While}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWhileAdapter() {
+		if (whileItemProvider == null) {
+			whileItemProvider = new WhileItemProvider(this);
+		}
+
+		return whileItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,6 +438,14 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory
 			esperarItemProvider.dispose();
 		if (encenderItemProvider != null)
 			encenderItemProvider.dispose();
+		if (doWhileItemProvider != null)
+			doWhileItemProvider.dispose();
+		if (ifItemProvider != null)
+			ifItemProvider.dispose();
+		if (forItemProvider != null)
+			forItemProvider.dispose();
+		if (whileItemProvider != null)
+			whileItemProvider.dispose();
 	}
 
 }

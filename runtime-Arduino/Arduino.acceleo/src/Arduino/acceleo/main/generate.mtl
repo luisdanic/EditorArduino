@@ -6,9 +6,21 @@
 [comment @main/]
 [file (sk.Nombre, false, 'UTF-8')]
 
+[sk.bloques.eClass().name/]
+
+[for (it : Bloques | sk.bloques)]
+	[if (it.eClass().name = '')]
+	no hay
+[else]
+	si hay
+[/if]
+[/for]
+
+
+[comment]
 //Actuadores
 [for (it : Actuadores | sk.actuadores)]
-[it.eClass().eAllAttributes.eAttributeType.name.toLowerFirst().concat(' ')/][it.eClass().eAllAttributes.name/][it.eClass().name/][it.pin.toString().concat('= '+it.pin.toString())/];
+int [it.eClass().eAllAttributes.name/][it.eClass().name/][it.pin.toString().concat('= '+it.pin.toString())/];
 [/for]
 
 //Sensores
@@ -18,7 +30,7 @@
 int [a/][it.eClass().name/][it.pin.toString().concat(' = 0;')/]
 		[/if]
 		[if (a='pin')]
-int [a/][it.eClass().name/][it.pin.toString().concat(' = ')/][it.pin.toString().concat(';')/]
+int A[a/][it.eClass().name/][it.pin.toString().concat(' = ')/][it.pin.toString().concat(';')/]
 		[/if]
 	[/for]	
 [/for]
@@ -36,25 +48,65 @@ int [a/][it.eClass().name/][it.pin/]=0;
 [for (it : Actuadores | sk.actuadores)]
 	[for (o : Instrucciones | it.instruccionactuador)]
 		[if (o.eClass().name='Encender')]
-int [o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/] = [o.eGet('esperar').segundos/];
+int [o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/] = [o.eGet('esperar').miliseg/];
 		[/if]		
 	[/for]
 [/for]
 
 
 void setup(){
-
-
-
-	
+[for (it : Actuadores | sk.actuadores)]
+	[for (o : Instrucciones | it.instruccionactuador)]
+		[if (o.eClass().name='Variar')]
+				[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][it.pin/], OUTPUT);
+				[/for]	
+		[/if]
+		[if (o.eClass().name='Encender')]
+				[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][it.pin/], OUTPUT);
+digitalWrite([a/][it.eClass().name/][it.pin/], LOW);
+				[/for]	
+		[/if]
+	[/for]
+[/for]
 }
 
 void loop(){
 
+[for (it : Actuadores | sk.actuadores)]
+[if (it.eClass().name = 'Led')]
+		[for (o : Instrucciones | it.instruccionactuador)]
+		[if (o.eClass().name='Encender')]
+				[for (a : String | it.eClass().eAllAttributes.name)]
+digitalWrite([a/][it.eClass().name/][it.pin/], HIGH);
+delay([o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/]);
+digitalWrite([a/][it.eClass().name/][it.pin/], LOW);
+delay([o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/]);
+
+				[/for]	
+		[/if]
+	[/for]
+[/if]
+[/for]
+[for (it : Sensores | sk.sensores)]
+[if (it.eClass().name = 'LDR')]
+[it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/] = analogRead(A[it.eClass().eAllAttributes.name.substitute('med', '')/][it.eClass().name/][it.pin/]);
+	[for (aux : Actuadores | it.act)]
+	[for (o : Instrucciones | aux.instruccionactuador)]
+		[if (o.eClass().name='Variar')]
+				[for (a : String | o.eClass().eAllAttributes.name)]
+[a/][aux.eClass().name/][aux.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/]/4;
+analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);		
+				[/for]	
+		[/if]
+	[/for]
+[/for]
+[/if]
+[/for]
 
 }
-
-
+[/comment]
 
 [/file]
 [/template]

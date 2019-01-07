@@ -4,6 +4,7 @@ package arduino.impl;
 
 import arduino.Actuadores;
 import arduino.ArduinoPackage;
+import arduino.Bloques;
 import arduino.Instrucciones;
 import arduino.Sensores;
 import arduino.Sketch;
@@ -36,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link arduino.impl.SketchImpl#getSensores <em>Sensores</em>}</li>
  *   <li>{@link arduino.impl.SketchImpl#getActuadores <em>Actuadores</em>}</li>
  *   <li>{@link arduino.impl.SketchImpl#getInstrucciones <em>Instrucciones</em>}</li>
+ *   <li>{@link arduino.impl.SketchImpl#getBloques <em>Bloques</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,6 +92,16 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 	 * @ordered
 	 */
 	protected EList<Instrucciones> instrucciones;
+
+	/**
+	 * The cached value of the '{@link #getBloques() <em>Bloques</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBloques()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Bloques> bloques;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,6 +186,18 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Bloques> getBloques() {
+		if (bloques == null) {
+			bloques = new EObjectContainmentEList<Bloques>(Bloques.class, this, ArduinoPackage.SKETCH__BLOQUES);
+		}
+		return bloques;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -183,6 +207,8 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 			return ((InternalEList<?>) getActuadores()).basicRemove(otherEnd, msgs);
 		case ArduinoPackage.SKETCH__INSTRUCCIONES:
 			return ((InternalEList<?>) getInstrucciones()).basicRemove(otherEnd, msgs);
+		case ArduinoPackage.SKETCH__BLOQUES:
+			return ((InternalEList<?>) getBloques()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -203,6 +229,8 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 			return getActuadores();
 		case ArduinoPackage.SKETCH__INSTRUCCIONES:
 			return getInstrucciones();
+		case ArduinoPackage.SKETCH__BLOQUES:
+			return getBloques();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -231,6 +259,10 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 			getInstrucciones().clear();
 			getInstrucciones().addAll((Collection<? extends Instrucciones>) newValue);
 			return;
+		case ArduinoPackage.SKETCH__BLOQUES:
+			getBloques().clear();
+			getBloques().addAll((Collection<? extends Bloques>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -255,6 +287,9 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 		case ArduinoPackage.SKETCH__INSTRUCCIONES:
 			getInstrucciones().clear();
 			return;
+		case ArduinoPackage.SKETCH__BLOQUES:
+			getBloques().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -275,6 +310,8 @@ public class SketchImpl extends MinimalEObjectImpl.Container implements Sketch {
 			return actuadores != null && !actuadores.isEmpty();
 		case ArduinoPackage.SKETCH__INSTRUCCIONES:
 			return instrucciones != null && !instrucciones.isEmpty();
+		case ArduinoPackage.SKETCH__BLOQUES:
+			return bloques != null && !bloques.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

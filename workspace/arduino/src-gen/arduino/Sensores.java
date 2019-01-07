@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link arduino.Sensores#getMed <em>Med</em>}</li>
  *   <li>{@link arduino.Sensores#getPin <em>Pin</em>}</li>
  *   <li>{@link arduino.Sensores#getAct <em>Act</em>}</li>
+ *   <li>{@link arduino.Sensores#getMed <em>Med</em>}</li>
  * </ul>
  *
  * @see arduino.ArduinoPackage#getSensores()

@@ -44,25 +44,25 @@ public class EsperarItemProvider extends InstruccionesItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSegundosPropertyDescriptor(object);
+			addMilisegPropertyDescriptor(object);
 			addApagarPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Segundos feature.
+	 * This adds a property descriptor for the Miliseg feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSegundosPropertyDescriptor(Object object) {
+	protected void addMilisegPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Esperar_segundos_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Esperar_segundos_feature",
+						getResourceLocator(), getString("_UI_Esperar_miliseg_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Esperar_miliseg_feature",
 								"_UI_Esperar_type"),
-						ArduinoPackage.Literals.ESPERAR__SEGUNDOS, true, false, false,
+						ArduinoPackage.Literals.ESPERAR__MILISEG, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -111,7 +111,7 @@ public class EsperarItemProvider extends InstruccionesItemProvider {
 	@Override
 	public String getText(Object object) {
 		Esperar esperar = (Esperar) object;
-		return getString("_UI_Esperar_type") + " " + esperar.getSegundos();
+		return getString("_UI_Esperar_type") + " " + esperar.getMiliseg();
 	}
 
 	/**
@@ -126,7 +126,7 @@ public class EsperarItemProvider extends InstruccionesItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Esperar.class)) {
-		case ArduinoPackage.ESPERAR__SEGUNDOS:
+		case ArduinoPackage.ESPERAR__MILISEG:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

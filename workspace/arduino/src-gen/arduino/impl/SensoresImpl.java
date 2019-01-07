@@ -21,33 +21,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link arduino.impl.SensoresImpl#getMed <em>Med</em>}</li>
  *   <li>{@link arduino.impl.SensoresImpl#getPin <em>Pin</em>}</li>
  *   <li>{@link arduino.impl.SensoresImpl#getAct <em>Act</em>}</li>
+ *   <li>{@link arduino.impl.SensoresImpl#getMed <em>Med</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class SensoresImpl extends MinimalEObjectImpl.Container implements Sensores {
-	/**
-	 * The default value of the '{@link #getMed() <em>Med</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMed()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int MED_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getMed() <em>Med</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMed()
-	 * @generated
-	 * @ordered
-	 */
-	protected int med = MED_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getPin() <em>Pin</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,6 +56,24 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<Actuadores> act;
+	/**
+	 * The default value of the '{@link #getMed() <em>Med</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MED_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getMed() <em>Med</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMed()
+	 * @generated
+	 * @ordered
+	 */
+	protected int med = MED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,12 +164,12 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ArduinoPackage.SENSORES__MED:
-			return getMed();
 		case ArduinoPackage.SENSORES__PIN:
 			return getPin();
 		case ArduinoPackage.SENSORES__ACT:
 			return getAct();
+		case ArduinoPackage.SENSORES__MED:
+			return getMed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,15 +183,15 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ArduinoPackage.SENSORES__MED:
-			setMed((Integer) newValue);
-			return;
 		case ArduinoPackage.SENSORES__PIN:
 			setPin((Integer) newValue);
 			return;
 		case ArduinoPackage.SENSORES__ACT:
 			getAct().clear();
 			getAct().addAll((Collection<? extends Actuadores>) newValue);
+			return;
+		case ArduinoPackage.SENSORES__MED:
+			setMed((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -206,14 +205,14 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ArduinoPackage.SENSORES__MED:
-			setMed(MED_EDEFAULT);
-			return;
 		case ArduinoPackage.SENSORES__PIN:
 			setPin(PIN_EDEFAULT);
 			return;
 		case ArduinoPackage.SENSORES__ACT:
 			getAct().clear();
+			return;
+		case ArduinoPackage.SENSORES__MED:
+			setMed(MED_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -227,12 +226,12 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ArduinoPackage.SENSORES__MED:
-			return med != MED_EDEFAULT;
 		case ArduinoPackage.SENSORES__PIN:
 			return pin != PIN_EDEFAULT;
 		case ArduinoPackage.SENSORES__ACT:
 			return act != null && !act.isEmpty();
+		case ArduinoPackage.SENSORES__MED:
+			return med != MED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -248,10 +247,10 @@ public abstract class SensoresImpl extends MinimalEObjectImpl.Container implemen
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (med: ");
-		result.append(med);
-		result.append(", pin: ");
+		result.append(" (pin: ");
 		result.append(pin);
+		result.append(", med: ");
+		result.append(med);
 		result.append(')');
 		return result.toString();
 	}

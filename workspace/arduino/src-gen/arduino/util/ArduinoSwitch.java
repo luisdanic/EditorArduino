@@ -148,6 +148,49 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ArduinoPackage.BLOQUES: {
+			Bloques bloques = (Bloques) theEObject;
+			T result = caseBloques(bloques);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.DO_WHILE: {
+			DoWhile doWhile = (DoWhile) theEObject;
+			T result = caseDoWhile(doWhile);
+			if (result == null)
+				result = caseBloques(doWhile);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.IF: {
+			If if_ = (If) theEObject;
+			T result = caseIf(if_);
+			if (result == null)
+				result = caseBloques(if_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.FOR: {
+			For for_ = (For) theEObject;
+			T result = caseFor(for_);
+			if (result == null)
+				result = caseBloques(for_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.WHILE: {
+			While while_ = (While) theEObject;
+			T result = caseWhile(while_);
+			if (result == null)
+				result = caseBloques(while_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -300,6 +343,81 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEncender(Encender object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bloques</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bloques</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBloques(Bloques object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Do While</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Do While</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDoWhile(DoWhile object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>If</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>If</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIf(If object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>For</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>For</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFor(For object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>While</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>While</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWhile(While object) {
 		return null;
 	}
 

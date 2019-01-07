@@ -4,6 +4,7 @@ package arduino;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -103,13 +104,22 @@ public interface ArduinoPackage extends EPackage {
 	int SKETCH__INSTRUCCIONES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Bloques</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKETCH__BLOQUES = 4;
+
+	/**
 	 * The number of structural features of the '<em>Sketch</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SKETCH_FEATURE_COUNT = 4;
+	int SKETCH_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Sketch</em>' class.
@@ -177,22 +187,13 @@ public interface ArduinoPackage extends EPackage {
 	int SENSORES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Med</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SENSORES__MED = 0;
-
-	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSORES__PIN = 1;
+	int SENSORES__PIN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Act</b></em>' reference list.
@@ -201,7 +202,16 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSORES__ACT = 2;
+	int SENSORES__ACT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Med</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSORES__MED = 2;
 
 	/**
 	 * The number of structural features of the '<em>Sensores</em>' class.
@@ -278,15 +288,6 @@ public interface ArduinoPackage extends EPackage {
 	int LDR = 4;
 
 	/**
-	 * The feature id for the '<em><b>Med</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LDR__MED = SENSORES__MED;
-
-	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,6 +304,15 @@ public interface ArduinoPackage extends EPackage {
 	 * @ordered
 	 */
 	int LDR__ACT = SENSORES__ACT;
+
+	/**
+	 * The feature id for the '<em><b>Med</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LDR__MED = SENSORES__MED;
 
 	/**
 	 * The number of structural features of the '<em>LDR</em>' class.
@@ -435,13 +445,13 @@ public interface ArduinoPackage extends EPackage {
 	int ESPERAR = 8;
 
 	/**
-	 * The feature id for the '<em><b>Segundos</b></em>' attribute.
+	 * The feature id for the '<em><b>Miliseg</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ESPERAR__SEGUNDOS = INSTRUCCIONES_FEATURE_COUNT + 0;
+	int ESPERAR__MILISEG = INSTRUCCIONES_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Apagar</b></em>' reference.
@@ -508,6 +518,472 @@ public interface ArduinoPackage extends EPackage {
 	int ENCENDER_OPERATION_COUNT = INSTRUCCIONES_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link arduino.impl.BloquesImpl <em>Bloques</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduino.impl.BloquesImpl
+	 * @see arduino.impl.ArduinoPackageImpl#getBloques()
+	 * @generated
+	 */
+	int BLOQUES = 10;
+
+	/**
+	 * The feature id for the '<em><b>Bloq</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOQUES__BLOQ = 0;
+
+	/**
+	 * The feature id for the '<em><b>Bactuadores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOQUES__BACTUADORES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Bsensores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOQUES__BSENSORES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Binstrucciones</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOQUES__BINSTRUCCIONES = 3;
+
+	/**
+	 * The number of structural features of the '<em>Bloques</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOQUES_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Bloques</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOQUES_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link arduino.impl.DoWhileImpl <em>Do While</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduino.impl.DoWhileImpl
+	 * @see arduino.impl.ArduinoPackageImpl#getDoWhile()
+	 * @generated
+	 */
+	int DO_WHILE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Bloq</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE__BLOQ = BLOQUES__BLOQ;
+
+	/**
+	 * The feature id for the '<em><b>Bactuadores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE__BACTUADORES = BLOQUES__BACTUADORES;
+
+	/**
+	 * The feature id for the '<em><b>Bsensores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE__BSENSORES = BLOQUES__BSENSORES;
+
+	/**
+	 * The feature id for the '<em><b>Binstrucciones</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE__BINSTRUCCIONES = BLOQUES__BINSTRUCCIONES;
+
+	/**
+	 * The feature id for the '<em><b>Operando</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE__OPERANDO = BLOQUES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Referencia</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE__REFERENCIA = BLOQUES_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Valor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE__VALOR = BLOQUES_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Do While</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE_FEATURE_COUNT = BLOQUES_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Do While</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_WHILE_OPERATION_COUNT = BLOQUES_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduino.impl.IfImpl <em>If</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduino.impl.IfImpl
+	 * @see arduino.impl.ArduinoPackageImpl#getIf()
+	 * @generated
+	 */
+	int IF = 12;
+
+	/**
+	 * The feature id for the '<em><b>Bloq</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__BLOQ = BLOQUES__BLOQ;
+
+	/**
+	 * The feature id for the '<em><b>Bactuadores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__BACTUADORES = BLOQUES__BACTUADORES;
+
+	/**
+	 * The feature id for the '<em><b>Bsensores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__BSENSORES = BLOQUES__BSENSORES;
+
+	/**
+	 * The feature id for the '<em><b>Binstrucciones</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__BINSTRUCCIONES = BLOQUES__BINSTRUCCIONES;
+
+	/**
+	 * The feature id for the '<em><b>Operando</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__OPERANDO = BLOQUES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Referencia</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__REFERENCIA = BLOQUES_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Valor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__VALOR = BLOQUES_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>If</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_FEATURE_COUNT = BLOQUES_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>If</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OPERATION_COUNT = BLOQUES_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduino.impl.ForImpl <em>For</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduino.impl.ForImpl
+	 * @see arduino.impl.ArduinoPackageImpl#getFor()
+	 * @generated
+	 */
+	int FOR = 13;
+
+	/**
+	 * The feature id for the '<em><b>Bloq</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__BLOQ = BLOQUES__BLOQ;
+
+	/**
+	 * The feature id for the '<em><b>Bactuadores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__BACTUADORES = BLOQUES__BACTUADORES;
+
+	/**
+	 * The feature id for the '<em><b>Bsensores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__BSENSORES = BLOQUES__BSENSORES;
+
+	/**
+	 * The feature id for the '<em><b>Binstrucciones</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__BINSTRUCCIONES = BLOQUES__BINSTRUCCIONES;
+
+	/**
+	 * The feature id for the '<em><b>Iterador</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__ITERADOR = BLOQUES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Valor Inicial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__VALOR_INICIAL = BLOQUES_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Valor Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__VALOR_FINAL = BLOQUES_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Valor Accion</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__VALOR_ACCION = BLOQUES_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Accion</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR__ACCION = BLOQUES_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>For</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_FEATURE_COUNT = BLOQUES_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>For</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_OPERATION_COUNT = BLOQUES_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduino.impl.WhileImpl <em>While</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduino.impl.WhileImpl
+	 * @see arduino.impl.ArduinoPackageImpl#getWhile()
+	 * @generated
+	 */
+	int WHILE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Bloq</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__BLOQ = BLOQUES__BLOQ;
+
+	/**
+	 * The feature id for the '<em><b>Bactuadores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__BACTUADORES = BLOQUES__BACTUADORES;
+
+	/**
+	 * The feature id for the '<em><b>Bsensores</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__BSENSORES = BLOQUES__BSENSORES;
+
+	/**
+	 * The feature id for the '<em><b>Binstrucciones</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__BINSTRUCCIONES = BLOQUES__BINSTRUCCIONES;
+
+	/**
+	 * The feature id for the '<em><b>Operando</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__OPERANDO = BLOQUES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Referencia</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__REFERENCIA = BLOQUES_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Valor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE__VALOR = BLOQUES_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>While</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_FEATURE_COUNT = BLOQUES_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>While</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_OPERATION_COUNT = BLOQUES_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link arduino.operandos <em>operandos</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduino.operandos
+	 * @see arduino.impl.ArduinoPackageImpl#getoperandos()
+	 * @generated
+	 */
+	int OPERANDOS = 15;
+
+	/**
+	 * The meta object id for the '{@link arduino.forAccion <em>for Accion</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see arduino.forAccion
+	 * @see arduino.impl.ArduinoPackageImpl#getforAccion()
+	 * @generated
+	 */
+	int FOR_ACCION = 16;
+
+	/**
 	 * Returns the meta object for class '{@link arduino.Sketch <em>Sketch</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -560,6 +1036,17 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSketch_Instrucciones();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduino.Sketch#getBloques <em>Bloques</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Bloques</em>'.
+	 * @see arduino.Sketch#getBloques()
+	 * @see #getSketch()
+	 * @generated
+	 */
+	EReference getSketch_Bloques();
 
 	/**
 	 * Returns the meta object for class '{@link arduino.Actuadores <em>Actuadores</em>}'.
@@ -719,15 +1206,15 @@ public interface ArduinoPackage extends EPackage {
 	EClass getEsperar();
 
 	/**
-	 * Returns the meta object for the attribute '{@link arduino.Esperar#getSegundos <em>Segundos</em>}'.
+	 * Returns the meta object for the attribute '{@link arduino.Esperar#getMiliseg <em>Miliseg</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Segundos</em>'.
-	 * @see arduino.Esperar#getSegundos()
+	 * @return the meta object for the attribute '<em>Miliseg</em>'.
+	 * @see arduino.Esperar#getMiliseg()
 	 * @see #getEsperar()
 	 * @generated
 	 */
-	EAttribute getEsperar_Segundos();
+	EAttribute getEsperar_Miliseg();
 
 	/**
 	 * Returns the meta object for the reference '{@link arduino.Esperar#getApagar <em>Apagar</em>}'.
@@ -760,6 +1247,274 @@ public interface ArduinoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEncender_Esperar();
+
+	/**
+	 * Returns the meta object for class '{@link arduino.Bloques <em>Bloques</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bloques</em>'.
+	 * @see arduino.Bloques
+	 * @generated
+	 */
+	EClass getBloques();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduino.Bloques#getBloq <em>Bloq</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Bloq</em>'.
+	 * @see arduino.Bloques#getBloq()
+	 * @see #getBloques()
+	 * @generated
+	 */
+	EReference getBloques_Bloq();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduino.Bloques#getBactuadores <em>Bactuadores</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Bactuadores</em>'.
+	 * @see arduino.Bloques#getBactuadores()
+	 * @see #getBloques()
+	 * @generated
+	 */
+	EReference getBloques_Bactuadores();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduino.Bloques#getBsensores <em>Bsensores</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Bsensores</em>'.
+	 * @see arduino.Bloques#getBsensores()
+	 * @see #getBloques()
+	 * @generated
+	 */
+	EReference getBloques_Bsensores();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link arduino.Bloques#getBinstrucciones <em>Binstrucciones</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Binstrucciones</em>'.
+	 * @see arduino.Bloques#getBinstrucciones()
+	 * @see #getBloques()
+	 * @generated
+	 */
+	EReference getBloques_Binstrucciones();
+
+	/**
+	 * Returns the meta object for class '{@link arduino.DoWhile <em>Do While</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Do While</em>'.
+	 * @see arduino.DoWhile
+	 * @generated
+	 */
+	EClass getDoWhile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.DoWhile#getOperando <em>Operando</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operando</em>'.
+	 * @see arduino.DoWhile#getOperando()
+	 * @see #getDoWhile()
+	 * @generated
+	 */
+	EAttribute getDoWhile_Operando();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.DoWhile#getReferencia <em>Referencia</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Referencia</em>'.
+	 * @see arduino.DoWhile#getReferencia()
+	 * @see #getDoWhile()
+	 * @generated
+	 */
+	EAttribute getDoWhile_Referencia();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.DoWhile#getValor <em>Valor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valor</em>'.
+	 * @see arduino.DoWhile#getValor()
+	 * @see #getDoWhile()
+	 * @generated
+	 */
+	EAttribute getDoWhile_Valor();
+
+	/**
+	 * Returns the meta object for class '{@link arduino.If <em>If</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If</em>'.
+	 * @see arduino.If
+	 * @generated
+	 */
+	EClass getIf();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.If#getOperando <em>Operando</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operando</em>'.
+	 * @see arduino.If#getOperando()
+	 * @see #getIf()
+	 * @generated
+	 */
+	EAttribute getIf_Operando();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.If#getReferencia <em>Referencia</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Referencia</em>'.
+	 * @see arduino.If#getReferencia()
+	 * @see #getIf()
+	 * @generated
+	 */
+	EAttribute getIf_Referencia();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.If#getValor <em>Valor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valor</em>'.
+	 * @see arduino.If#getValor()
+	 * @see #getIf()
+	 * @generated
+	 */
+	EAttribute getIf_Valor();
+
+	/**
+	 * Returns the meta object for class '{@link arduino.For <em>For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>For</em>'.
+	 * @see arduino.For
+	 * @generated
+	 */
+	EClass getFor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.For#getIterador <em>Iterador</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Iterador</em>'.
+	 * @see arduino.For#getIterador()
+	 * @see #getFor()
+	 * @generated
+	 */
+	EAttribute getFor_Iterador();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.For#getValorInicial <em>Valor Inicial</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valor Inicial</em>'.
+	 * @see arduino.For#getValorInicial()
+	 * @see #getFor()
+	 * @generated
+	 */
+	EAttribute getFor_ValorInicial();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.For#getValorFinal <em>Valor Final</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valor Final</em>'.
+	 * @see arduino.For#getValorFinal()
+	 * @see #getFor()
+	 * @generated
+	 */
+	EAttribute getFor_ValorFinal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.For#getValorAccion <em>Valor Accion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valor Accion</em>'.
+	 * @see arduino.For#getValorAccion()
+	 * @see #getFor()
+	 * @generated
+	 */
+	EAttribute getFor_ValorAccion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.For#getAccion <em>Accion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Accion</em>'.
+	 * @see arduino.For#getAccion()
+	 * @see #getFor()
+	 * @generated
+	 */
+	EAttribute getFor_Accion();
+
+	/**
+	 * Returns the meta object for class '{@link arduino.While <em>While</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>While</em>'.
+	 * @see arduino.While
+	 * @generated
+	 */
+	EClass getWhile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.While#getOperando <em>Operando</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operando</em>'.
+	 * @see arduino.While#getOperando()
+	 * @see #getWhile()
+	 * @generated
+	 */
+	EAttribute getWhile_Operando();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.While#getReferencia <em>Referencia</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Referencia</em>'.
+	 * @see arduino.While#getReferencia()
+	 * @see #getWhile()
+	 * @generated
+	 */
+	EAttribute getWhile_Referencia();
+
+	/**
+	 * Returns the meta object for the attribute '{@link arduino.While#getValor <em>Valor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Valor</em>'.
+	 * @see arduino.While#getValor()
+	 * @see #getWhile()
+	 * @generated
+	 */
+	EAttribute getWhile_Valor();
+
+	/**
+	 * Returns the meta object for enum '{@link arduino.operandos <em>operandos</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>operandos</em>'.
+	 * @see arduino.operandos
+	 * @generated
+	 */
+	EEnum getoperandos();
+
+	/**
+	 * Returns the meta object for enum '{@link arduino.forAccion <em>for Accion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>for Accion</em>'.
+	 * @see arduino.forAccion
+	 * @generated
+	 */
+	EEnum getforAccion();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -825,6 +1580,14 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SKETCH__INSTRUCCIONES = eINSTANCE.getSketch_Instrucciones();
+
+		/**
+		 * The meta object literal for the '<em><b>Bloques</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SKETCH__BLOQUES = eINSTANCE.getSketch_Bloques();
 
 		/**
 		 * The meta object literal for the '{@link arduino.impl.ActuadoresImpl <em>Actuadores</em>}' class.
@@ -963,12 +1726,12 @@ public interface ArduinoPackage extends EPackage {
 		EClass ESPERAR = eINSTANCE.getEsperar();
 
 		/**
-		 * The meta object literal for the '<em><b>Segundos</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Miliseg</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ESPERAR__SEGUNDOS = eINSTANCE.getEsperar_Segundos();
+		EAttribute ESPERAR__MILISEG = eINSTANCE.getEsperar_Miliseg();
 
 		/**
 		 * The meta object literal for the '<em><b>Apagar</b></em>' reference feature.
@@ -995,6 +1758,220 @@ public interface ArduinoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENCENDER__ESPERAR = eINSTANCE.getEncender_Esperar();
+
+		/**
+		 * The meta object literal for the '{@link arduino.impl.BloquesImpl <em>Bloques</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduino.impl.BloquesImpl
+		 * @see arduino.impl.ArduinoPackageImpl#getBloques()
+		 * @generated
+		 */
+		EClass BLOQUES = eINSTANCE.getBloques();
+
+		/**
+		 * The meta object literal for the '<em><b>Bloq</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOQUES__BLOQ = eINSTANCE.getBloques_Bloq();
+
+		/**
+		 * The meta object literal for the '<em><b>Bactuadores</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOQUES__BACTUADORES = eINSTANCE.getBloques_Bactuadores();
+
+		/**
+		 * The meta object literal for the '<em><b>Bsensores</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOQUES__BSENSORES = eINSTANCE.getBloques_Bsensores();
+
+		/**
+		 * The meta object literal for the '<em><b>Binstrucciones</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOQUES__BINSTRUCCIONES = eINSTANCE.getBloques_Binstrucciones();
+
+		/**
+		 * The meta object literal for the '{@link arduino.impl.DoWhileImpl <em>Do While</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduino.impl.DoWhileImpl
+		 * @see arduino.impl.ArduinoPackageImpl#getDoWhile()
+		 * @generated
+		 */
+		EClass DO_WHILE = eINSTANCE.getDoWhile();
+
+		/**
+		 * The meta object literal for the '<em><b>Operando</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DO_WHILE__OPERANDO = eINSTANCE.getDoWhile_Operando();
+
+		/**
+		 * The meta object literal for the '<em><b>Referencia</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DO_WHILE__REFERENCIA = eINSTANCE.getDoWhile_Referencia();
+
+		/**
+		 * The meta object literal for the '<em><b>Valor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DO_WHILE__VALOR = eINSTANCE.getDoWhile_Valor();
+
+		/**
+		 * The meta object literal for the '{@link arduino.impl.IfImpl <em>If</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduino.impl.IfImpl
+		 * @see arduino.impl.ArduinoPackageImpl#getIf()
+		 * @generated
+		 */
+		EClass IF = eINSTANCE.getIf();
+
+		/**
+		 * The meta object literal for the '<em><b>Operando</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IF__OPERANDO = eINSTANCE.getIf_Operando();
+
+		/**
+		 * The meta object literal for the '<em><b>Referencia</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IF__REFERENCIA = eINSTANCE.getIf_Referencia();
+
+		/**
+		 * The meta object literal for the '<em><b>Valor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IF__VALOR = eINSTANCE.getIf_Valor();
+
+		/**
+		 * The meta object literal for the '{@link arduino.impl.ForImpl <em>For</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduino.impl.ForImpl
+		 * @see arduino.impl.ArduinoPackageImpl#getFor()
+		 * @generated
+		 */
+		EClass FOR = eINSTANCE.getFor();
+
+		/**
+		 * The meta object literal for the '<em><b>Iterador</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOR__ITERADOR = eINSTANCE.getFor_Iterador();
+
+		/**
+		 * The meta object literal for the '<em><b>Valor Inicial</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOR__VALOR_INICIAL = eINSTANCE.getFor_ValorInicial();
+
+		/**
+		 * The meta object literal for the '<em><b>Valor Final</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOR__VALOR_FINAL = eINSTANCE.getFor_ValorFinal();
+
+		/**
+		 * The meta object literal for the '<em><b>Valor Accion</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOR__VALOR_ACCION = eINSTANCE.getFor_ValorAccion();
+
+		/**
+		 * The meta object literal for the '<em><b>Accion</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOR__ACCION = eINSTANCE.getFor_Accion();
+
+		/**
+		 * The meta object literal for the '{@link arduino.impl.WhileImpl <em>While</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduino.impl.WhileImpl
+		 * @see arduino.impl.ArduinoPackageImpl#getWhile()
+		 * @generated
+		 */
+		EClass WHILE = eINSTANCE.getWhile();
+
+		/**
+		 * The meta object literal for the '<em><b>Operando</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WHILE__OPERANDO = eINSTANCE.getWhile_Operando();
+
+		/**
+		 * The meta object literal for the '<em><b>Referencia</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WHILE__REFERENCIA = eINSTANCE.getWhile_Referencia();
+
+		/**
+		 * The meta object literal for the '<em><b>Valor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WHILE__VALOR = eINSTANCE.getWhile_Valor();
+
+		/**
+		 * The meta object literal for the '{@link arduino.operandos <em>operandos</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduino.operandos
+		 * @see arduino.impl.ArduinoPackageImpl#getoperandos()
+		 * @generated
+		 */
+		EEnum OPERANDOS = eINSTANCE.getoperandos();
+
+		/**
+		 * The meta object literal for the '{@link arduino.forAccion <em>for Accion</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see arduino.forAccion
+		 * @see arduino.impl.ArduinoPackageImpl#getforAccion()
+		 * @generated
+		 */
+		EEnum FOR_ACCION = eINSTANCE.getforAccion();
 
 	}
 

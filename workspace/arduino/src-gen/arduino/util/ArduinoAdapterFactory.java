@@ -117,6 +117,31 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseBloques(Bloques object) {
+			return createBloquesAdapter();
+		}
+
+		@Override
+		public Adapter caseDoWhile(DoWhile object) {
+			return createDoWhileAdapter();
+		}
+
+		@Override
+		public Adapter caseIf(If object) {
+			return createIfAdapter();
+		}
+
+		@Override
+		public Adapter caseFor(For object) {
+			return createForAdapter();
+		}
+
+		@Override
+		public Adapter caseWhile(While object) {
+			return createWhileAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -272,6 +297,76 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEncenderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.Bloques <em>Bloques</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.Bloques
+	 * @generated
+	 */
+	public Adapter createBloquesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.DoWhile <em>Do While</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.DoWhile
+	 * @generated
+	 */
+	public Adapter createDoWhileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.If <em>If</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.If
+	 * @generated
+	 */
+	public Adapter createIfAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.For <em>For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.For
+	 * @generated
+	 */
+	public Adapter createForAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.While <em>While</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.While
+	 * @generated
+	 */
+	public Adapter createWhileAdapter() {
 		return null;
 	}
 

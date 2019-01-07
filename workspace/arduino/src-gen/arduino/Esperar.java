@@ -11,7 +11,7 @@ package arduino;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link arduino.Esperar#getSegundos <em>Segundos</em>}</li>
+ *   <li>{@link arduino.Esperar#getMiliseg <em>Miliseg</em>}</li>
  *   <li>{@link arduino.Esperar#getApagar <em>Apagar</em>}</li>
  * </ul>
  *
@@ -21,30 +21,30 @@ package arduino;
  */
 public interface Esperar extends Instrucciones {
 	/**
-	 * Returns the value of the '<em><b>Segundos</b></em>' attribute.
+	 * Returns the value of the '<em><b>Miliseg</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Segundos</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Miliseg</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Segundos</em>' attribute.
-	 * @see #setSegundos(int)
-	 * @see arduino.ArduinoPackage#getEsperar_Segundos()
+	 * @return the value of the '<em>Miliseg</em>' attribute.
+	 * @see #setMiliseg(int)
+	 * @see arduino.ArduinoPackage#getEsperar_Miliseg()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.Int"
 	 * @generated
 	 */
-	int getSegundos();
+	int getMiliseg();
 
 	/**
-	 * Sets the value of the '{@link arduino.Esperar#getSegundos <em>Segundos</em>}' attribute.
+	 * Sets the value of the '{@link arduino.Esperar#getMiliseg <em>Miliseg</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Segundos</em>' attribute.
-	 * @see #getSegundos()
+	 * @param value the new value of the '<em>Miliseg</em>' attribute.
+	 * @see #getMiliseg()
 	 * @generated
 	 */
-	void setSegundos(int value);
+	void setMiliseg(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Apagar</b></em>' reference.

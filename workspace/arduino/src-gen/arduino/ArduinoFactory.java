@@ -85,6 +85,42 @@ public interface ArduinoFactory extends EFactory {
 	Encender createEncender();
 
 	/**
+	 * Returns a new object of class '<em>Do While</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Do While</em>'.
+	 * @generated
+	 */
+	DoWhile createDoWhile();
+
+	/**
+	 * Returns a new object of class '<em>If</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>If</em>'.
+	 * @generated
+	 */
+	If createIf();
+
+	/**
+	 * Returns a new object of class '<em>For</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>For</em>'.
+	 * @generated
+	 */
+	For createFor();
+
+	/**
+	 * Returns a new object of class '<em>While</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>While</em>'.
+	 * @generated
+	 */
+	While createWhile();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
