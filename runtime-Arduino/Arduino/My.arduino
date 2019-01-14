@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <arduino:Sketch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.example.org/arduino" Nombre="ejemplo1">
-  <sensores xsi:type="arduino:LDR"/>
-  <actuadores xsi:type="arduino:Led" instruccionactuador="//@instrucciones.0"/>
-  <actuadores xsi:type="arduino:Led"/>
-  <instrucciones xsi:type="arduino:Encender"/>
-  <bloques xsi:type="arduino:DoWhile"/>
+  <actuadores xsi:type="arduino:Servo" actuadorinstruccion="//@instrucciones.0"/>
+  <instrucciones xsi:type="arduino:Variar"/>
 </arduino:Sketch>

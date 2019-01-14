@@ -182,8 +182,26 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 		newChildDescriptors.add(
 				createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES, ArduinoFactory.eINSTANCE.createLDR()));
 
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES,
+				ArduinoFactory.eINSTANCE.createTemperatura()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES,
+				ArduinoFactory.eINSTANCE.createPotenciometro()));
+
+		newChildDescriptors.add(
+				createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES, ArduinoFactory.eINSTANCE.createBoton()));
+
+		newChildDescriptors.add(
+				createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES, ArduinoFactory.eINSTANCE.createPIR()));
+
 		newChildDescriptors.add(
 				createChildParameter(ArduinoPackage.Literals.SKETCH__ACTUADORES, ArduinoFactory.eINSTANCE.createLed()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__ACTUADORES,
+				ArduinoFactory.eINSTANCE.createBuzzer()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__ACTUADORES,
+				ArduinoFactory.eINSTANCE.createServo()));
 
 		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES,
 				ArduinoFactory.eINSTANCE.createApagar()));
@@ -197,14 +215,8 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES,
 				ArduinoFactory.eINSTANCE.createEncender()));
 
-		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__BLOQUES,
-				ArduinoFactory.eINSTANCE.createDoWhile()));
-
 		newChildDescriptors.add(
 				createChildParameter(ArduinoPackage.Literals.SKETCH__BLOQUES, ArduinoFactory.eINSTANCE.createIf()));
-
-		newChildDescriptors.add(
-				createChildParameter(ArduinoPackage.Literals.SKETCH__BLOQUES, ArduinoFactory.eINSTANCE.createFor()));
 
 		newChildDescriptors.add(
 				createChildParameter(ArduinoPackage.Literals.SKETCH__BLOQUES, ArduinoFactory.eINSTANCE.createWhile()));

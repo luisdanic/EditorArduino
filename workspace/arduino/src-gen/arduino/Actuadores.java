@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link arduino.Actuadores#getPin <em>Pin</em>}</li>
- *   <li>{@link arduino.Actuadores#getInstruccionactuador <em>Instruccionactuador</em>}</li>
+ *   <li>{@link arduino.Actuadores#getActuadorinstruccion <em>Actuadorinstruccion</em>}</li>
  * </ul>
  *
  * @see arduino.ArduinoPackage#getActuadores()
@@ -50,30 +50,30 @@ public interface Actuadores extends EObject {
 	void setPin(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Instruccionactuador</b></em>' reference.
+	 * Returns the value of the '<em><b>Actuadorinstruccion</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Instruccionactuador</em>' reference isn't clear,
+	 * If the meaning of the '<em>Actuadorinstruccion</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instruccionactuador</em>' reference.
-	 * @see #setInstruccionactuador(Instrucciones)
-	 * @see arduino.ArduinoPackage#getActuadores_Instruccionactuador()
+	 * @return the value of the '<em>Actuadorinstruccion</em>' reference.
+	 * @see #setActuadorinstruccion(Instrucciones)
+	 * @see arduino.ArduinoPackage#getActuadores_Actuadorinstruccion()
 	 * @model
 	 * @generated
 	 */
-	Instrucciones getInstruccionactuador();
+	Instrucciones getActuadorinstruccion();
 
 	/**
-	 * Sets the value of the '{@link arduino.Actuadores#getInstruccionactuador <em>Instruccionactuador</em>}' reference.
+	 * Sets the value of the '{@link arduino.Actuadores#getActuadorinstruccion <em>Actuadorinstruccion</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Instruccionactuador</em>' reference.
-	 * @see #getInstruccionactuador()
+	 * @param value the new value of the '<em>Actuadorinstruccion</em>' reference.
+	 * @see #getActuadorinstruccion()
 	 * @generated
 	 */
-	void setInstruccionactuador(Instrucciones value);
+	void setActuadorinstruccion(Instrucciones value);
 
 	EObject getElemento();
 

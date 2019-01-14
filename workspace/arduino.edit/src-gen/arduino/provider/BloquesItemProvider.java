@@ -55,6 +55,7 @@ public class BloquesItemProvider extends ItemProviderAdapter implements IEditing
 			addBloqPropertyDescriptor(object);
 			addBactuadoresPropertyDescriptor(object);
 			addBsensoresPropertyDescriptor(object);
+			addBloactsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -104,6 +105,21 @@ public class BloquesItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
+	 * This adds a property descriptor for the Bloacts feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBloactsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Bloques_bloacts_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Bloques_bloacts_feature",
+								"_UI_Bloques_type"),
+						ArduinoPackage.Literals.BLOQUES__BLOACTS, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -117,7 +133,6 @@ public class BloquesItemProvider extends ItemProviderAdapter implements IEditing
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ArduinoPackage.Literals.BLOQUES__BLOQ);
 			childrenFeatures.add(ArduinoPackage.Literals.BLOQUES__BACTUADORES);
-			childrenFeatures.add(ArduinoPackage.Literals.BLOQUES__BSENSORES);
 			childrenFeatures.add(ArduinoPackage.Literals.BLOQUES__BINSTRUCCIONES);
 		}
 		return childrenFeatures;
@@ -182,7 +197,6 @@ public class BloquesItemProvider extends ItemProviderAdapter implements IEditing
 		switch (notification.getFeatureID(Bloques.class)) {
 		case ArduinoPackage.BLOQUES__BLOQ:
 		case ArduinoPackage.BLOQUES__BACTUADORES:
-		case ArduinoPackage.BLOQUES__BSENSORES:
 		case ArduinoPackage.BLOQUES__BINSTRUCCIONES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -201,14 +215,8 @@ public class BloquesItemProvider extends ItemProviderAdapter implements IEditing
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(ArduinoPackage.Literals.BLOQUES__BLOQ, ArduinoFactory.eINSTANCE.createDoWhile()));
-
 		newChildDescriptors
 				.add(createChildParameter(ArduinoPackage.Literals.BLOQUES__BLOQ, ArduinoFactory.eINSTANCE.createIf()));
-
-		newChildDescriptors
-				.add(createChildParameter(ArduinoPackage.Literals.BLOQUES__BLOQ, ArduinoFactory.eINSTANCE.createFor()));
 
 		newChildDescriptors.add(
 				createChildParameter(ArduinoPackage.Literals.BLOQUES__BLOQ, ArduinoFactory.eINSTANCE.createWhile()));
@@ -216,8 +224,11 @@ public class BloquesItemProvider extends ItemProviderAdapter implements IEditing
 		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.BLOQUES__BACTUADORES,
 				ArduinoFactory.eINSTANCE.createLed()));
 
-		newChildDescriptors.add(
-				createChildParameter(ArduinoPackage.Literals.BLOQUES__BSENSORES, ArduinoFactory.eINSTANCE.createLDR()));
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.BLOQUES__BACTUADORES,
+				ArduinoFactory.eINSTANCE.createBuzzer()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.BLOQUES__BACTUADORES,
+				ArduinoFactory.eINSTANCE.createServo()));
 
 		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.BLOQUES__BINSTRUCCIONES,
 				ArduinoFactory.eINSTANCE.createApagar()));

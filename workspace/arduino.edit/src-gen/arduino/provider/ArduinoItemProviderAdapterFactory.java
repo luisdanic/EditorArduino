@@ -234,29 +234,6 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link arduino.DoWhile} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DoWhileItemProvider doWhileItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link arduino.DoWhile}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDoWhileAdapter() {
-		if (doWhileItemProvider == null) {
-			doWhileItemProvider = new DoWhileItemProvider(this);
-		}
-
-		return doWhileItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link arduino.If} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -280,29 +257,6 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link arduino.For} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ForItemProvider forItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link arduino.For}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createForAdapter() {
-		if (forItemProvider == null) {
-			forItemProvider = new ForItemProvider(this);
-		}
-
-		return forItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link arduino.While} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -323,6 +277,144 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory
 		}
 
 		return whileItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.Temperatura} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TemperaturaItemProvider temperaturaItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.Temperatura}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTemperaturaAdapter() {
+		if (temperaturaItemProvider == null) {
+			temperaturaItemProvider = new TemperaturaItemProvider(this);
+		}
+
+		return temperaturaItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.Potenciometro} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PotenciometroItemProvider potenciometroItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.Potenciometro}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPotenciometroAdapter() {
+		if (potenciometroItemProvider == null) {
+			potenciometroItemProvider = new PotenciometroItemProvider(this);
+		}
+
+		return potenciometroItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.Boton} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BotonItemProvider botonItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.Boton}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBotonAdapter() {
+		if (botonItemProvider == null) {
+			botonItemProvider = new BotonItemProvider(this);
+		}
+
+		return botonItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.PIR} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PIRItemProvider pirItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.PIR}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPIRAdapter() {
+		if (pirItemProvider == null) {
+			pirItemProvider = new PIRItemProvider(this);
+		}
+
+		return pirItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.Buzzer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BuzzerItemProvider buzzerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.Buzzer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBuzzerAdapter() {
+		if (buzzerItemProvider == null) {
+			buzzerItemProvider = new BuzzerItemProvider(this);
+		}
+
+		return buzzerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link arduino.Servo} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServoItemProvider servoItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link arduino.Servo}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createServoAdapter() {
+		if (servoItemProvider == null) {
+			servoItemProvider = new ServoItemProvider(this);
+		}
+
+		return servoItemProvider;
 	}
 
 	/**
@@ -438,14 +530,22 @@ public class ArduinoItemProviderAdapterFactory extends ArduinoAdapterFactory
 			esperarItemProvider.dispose();
 		if (encenderItemProvider != null)
 			encenderItemProvider.dispose();
-		if (doWhileItemProvider != null)
-			doWhileItemProvider.dispose();
 		if (ifItemProvider != null)
 			ifItemProvider.dispose();
-		if (forItemProvider != null)
-			forItemProvider.dispose();
 		if (whileItemProvider != null)
 			whileItemProvider.dispose();
+		if (temperaturaItemProvider != null)
+			temperaturaItemProvider.dispose();
+		if (potenciometroItemProvider != null)
+			potenciometroItemProvider.dispose();
+		if (botonItemProvider != null)
+			botonItemProvider.dispose();
+		if (pirItemProvider != null)
+			pirItemProvider.dispose();
+		if (buzzerItemProvider != null)
+			buzzerItemProvider.dispose();
+		if (servoItemProvider != null)
+			servoItemProvider.dispose();
 	}
 
 }

@@ -71,14 +71,22 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 			return createEsperar();
 		case ArduinoPackage.ENCENDER:
 			return createEncender();
-		case ArduinoPackage.DO_WHILE:
-			return createDoWhile();
 		case ArduinoPackage.IF:
 			return createIf();
-		case ArduinoPackage.FOR:
-			return createFor();
 		case ArduinoPackage.WHILE:
 			return createWhile();
+		case ArduinoPackage.TEMPERATURA:
+			return createTemperatura();
+		case ArduinoPackage.POTENCIOMETRO:
+			return createPotenciometro();
+		case ArduinoPackage.BOTON:
+			return createBoton();
+		case ArduinoPackage.PIR:
+			return createPIR();
+		case ArduinoPackage.BUZZER:
+			return createBuzzer();
+		case ArduinoPackage.SERVO:
+			return createServo();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -94,8 +102,6 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 		switch (eDataType.getClassifierID()) {
 		case ArduinoPackage.OPERANDOS:
 			return createoperandosFromString(eDataType, initialValue);
-		case ArduinoPackage.FOR_ACCION:
-			return createforAccionFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -111,8 +117,6 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 		switch (eDataType.getClassifierID()) {
 		case ArduinoPackage.OPERANDOS:
 			return convertoperandosToString(eDataType, instanceValue);
-		case ArduinoPackage.FOR_ACCION:
-			return convertforAccionToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -193,16 +197,6 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DoWhile createDoWhile() {
-		DoWhileImpl doWhile = new DoWhileImpl();
-		return doWhile;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public If createIf() {
 		IfImpl if_ = new IfImpl();
 		return if_;
@@ -213,9 +207,9 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public For createFor() {
-		ForImpl for_ = new ForImpl();
-		return for_;
+	public While createWhile() {
+		WhileImpl while_ = new WhileImpl();
+		return while_;
 	}
 
 	/**
@@ -223,9 +217,59 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public While createWhile() {
-		WhileImpl while_ = new WhileImpl();
-		return while_;
+	public Temperatura createTemperatura() {
+		TemperaturaImpl temperatura = new TemperaturaImpl();
+		return temperatura;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Potenciometro createPotenciometro() {
+		PotenciometroImpl potenciometro = new PotenciometroImpl();
+		return potenciometro;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Boton createBoton() {
+		BotonImpl boton = new BotonImpl();
+		return boton;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PIR createPIR() {
+		PIRImpl pir = new PIRImpl();
+		return pir;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Buzzer createBuzzer() {
+		BuzzerImpl buzzer = new BuzzerImpl();
+		return buzzer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Servo createServo() {
+		ServoImpl servo = new ServoImpl();
+		return servo;
 	}
 
 	/**
@@ -247,28 +291,6 @@ public class ArduinoFactoryImpl extends EFactoryImpl implements ArduinoFactory {
 	 * @generated
 	 */
 	public String convertoperandosToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public forAccion createforAccionFromString(EDataType eDataType, String initialValue) {
-		forAccion result = forAccion.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertforAccionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -5,78 +5,311 @@
 [template public generateElement(sk : Sketch)]
 [comment @main/]
 [file (sk.Nombre, false, 'UTF-8')]
-
-[sk.bloques.eClass().name/]
-
-[for (it : Bloques | sk.bloques)]
-	[if (it.eClass().name = '')]
-	no hay
-[else]
-	si hay
+[if (sk.actuadores.eClass().name->count('Servo') = 1  )]
+#include<[sk.actuadores.eGet('libreria')/]>
+[elseif (sk.bloques.bactuadores.eClass().name->count('Servo') = 1)]
+#include<[sk.bloques.bactuadores.eGet('libreria')/]>
+[elseif (sk.bloques.bloq.bactuadores.eClass().name->count('Servo') = 1)]
+#include<[sk.bloques.bloq.bactuadores.eGet('libreria')/]>	
 [/if]
-[/for]
 
-
-[comment]
 //Actuadores
 [for (it : Actuadores | sk.actuadores)]
-int [it.eClass().eAllAttributes.name/][it.eClass().name/][it.pin.toString().concat('= '+it.pin.toString())/];
+	[if (it.eClass().name = 'Led' or it.eClass().name = 'Buzzer')]
+[it.eClass().eAllAttributes.eAttributeType.name.toLowerFirst()/] [it.eClass().eAllAttributes.name/][it.eClass().name/][it.pin/] = [it.pin/];
+
+	[/if]
+	[if (it.eClass().name = 'Servo')]
+		[for (at : EAttribute | it.eClass().eAllAttributes)]
+			[if (at.name = 'pin')]
+Servo [it.eClass().name/][it.pin/];
+			[elseif (at.name = 'angulo')]
+[at.eAttributeType.name.toLowerFirst()/] [at.name/][it.eClass().name/][it.pin/] = [it.eGet('angulo')/];
+
+			[/if]
+		[/for]
+	[/if]
+[/for]
+[for (it : Bloques | sk.bloques)]
+	[for (aux : Actuadores | it.bactuadores)]
+		[if (aux.eClass().name = 'Led' or aux.eClass().name = 'Buzzer')]
+[aux.eClass().eAllAttributes.eAttributeType.name.toLowerFirst()/] [aux.eClass().eAllAttributes.name/][aux.eClass().name/][it.eClass().name/][aux.pin/] = [aux.pin/];
+
+		[/if]
+		[if (aux.eClass().name = 'Servo')]
+			[for (at : EAttribute | aux.eClass().eAllAttributes)]
+				[if (at.name = 'pin')]
+Servo [aux.eClass().name/][it.eClass().name/][aux.pin/];
+				[elseif (at.name = 'angulo')]
+[at.eAttributeType.name.toLowerFirst()/] [at.name/][aux.eClass().name/][it.eClass().name/][aux.pin/] = 0;
+
+				[/if]
+			[/for]
+		[/if]
+	[/for]
+	[for (den : Bloques | it.bloq)]
+		[for (aux : Actuadores | den.bactuadores)]
+			[if (aux.eClass().name = 'Led' or aux.eClass().name = 'Buzzer')]
+[aux.eClass().eAllAttributes.eAttributeType.name.toLowerFirst()/] [aux.eClass().eAllAttributes.name/][aux.eClass().name/][it.eClass().name/][den.eClass().name/][aux.pin/] = [aux.pin/];
+
+			[/if]
+			[if (aux.eClass().name = 'Servo')]
+				[for (at : EAttribute | aux.eClass().eAllAttributes)]
+					[if (at.name = 'pin')]
+Servo [aux.eClass().name/][it.eClass().name/][den.eClass().name/][aux.pin/];
+					[elseif (at.name = 'angulo')]
+[at.eAttributeType.name.toLowerFirst()/] [at.name/][aux.eClass().name/][it.eClass().name/][den.eClass().name/][aux.pin/] = 0;
+
+					[/if]
+				[/for]
+			[/if]
+		[/for]
+	[/for]
 [/for]
 
 //Sensores
 [for (it: Sensores | sk.sensores)]
-	[for (a : String | it.eClass().eAllAttributes.name)]
-		[if (a='med')]
-int [a/][it.eClass().name/][it.pin.toString().concat(' = 0;')/]
-		[/if]
-		[if (a='pin')]
-int A[a/][it.eClass().name/][it.pin.toString().concat(' = ')/][it.pin.toString().concat(';')/]
-		[/if]
-	[/for]	
+	[if (it.eClass().name = 'LDR' or it.eClass().name = 'Potenciometro' or it.eClass().name = 'Temperatura')]
+		[for (a : EAttribute | it.eClass().eAllAttributes)]
+			[if (a.name='med')]
+[a.eAttributeType.name.toString().toLowerFirst()/] [a.name/][it.eClass().name/][it.pin/] = 0;
+			[elseif (a.name='pin')]
+[a.eAttributeType.name.toString().toLowerFirst()/] A[a.name/][it.eClass().name/][it.pin/] = [it.pin/];
+			[else]
+[a.eAttributeType.name.toString().toLowerFirst()/] [a.name/][it.eClass().name/][it.pin/] = 0;	
+
+			[/if]
+		[/for]
+	[/if]
+	[if (it.eClass().name = 'Boton' or it.eClass().name = 'PIR')]
+		[for (a : EAttribute | it.eClass().eAllAttributes)]
+			[if (a.name='med')]
+[a.eAttributeType.name.toString().toLowerFirst()/] [a.name/][it.eClass().name/][it.pin/] = 0;
+			[elseif (a.name='pin')]
+[a.eAttributeType.name.toString().toLowerFirst()/] D[a.name/][it.eClass().name/][it.pin/] = [it.pin/];
+			[/if]
+		[/for]
+
+	[/if]
 [/for]
 
 //Instrucciones
 [for (it : Actuadores | sk.actuadores)]
-	[for (o : Instrucciones | it.instruccionactuador)]
-		[if (o.eClass().name='Variar')]
-			[for (a : String | o.eClass().eAllAttributes.name)]
-int [a/][it.eClass().name/][it.pin/]=0;
-			[/for]	
-		[/if]
+[if (it.eCrossReferences()->notEmpty())]
+	[if (it.eClass().name = 'Led' or it.eClass().name = 'Buzzer')]
+	[for (aux : Instrucciones | it.actuadorinstruccion)]
+				[if (aux.eClass().name = 'Variar')]
+[aux.eClass().eAllAttributes.eAttributeType.name.toString().toLowerFirst()/] [aux.eClass().eAllAttributes.name/][it.eClass().name/][it.pin/] = 0;
+				[/if]
+				[if (aux.eClass().name = 'Encender')]
+[aux.eGet('esperar').eClass().eAllAttributes.eAttributeType.name.toString().toLowerFirst()/] [aux.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/] = [aux.eGet('esperar').miliseg/];
+				[/if]
+				[if (aux.eClass().name = 'Apagar')]
+[aux.eGet('esperar1').eClass().eAllAttributes.eAttributeType.name.toString().toLowerFirst()/] [aux.eGet('esperar1').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/] = [aux.eGet('esperar1').miliseg/];	
+				[/if]
 	[/for]
-[/for]
-[for (it : Actuadores | sk.actuadores)]
-	[for (o : Instrucciones | it.instruccionactuador)]
-		[if (o.eClass().name='Encender')]
-int [o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/] = [o.eGet('esperar').miliseg/];
-		[/if]		
+[/if]
+[if (it.eClass().name = 'Servo')]
+	[for (aux : Instrucciones | it.actuadorinstruccion)]
+				[if (aux.eClass().name = 'Variar' or aux.eClass().name = 'Apagar' or aux.eClass().name = 'Encender')]
+				[/if]
 	[/for]
-[/for]
+[/if]		
+[else]
+	ERROR
+[/if]
 
+[/for]
+[for (bp : Bloques | sk.bloques)]
+	[for (it : Actuadores | bp.bactuadores)]	
+[if (it.eCrossReferences()->notEmpty())]
+[if (it.eClass().name = 'Led' or it.eClass().name = 'Buzzer')]
+		[for (o : Instrucciones | it.actuadorinstruccion)]
+			[if (o.eClass().name='Variar')]
+				[for (a : String | o.eClass().eAllAttributes.name)]
+int [a/][it.eClass().name/][bp.eClass().name/][it.pin/]= 0;
+
+				[/for]	
+			[/if]
+			[if (o.eClass().name='Encender')]
+int [o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][bp.eClass().name/][it.pin/] = [o.eGet('esperar').miliseg/];
+
+			[/if]
+			[if (o.eClass().name='Apagar')]
+int [o.eGet('esperar1').eClass().eAllAttributes.name/][it.eClass().name/][bp.eClass().name/][it.pin/] = [o.eGet('esperar1').miliseg/];
+
+			[/if]		
+		[/for]
+[/if]
+[if (it.eClass().name = 'Servo')]
+	[for (aux : Instrucciones | it.actuadorinstruccion)]
+				[if (aux.eClass().name = 'Variar')]
+				[/if]
+				[if (aux.eClass().name = 'Encender')]
+[aux.eGet('esperar').eClass().eAllAttributes.eAttributeType.name.toString().toLowerFirst()/] [aux.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][bp.eClass().name/][it.pin/] = [aux.eGet('esperar').miliseg/];
+
+				[/if]
+				[if (aux.eClass().name = 'Apagar')]
+[aux.eGet('esperar1').eClass().eAllAttributes.eAttributeType.name.toString().toLowerFirst()/] [aux.eGet('esperar1').eClass().eAllAttributes.name/][it.eClass().name/][bp.eClass().name/][it.pin/] = [aux.eGet('esperar1').miliseg/];
+
+				[/if]
+	[/for]
+[/if]
+[else]
+	ERROR
+[/if]		
+	[/for]
+	[for (den : Bloques| bp.bloq)]
+		[for (it : Actuadores | den.bactuadores)]	
+[if (it.eCrossReferences()->notEmpty())]
+		[if (it.eClass().name = 'Led' or it.eClass().name = 'Buzzer')]
+			[for (o : Instrucciones | it.actuadorinstruccion)]
+				[if (o.eClass().name='Variar')]
+					[for (a : String | o.eClass().eAllAttributes.name)]
+int [a/][it.eClass().name/][bp.eClass().name/][den.eClass().name/][it.pin/]= 0;
+
+					[/for]	
+				[elseif (o.eClass().name='Encender')]
+int [o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][bp.eClass().name/][den.eClass().name/][it.pin/] = [o.eGet('esperar').miliseg/];
+
+				[elseif (o.eClass().name='Apagar')]
+int [o.eGet('esperar1').eClass().eAllAttributes.name/][it.eClass().name/][bp.eClass().name/][den.eClass().name/][it.pin/] = [o.eGet('esperar1').miliseg/];
+
+				[/if]
+			[/for]
+		[/if]
+[else]
+	ERROR
+[/if]
+		[/for]
+	[/for]
+[/for]
 
 void setup(){
 [for (it : Actuadores | sk.actuadores)]
-	[for (o : Instrucciones | it.instruccionactuador)]
-		[if (o.eClass().name='Variar')]
+[if (it.eCrossReferences()->notEmpty())]
+	[if (it.eClass().name = 'Led' or it.eClass().name = 'Buzzer')]
+		[for (o : Instrucciones | it.actuadorinstruccion)]
+			[if (o.eClass().name='Variar')]
 				[for (a : String | it.eClass().eAllAttributes.name)]
 pinMode([a/][it.eClass().name/][it.pin/], OUTPUT);
+
 				[/for]	
-		[/if]
-		[if (o.eClass().name='Encender')]
+			[/if]
+			[if (o.eClass().name='Encender')]
 				[for (a : String | it.eClass().eAllAttributes.name)]
 pinMode([a/][it.eClass().name/][it.pin/], OUTPUT);
 digitalWrite([a/][it.eClass().name/][it.pin/], LOW);
+
 				[/for]	
-		[/if]
+			[/if]
+			[if (o.eClass().name='Apagar')]
+				[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][it.pin/], OUTPUT);
+digitalWrite([a/][it.eClass().name/][it.pin/], HIGH);
+
+				[/for]	
+			[/if]
+		[/for]
+	[/if]
+	[if (it.eClass().name = 'Servo')]
+[it.eClass().name/][it.pin/].attach([it.pin/]);
+
+	[/if]
+[else]
+	ERROR
+[/if]
+[/for]
+[for (bb : Bloques | sk.bloques)]
+	[for (it : Actuadores | bb.bactuadores)]
+[if (it.eCrossReferences()->notEmpty())]
+[if (it.eClass().name = 'Led' or it.eClass().name = 'Buzzer')]
+		[for (o : Instrucciones | it.actuadorinstruccion)]
+			[if (o.eClass().name='Variar')]
+				[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][bb.eClass().name/][it.pin/], OUTPUT);
+
+				[/for]	
+			[/if]
+			[if (o.eClass().name='Encender')]
+				[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][bb.eClass().name/][it.pin/], OUTPUT);
+digitalWrite([a/][it.eClass().name/][bb.eClass().name/][it.pin/], LOW);
+
+				[/for]	
+			[/if]
+			[if (o.eClass().name='Apagar')]
+				[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][bb.eClass().name/][it.pin/], OUTPUT);
+digitalWrite([a/][it.eClass().name/][bb.eClass().name/][it.pin/], HIGH);
+
+				[/for]	
+			[/if]
+		[/for]
+	[/if]
+	[if (it.eClass().name = 'Servo')]
+[it.eClass().name/][bb.eClass().name/][it.pin/].attach([it.pin/]);
+
+	[/if]
+[else]
+	ERROR
+[/if]
 	[/for]
+	[for (den : Bloques | bb.bloq)]
+		[for (it : Actuadores | den.bactuadores)]
+[if (it.eCrossReferences()->notEmpty())]
+[if (it.eClass().name = 'Led' or it.eClass().name = 'Buzzer')]
+				[for (o : Instrucciones | it.actuadorinstruccion)]
+					[if (o.eClass().name='Variar')]
+						[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][bb.eClass().name/][den.eClass().name/][it.pin/], OUTPUT);
+
+						[/for]	
+					[/if]
+					[if (o.eClass().name='Encender')]
+						[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][den.eClass().name/][it.pin/], OUTPUT);
+digitalWrite([a/][it.eClass().name/][bb.eClass().name/][den.eClass().name/][it.pin/], LOW);
+
+						[/for]	
+					[/if]
+					[if (o.eClass().name='Apagar')]
+						[for (a : String | it.eClass().eAllAttributes.name)]
+pinMode([a/][it.eClass().name/][den.eClass().name/][it.pin/], OUTPUT);
+digitalWrite([a/][it.eClass().name/][bb.eClass().name/][den.eClass().name/][it.pin/], HIGH);
+
+						[/for]	
+					[/if]
+				[/for]
+			[/if]
+			[if (it.eClass().name = 'Servo')]
+[it.eClass().name/][bb.eClass().name/][den.eClass().name/][it.pin/].attach([it.pin/]);
+
+			[/if]
+[else]
+	ERROR
+[/if]
+		[/for]
+	[/for]
+[/for]
+[for (it : Sensores | sk.sensores)]
+	[if (it.eClass().name = 'Boton' or it.eClass().name = 'PIR')]
+		[for (a : EAttribute | it.eClass().eAllAttributes)]
+			[if (a.name='pin')]
+pinMode(D[a.name/][it.eClass().name/][it.pin/], INPUT);
+
+			[/if]
+		[/for]
+	[/if]
 [/for]
 }
 
 void loop(){
 
 [for (it : Actuadores | sk.actuadores)]
-[if (it.eClass().name = 'Led')]
-		[for (o : Instrucciones | it.instruccionactuador)]
+[if (it.eCrossReferences()->notEmpty())]
+	[if (it.eClass().name = 'Led' or it.eClass().name = 'Buzzer')]
+		[for (o : Instrucciones | it.actuadorinstruccion)]
 		[if (o.eClass().name='Encender')]
 				[for (a : String | it.eClass().eAllAttributes.name)]
 digitalWrite([a/][it.eClass().name/][it.pin/], HIGH);
@@ -86,18 +319,132 @@ delay([o.eGet('esperar').eClass().eAllAttributes.name/][it.eClass().name/][it.pi
 
 				[/for]	
 		[/if]
+		[if (o.eClass().name='Apagar')]
+				[for (a : String | it.eClass().eAllAttributes.name)]
+digitalWrite([a/][it.eClass().name/][it.pin/], LOW);
+delay([o.eGet('esperar1').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/]);
+digitalWrite([a/][it.eClass().name/][it.pin/], HIGH);
+delay([o.eGet('esperar1').eClass().eAllAttributes.name/][it.eClass().name/][it.pin/]);
+
+				[/for]	
+		[/if]
+		[if (o.eClass().name='Variar')]
+			[if (o.eCrossReferences()->isEmpty())]
+for(int i=0; i<=255; i++){
+	analogWrite([it.eClass().eAllAttributes.name/][it.eClass().name/][it.pin/],i);
+	delay(100);
+}
+
+for(int i=255; i>=0; i--){
+	analogWrite([it.eClass().eAllAttributes.name/][it.eClass().name/][it.pin/],i);
+	delay(100);
+}
+			
+			[else]
+			[/if]
+		[/if]
 	[/for]
+[/if]
+[if (it.eClass().name = 'Servo')]
+[for (o : Instrucciones | it.actuadorinstruccion)]
+		[if (o.eClass().name='Encender')]
+[it.eClass().name/][it.pin/].write(0);
+delay(100);
+[it.eClass().name/][it.pin/].write([it.eClass().eAllAttributes.name.substitute('pin', '').substitute('libreria', '')/][it.eClass().name/][it.eGet('angulo')/]);
+		[/if]
+		[if (o.eClass().name='Apagar')]
+[it.eClass().name/][it.pin/].write(180);
+delay(100);
+[it.eClass().name/][it.pin/].write([it.eClass().eAllAttributes.name.substitute('pin', '').substitute('libreria', '')/][it.eClass().name/][it.eGet('angulo')/]);	
+		[/if]
+		[if (o.eClass().name='Variar')]
+			[if (o.eCrossReferences()->isEmpty())]
+for(int i=0; i<=180; i++){
+	[it.eClass().name/][it.pin/].write(i);
+	delay(20);
+}
+
+for(int i=180; i>=0; i--){
+	[it.eClass().name/][it.pin/].write(i);
+	delay(20);
+}
+			
+			[else]
+			[/if]
+		[/if]
+	[/for]
+[/if]
+[else]
+	ERROR
 [/if]
 [/for]
 [for (it : Sensores | sk.sensores)]
 [if (it.eClass().name = 'LDR')]
 [it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/] = analogRead(A[it.eClass().eAllAttributes.name.substitute('med', '')/][it.eClass().name/][it.pin/]);
 	[for (aux : Actuadores | it.act)]
-	[for (o : Instrucciones | aux.instruccionactuador)]
+	[for (o : Instrucciones | aux.actuadorinstruccion)]
 		[if (o.eClass().name='Variar')]
 				[for (a : String | o.eClass().eAllAttributes.name)]
 [a/][aux.eClass().name/][aux.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/]/4;
-analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);		
+analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);	
+	
+				[/for]	
+		[/if]
+	[/for]
+[/for]
+[/if]
+[if (it.eClass().name = 'Potenciometro')]
+[it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/] = analogRead(A[it.eClass().eAllAttributes.name.substitute('med', '')/][it.eClass().name/][it.pin/]);
+	[for (aux : Actuadores | it.act)]
+	[for (o : Instrucciones | aux.actuadorinstruccion)]
+		[if (o.eClass().name='Variar')]
+				[for (a : String | o.eClass().eAllAttributes.name)]
+[a/][aux.eClass().name/][aux.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/]/4;
+analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);	
+	
+				[/for]	
+		[/if]
+	[/for]
+[/for]
+[/if]
+[if (it.eClass().name = 'Temperatura')]
+[it.eClass().eAllAttributes.name.substitute('pin', '').substitute('temperatura', '')/][it.eClass().name/][it.pin/] = analogRead(A[it.eClass().eAllAttributes.name.substitute('med', '').substitute('temperatura', '')/][it.eClass().name/][it.pin/]);
+	[for (aux : Actuadores | it.act)]
+	[for (o : Instrucciones | aux.actuadorinstruccion)]
+		[if (o.eClass().name='Variar')]
+				[for (a : String | o.eClass().eAllAttributes.name)]
+[a/][aux.eClass().name/][aux.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '').substitute('temperatura', '')/][it.eClass().name/][it.pin/]/4;
+[it.eClass().eAllAttributes.name.substitute('pin', '').substitute('med', '')/][it.eClass().name/][it.pin/] = (5.0*[it.eClass().eAllAttributes.name.substitute('pin', '').substitute('temperatura', '')/][it.eClass().name/][it.pin/]*100.0)/1024;
+analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);	
+	
+				[/for]	
+		[/if]
+	[/for]
+[/for]
+[/if]
+[if (it.eClass().name = 'Boton')]
+[it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/] = digitalRead(D[it.eClass().eAllAttributes.name.substitute('med', '')/][it.eClass().name/][it.pin/]);
+	[for (aux : Actuadores | it.act)]
+	[for (o : Instrucciones | aux.actuadorinstruccion)]
+		[if (o.eClass().name='Variar')]
+				[for (a : String | o.eClass().eAllAttributes.name)]
+[a/][aux.eClass().name/][aux.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/];
+digitalgWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);	
+	
+				[/for]	
+		[/if]
+	[/for]
+[/for]
+[/if]
+[if (it.eClass().name = 'PIR')]
+[it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/] = digitalRead(D[it.eClass().eAllAttributes.name.substitute('med', '')/][it.eClass().name/][it.pin/]);
+	[for (aux : Actuadores | it.act)]
+	[for (o : Instrucciones | aux.actuadorinstruccion)]
+		[if (o.eClass().name='Variar')]
+				[for (a : String | o.eClass().eAllAttributes.name)]
+[a/][aux.eClass().name/][aux.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '')/][it.eClass().name/][it.pin/];
+digitalgWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);	
+	
 				[/for]	
 		[/if]
 	[/for]
@@ -106,7 +453,6 @@ analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [
 [/for]
 
 }
-[/comment]
 
 [/file]
 [/template]

@@ -85,15 +85,6 @@ public interface ArduinoFactory extends EFactory {
 	Encender createEncender();
 
 	/**
-	 * Returns a new object of class '<em>Do While</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Do While</em>'.
-	 * @generated
-	 */
-	DoWhile createDoWhile();
-
-	/**
 	 * Returns a new object of class '<em>If</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,15 +94,6 @@ public interface ArduinoFactory extends EFactory {
 	If createIf();
 
 	/**
-	 * Returns a new object of class '<em>For</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>For</em>'.
-	 * @generated
-	 */
-	For createFor();
-
-	/**
 	 * Returns a new object of class '<em>While</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +101,60 @@ public interface ArduinoFactory extends EFactory {
 	 * @generated
 	 */
 	While createWhile();
+
+	/**
+	 * Returns a new object of class '<em>Temperatura</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Temperatura</em>'.
+	 * @generated
+	 */
+	Temperatura createTemperatura();
+
+	/**
+	 * Returns a new object of class '<em>Potenciometro</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Potenciometro</em>'.
+	 * @generated
+	 */
+	Potenciometro createPotenciometro();
+
+	/**
+	 * Returns a new object of class '<em>Boton</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boton</em>'.
+	 * @generated
+	 */
+	Boton createBoton();
+
+	/**
+	 * Returns a new object of class '<em>PIR</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>PIR</em>'.
+	 * @generated
+	 */
+	PIR createPIR();
+
+	/**
+	 * Returns a new object of class '<em>Buzzer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Buzzer</em>'.
+	 * @generated
+	 */
+	Buzzer createBuzzer();
+
+	/**
+	 * Returns a new object of class '<em>Servo</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Servo</em>'.
+	 * @generated
+	 */
+	Servo createServo();
 
 	/**
 	 * Returns the package supported by this factory.

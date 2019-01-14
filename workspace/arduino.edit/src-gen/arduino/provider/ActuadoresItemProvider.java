@@ -51,7 +51,7 @@ public class ActuadoresItemProvider extends ItemProviderAdapter implements IEdit
 			super.getPropertyDescriptors(object);
 
 			addPinPropertyDescriptor(object);
-			addInstruccionactuadorPropertyDescriptor(object);
+			addActuadorinstruccionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -73,18 +73,18 @@ public class ActuadoresItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
-	 * This adds a property descriptor for the Instruccionactuador feature.
+	 * This adds a property descriptor for the Actuadorinstruccion feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInstruccionactuadorPropertyDescriptor(Object object) {
+	protected void addActuadorinstruccionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Actuadores_instruccionactuador_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Actuadores_instruccionactuador_feature",
+						getResourceLocator(), getString("_UI_Actuadores_actuadorinstruccion_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Actuadores_actuadorinstruccion_feature",
 								"_UI_Actuadores_type"),
-						ArduinoPackage.Literals.ACTUADORES__INSTRUCCIONACTUADOR, true, false, true, null, null, null));
+						ArduinoPackage.Literals.ACTUADORES__ACTUADORINSTRUCCION, true, false, true, null, null, null));
 	}
 
 	/**

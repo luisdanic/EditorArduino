@@ -4,7 +4,6 @@ package arduino.impl;
 
 import arduino.Actuadores;
 import arduino.ArduinoPackage;
-
 import arduino.Instrucciones;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link arduino.impl.ActuadoresImpl#getPin <em>Pin</em>}</li>
- *   <li>{@link arduino.impl.ActuadoresImpl#getInstruccionactuador <em>Instruccionactuador</em>}</li>
+ *   <li>{@link arduino.impl.ActuadoresImpl#getActuadorinstruccion <em>Actuadorinstruccion</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,14 +46,14 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 	 */
 	protected int pin = PIN_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getInstruccionactuador() <em>Instruccionactuador</em>}' reference.
+	 * The cached value of the '{@link #getActuadorinstruccion() <em>Actuadorinstruccion</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInstruccionactuador()
+	 * @see #getActuadorinstruccion()
 	 * @generated
 	 * @ordered
 	 */
-	protected Instrucciones instruccionactuador;
+	protected Instrucciones actuadorinstruccion;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,18 +100,18 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instrucciones getInstruccionactuador() {
-		if (instruccionactuador != null && instruccionactuador.eIsProxy()) {
-			InternalEObject oldInstruccionactuador = (InternalEObject) instruccionactuador;
-			instruccionactuador = (Instrucciones) eResolveProxy(oldInstruccionactuador);
-			if (instruccionactuador != oldInstruccionactuador) {
+	public Instrucciones getActuadorinstruccion() {
+		if (actuadorinstruccion != null && actuadorinstruccion.eIsProxy()) {
+			InternalEObject oldActuadorinstruccion = (InternalEObject) actuadorinstruccion;
+			actuadorinstruccion = (Instrucciones) eResolveProxy(oldActuadorinstruccion);
+			if (actuadorinstruccion != oldActuadorinstruccion) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ArduinoPackage.ACTUADORES__INSTRUCCIONACTUADOR, oldInstruccionactuador,
-							instruccionactuador));
+							ArduinoPackage.ACTUADORES__ACTUADORINSTRUCCION, oldActuadorinstruccion,
+							actuadorinstruccion));
 			}
 		}
-		return instruccionactuador;
+		return actuadorinstruccion;
 	}
 
 	/**
@@ -120,8 +119,8 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instrucciones basicGetInstruccionactuador() {
-		return instruccionactuador;
+	public Instrucciones basicGetActuadorinstruccion() {
+		return actuadorinstruccion;
 	}
 
 	/**
@@ -129,12 +128,12 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInstruccionactuador(Instrucciones newInstruccionactuador) {
-		Instrucciones oldInstruccionactuador = instruccionactuador;
-		instruccionactuador = newInstruccionactuador;
+	public void setActuadorinstruccion(Instrucciones newActuadorinstruccion) {
+		Instrucciones oldActuadorinstruccion = actuadorinstruccion;
+		actuadorinstruccion = newActuadorinstruccion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.ACTUADORES__INSTRUCCIONACTUADOR,
-					oldInstruccionactuador, instruccionactuador));
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.ACTUADORES__ACTUADORINSTRUCCION,
+					oldActuadorinstruccion, actuadorinstruccion));
 	}
 
 	public EObject getElemento() {
@@ -152,10 +151,10 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 		case ArduinoPackage.ACTUADORES__PIN:
 			return getPin();
-		case ArduinoPackage.ACTUADORES__INSTRUCCIONACTUADOR:
+		case ArduinoPackage.ACTUADORES__ACTUADORINSTRUCCION:
 			if (resolve)
-				return getInstruccionactuador();
-			return basicGetInstruccionactuador();
+				return getActuadorinstruccion();
+			return basicGetActuadorinstruccion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,8 +170,8 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 		case ArduinoPackage.ACTUADORES__PIN:
 			setPin((Integer) newValue);
 			return;
-		case ArduinoPackage.ACTUADORES__INSTRUCCIONACTUADOR:
-			setInstruccionactuador((Instrucciones) newValue);
+		case ArduinoPackage.ACTUADORES__ACTUADORINSTRUCCION:
+			setActuadorinstruccion((Instrucciones) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,8 +188,8 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 		case ArduinoPackage.ACTUADORES__PIN:
 			setPin(PIN_EDEFAULT);
 			return;
-		case ArduinoPackage.ACTUADORES__INSTRUCCIONACTUADOR:
-			setInstruccionactuador((Instrucciones) null);
+		case ArduinoPackage.ACTUADORES__ACTUADORINSTRUCCION:
+			setActuadorinstruccion((Instrucciones) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -206,8 +205,8 @@ public abstract class ActuadoresImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 		case ArduinoPackage.ACTUADORES__PIN:
 			return pin != PIN_EDEFAULT;
-		case ArduinoPackage.ACTUADORES__INSTRUCCIONACTUADOR:
-			return instruccionactuador != null;
+		case ArduinoPackage.ACTUADORES__ACTUADORINSTRUCCION:
+			return actuadorinstruccion != null;
 		}
 		return super.eIsSet(featureID);
 	}

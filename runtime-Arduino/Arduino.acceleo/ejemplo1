@@ -1,7 +1,32 @@
+#include<Servo.h>
 
-DoWhile
+//Actuadores
+Servo Servo0;
+int anguloServo0 = 0;
 
-	si hay
+
+//Sensores
+
+//Instrucciones
 
 
+void setup(){
+Servo0.attach(0);
+
+}
+
+void loop(){
+
+for(int i=0; i<=180; i++){
+	Servo0.write(i);
+	delay(20);
+}
+
+for(int i=180; i>=0; i--){
+	Servo0.write(i);
+	delay(20);
+}
+			
+
+}
 
