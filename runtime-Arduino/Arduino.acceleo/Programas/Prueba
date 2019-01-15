@@ -1,0 +1,45 @@
+
+//Actuadores
+int pinLed3 = 3;
+
+int pinLed2 = 2;
+
+int pinLed1 = 1;
+
+
+//Sensores
+int ApinLDR0 = 0;
+int medLDR0 = 0;
+
+//Instrucciones
+int pwmLed3 = 0;
+
+int pwmLed2 = 0;
+
+int pwmLed1 = 0;
+
+
+void setup(){
+pinMode(pinLed3, OUTPUT);
+
+pinMode(pinLed2, OUTPUT);
+
+pinMode(pinLed1, OUTPUT);
+
+}
+
+void loop(){
+
+medLDR0 = analogRead(ApinLDR0);
+pwmLed3 = medLDR0/4;
+analogWrite(pinLed3, pwmLed312);	
+	
+pwmLed1 = medLDR0/4;
+analogWrite(pinLed1, pwmLed312);	
+	
+pwmLed2 = medLDR0/4;
+analogWrite(pinLed2, pwmLed312);	
+	
+
+}
+

@@ -889,11 +889,11 @@
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
     <categories name="Default Category">
-      <pages name="Sensores" labelExpression="General" domainClass="arduino::Sensores" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1"/>
-      <pages name="Actuadores" labelExpression="General" domainClass="arduino::Actuadores" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.2"/>
-      <pages name="Esperar" labelExpression="General" domainClass="arduino::Esperar" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.3"/>
+      <pages name="Sensores" labelExpression="General" domainClass="arduino::Sensores" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4"/>
+      <pages name="Actuadores" labelExpression="General" domainClass="arduino::Actuadores" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.6 //@extensions.0/@categories.0/@groups.7"/>
+      <pages name="Instrucciones" labelExpression="General" domainClass="arduino::Instrucciones" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.8"/>
       <pages name="Variar" labelExpression="General" domainClass="arduino::Variar" semanticCandidateExpression="var:self"/>
-      <pages name="Sketch" labelExpression="General" domainClass="arduino::Sketch" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4"/>
+      <pages name="Sketch" labelExpression="General" domainClass="arduino::Sketch" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.9"/>
       <groups name="LDR" labelExpression="Propiedades" domainClass="arduino::LDR" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el LDR se conecta en uno analogico." valueExpression="feature:pin">
           <initialOperation>
@@ -902,18 +902,6 @@
             </firstModelOperations>
           </initialOperation>
           <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
-            <style>
-              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-            </style>
-          </conditionalStyles>
-        </controls>
-        <controls xsi:type="properties:TextDescription" name="Medicion" labelExpression="Medición" helpExpression="Se puede escribir la medición del sensor" valueExpression="feature:med">
-          <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-              <subModelOperations xsi:type="tool_1:SetValue" featureName="med" valueExpression="var:newValue"/>
-            </firstModelOperations>
-          </initialOperation>
-          <conditionalStyles preconditionExpression="aql:self.med&lt;0">
             <style>
               <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </style>
@@ -934,18 +922,6 @@
             </style>
           </conditionalStyles>
         </controls>
-        <controls xsi:type="properties:TextDescription" name="Medicion" labelExpression="Medición" helpExpression="Se puede escribir la medición del sensor" valueExpression="feature:med">
-          <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-              <subModelOperations xsi:type="tool_1:SetValue" featureName="med" valueExpression="var:newValue"/>
-            </firstModelOperations>
-          </initialOperation>
-          <conditionalStyles preconditionExpression="aql:self.med&lt;0">
-            <style>
-              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-            </style>
-          </conditionalStyles>
-        </controls>
         <controls xsi:type="properties:TextDescription" name="Temperatura" labelExpression="Temperatura" helpExpression="Se puede escribir la temperatura que el sensor medira sensor" valueExpression="feature:temperatura">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
@@ -960,8 +936,8 @@
         </controls>
         <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="SensorActuador" labelExpression="Conexion sensor actuador" helpExpression="Elegir el sensor que va a estar relacionado con el actuador" referenceNameExpression="act" referenceOwnerExpression="var:self"/>
       </groups>
-      <groups name="Led" labelExpression="Propiedades" domainClass="arduino::Led" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el led se conecta en uno digital, y si se usa la variacion en uno que tenga PWM" valueExpression="feature:pin">
+      <groups name="Potenciometro" labelExpression="Propiedades" domainClass="arduino::Potenciometro" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el Potenciometro se conecta en uno analogico." valueExpression="feature:pin">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
@@ -972,13 +948,95 @@
               <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </style>
           </conditionalStyles>
-          <conditionalStyles preconditionExpression="aql:self.pin>13">
+        </controls>
+        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="SensorActuador" labelExpression="Conexion sensor actuador" helpExpression="Elegir el sensor que va a estar relacionado con el actuador" referenceNameExpression="act" referenceOwnerExpression="var:self"/>
+      </groups>
+      <groups name="Boton" labelExpression="Propiedades" domainClass="arduino::Boton" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el Boton se conecta en uno digital." valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="SensorActuador" labelExpression="Conexion sensor actuador" helpExpression="Elegir el sensor que va a estar relacionado con el actuador" referenceNameExpression="act" referenceOwnerExpression="var:self"/>
+      </groups>
+      <groups name="PIR" labelExpression="Propiedades" domainClass="arduino::PIR" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el PIR se conecta en uno digital." valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="SensorActuador" labelExpression="Conexion sensor actuador" helpExpression="Elegir el sensor que va a estar relacionado con el actuador" referenceNameExpression="act" referenceOwnerExpression="var:self"/>
+      </groups>
+      <groups name="Led" labelExpression="Propiedades" domainClass="arduino::Led" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el actuador, el Led se conecta en uno digital, y si se usa la variacion en uno que tenga PWM" valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
             <style>
               <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </style>
           </conditionalStyles>
         </controls>
         <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ActuadorInstrucciones" labelExpression="Conexion actuador instruccion" helpExpression="Elegir la instruccion que seguira el actuador" referenceNameExpression="[actuadorinstruccion/]" referenceOwnerExpression="var:self"/>
+      </groups>
+      <groups name="Buzeer" labelExpression="Propiedades" domainClass="arduino::Buzzer" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el actuador, el Buzzer se conecta en uno digital, y si se usa la variacion en uno que tenga PWM" valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ActuadorInstrucciones" labelExpression="Conexion actuador instruccion" helpExpression="Elegir la instruccion que seguira el actuador" referenceNameExpression="[actuadorinstruccion/]" referenceOwnerExpression="var:self"/>
+      </groups>
+      <groups name="Servo" labelExpression="Propiedades" domainClass="arduino::Servo" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el actuador, el Servo se conecta en uno digital con cualquiera de las instrucciones" valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ActuadorInstrucciones" labelExpression="Conexion actuador instruccion" helpExpression="Elegir la instruccion que seguira el actuador" referenceNameExpression="[actuadorinstruccion/]" referenceOwnerExpression="var:self"/>
+        <controls xsi:type="properties:TextDescription" name="Angulo Servo" labelExpression="Angulo °: " helpExpression="Escribir el angulo en grados que el Servo girará, si se usa Varias no es necesario definirlo" valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="angulo" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.angulo&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
       </groups>
       <groups name="Tiempo" labelExpression="Propiedades" domainClass="arduino::Esperar" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="Tiempo" labelExpression="Milisegundos" helpExpression="Escribir el tiempo en segundos que se desea esperar" valueExpression="feature:miliseg">

@@ -301,6 +301,10 @@ pinMode(D[a.name/][it.eClass().name/][it.pin/], INPUT);
 			[/if]
 		[/for]
 	[/if]
+	[if (it.eClass().name = 'Temperatura')]
+Serial.begin(9600);
+
+	[/if]
 [/for]
 }
 
@@ -347,26 +351,19 @@ for(int i=255; i>=0; i--){
 [/if]
 [if (it.eClass().name = 'Servo')]
 [for (o : Instrucciones | it.actuadorinstruccion)]
-		[if (o.eClass().name='Encender')]
-[it.eClass().name/][it.pin/].write(0);
-delay(100);
-[it.eClass().name/][it.pin/].write([it.eClass().eAllAttributes.name.substitute('pin', '').substitute('libreria', '')/][it.eClass().name/][it.eGet('angulo')/]);
+		[if (o.eClass().name='Encender' or o.eClass().name='Apagar')]
+[it.eClass().name/][it.pin/].write([it.eClass().eAllAttributes.name.substitute('pin', '').substitute('libreria', '')/][it.eClass().name/][it.pin/]);
 		[/if]
-		[if (o.eClass().name='Apagar')]
-[it.eClass().name/][it.pin/].write(180);
-delay(100);
-[it.eClass().name/][it.pin/].write([it.eClass().eAllAttributes.name.substitute('pin', '').substitute('libreria', '')/][it.eClass().name/][it.eGet('angulo')/]);	
-		[/if]
-		[if (o.eClass().name='Variar')]
+				[if (o.eClass().name='Variar')]
 			[if (o.eCrossReferences()->isEmpty())]
 for(int i=0; i<=180; i++){
 	[it.eClass().name/][it.pin/].write(i);
-	delay(20);
+	delay(50);
 }
 
 for(int i=180; i>=0; i--){
 	[it.eClass().name/][it.pin/].write(i);
-	delay(20);
+	delay(50);
 }
 			
 			[else]
@@ -416,7 +413,7 @@ analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [
 [a/][aux.eClass().name/][aux.pin/] = [it.eClass().eAllAttributes.name.substitute('pin', '').substitute('temperatura', '')/][it.eClass().name/][it.pin/]/4;
 [it.eClass().eAllAttributes.name.substitute('pin', '').substitute('med', '')/][it.eClass().name/][it.pin/] = (5.0*[it.eClass().eAllAttributes.name.substitute('pin', '').substitute('temperatura', '')/][it.eClass().name/][it.pin/]*100.0)/1024;
 analogWrite([aux.eClass().eAllAttributes.name/][aux.eClass().name/][aux.pin/], [a/][aux.eClass().name/][it.act.pin/]);	
-	
+Serial.println([it.eClass().eAllAttributes.name.substitute('pin', '').substitute('med', '')/][it.eClass().name/][it.pin/]);	
 				[/for]	
 		[/if]
 	[/for]
