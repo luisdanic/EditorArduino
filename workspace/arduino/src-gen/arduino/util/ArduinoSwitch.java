@@ -148,6 +148,85 @@ public class ArduinoSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ArduinoPackage.BLOQUES: {
+			Bloques bloques = (Bloques) theEObject;
+			T result = caseBloques(bloques);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.IF: {
+			If if_ = (If) theEObject;
+			T result = caseIf(if_);
+			if (result == null)
+				result = caseBloques(if_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.WHILE: {
+			While while_ = (While) theEObject;
+			T result = caseWhile(while_);
+			if (result == null)
+				result = caseBloques(while_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.TEMPERATURA: {
+			Temperatura temperatura = (Temperatura) theEObject;
+			T result = caseTemperatura(temperatura);
+			if (result == null)
+				result = caseSensores(temperatura);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.POTENCIOMETRO: {
+			Potenciometro potenciometro = (Potenciometro) theEObject;
+			T result = casePotenciometro(potenciometro);
+			if (result == null)
+				result = caseSensores(potenciometro);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.BOTON: {
+			Boton boton = (Boton) theEObject;
+			T result = caseBoton(boton);
+			if (result == null)
+				result = caseSensores(boton);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.PIR: {
+			PIR pir = (PIR) theEObject;
+			T result = casePIR(pir);
+			if (result == null)
+				result = caseSensores(pir);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.BUZZER: {
+			Buzzer buzzer = (Buzzer) theEObject;
+			T result = caseBuzzer(buzzer);
+			if (result == null)
+				result = caseActuadores(buzzer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ArduinoPackage.SERVO: {
+			Servo servo = (Servo) theEObject;
+			T result = caseServo(servo);
+			if (result == null)
+				result = caseActuadores(servo);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -300,6 +379,141 @@ public class ArduinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEncender(Encender object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bloques</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bloques</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBloques(Bloques object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>If</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>If</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIf(If object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>While</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>While</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWhile(While object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Temperatura</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Temperatura</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTemperatura(Temperatura object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Potenciometro</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Potenciometro</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePotenciometro(Potenciometro object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boton</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boton</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBoton(Boton object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>PIR</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>PIR</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePIR(PIR object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Buzzer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Buzzer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBuzzer(Buzzer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Servo</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Servo</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServo(Servo object) {
 		return null;
 	}
 

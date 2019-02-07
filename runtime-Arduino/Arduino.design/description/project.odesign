@@ -4,8 +4,437 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ArduinoDiagram" domainClass="arduino.Sketch">
       <metamodel href="http://www.example.org/arduino#/"/>
       <layout xsi:type="description_1:CompositeLayout" direction="LeftToRight"/>
-      <defaultLayer name="Default">
-        <edgeMappings name="Datos" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Variar']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR']" targetFinderExpression="feature:datos" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconectar%20Variar%20DatosSensor']">
+      <defaultLayer name="Herramientas">
+        <toolSections name="Edición"/>
+      </defaultLayer>
+      <additionalLayers name="Sensores" activeByDefault="true">
+        <nodeMappings name="LDR" semanticCandidatesExpression="[sensores/]" domainClass="arduino::LDR">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'A'+self.pin+'-LDR'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/LDR.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Temperatura" semanticCandidatesExpression="[sensores/]" domainClass="arduino::Temperatura">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.temperatura+'°C'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Temperatura.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Potenciometro" semanticCandidatesExpression="[sensores/]" domainClass="arduino::Potenciometro">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'A'+self.pin+'-POT'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Potenciometro.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="PIR" semanticCandidatesExpression="[sensores/]" domainClass="arduino::PIR">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-PIR'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/PIR.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Boton" semanticCandidatesExpression="[sensores/]" domainClass="arduino::Boton">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-BOTON'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Boton.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+      </additionalLayers>
+      <additionalLayers name="Actuador" activeByDefault="true">
+        <nodeMappings name="Led" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar%20Elementos']" semanticCandidatesExpression="[actuadores/]" domainClass="arduino::Led">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-LED'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Led.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Buzzer" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar%20Elementos']" semanticCandidatesExpression="[actuadores/]" domainClass="arduino::Buzzer">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-BUZZER'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Buzzer.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Servo" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar%20Elementos']" semanticCandidatesExpression="[actuadores/]" domainClass="arduino::Servo">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-SERVO'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Servo.jpg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+      </additionalLayers>
+      <additionalLayers name="Instrucciones" activeByDefault="true">
+        <nodeMappings name="Apagar" semanticCandidatesExpression="[instrucciones/]" domainClass="arduino::Apagar">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Apagar.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Encender" semanticCandidatesExpression="[instrucciones/]" domainClass="arduino::Encender">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Encender.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Esperar" semanticCandidatesExpression="[instrucciones/]" domainClass="arduino::Esperar">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.miliseg+' miliseg'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Esperar.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Variar" semanticCandidatesExpression="[instrucciones/]" domainClass="arduino::Variar">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="Variar" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Variar.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+      </additionalLayers>
+      <additionalLayers name="Bloques" activeByDefault="true">
+        <containerMappings name="While" semanticCandidatesExpression="feature:bloques" domainClass="arduino::While">
+          <subNodeMappings name="Led" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Led">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-LED'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Led.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Buzzer" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Buzzer">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-BUZZER'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Buzzer.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Servo" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Servo">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-SERVO'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Servo.jpg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Apagar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Apagar">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Apagar.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Encender" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Encender">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Encender.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Esperar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Esperar">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.miliseg+' miliseg'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Esperar.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Variar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Variar">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="Variar" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Variar.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="While" semanticCandidatesExpression="feature:bloq" domainClass="arduino::While">
+            <subNodeMappings name="Led" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Led">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-LED'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Led.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Buzzer" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Buzzer">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-BUZZER'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Buzzer.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Servo" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Servo">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-SERVO'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Servo.jpg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Apagar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Apagar">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Apagar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Encender" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Encender">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Encender.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Esperar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Esperar">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.miliseg+' miliseg'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Esperar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Variar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Variar">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.pwm+'V'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Variar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:'Mientras se cumpla('+self.referencia+' es '+self.operando+' que  '+ self.valor +' )\n Hacer:'">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="If" semanticCandidatesExpression="feature:bloq" domainClass="arduino::If">
+            <subNodeMappings name="Led" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Led">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-LED'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Led.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Buzzer" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Buzzer">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-BUZZER'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Buzzer.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Servo" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Servo">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-SERVO'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Servo.jpg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Apagar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Apagar">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Apagar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Encender" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Encender">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Encender.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Esperar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Esperar">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.miliseg+' miliseg'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Esperar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Variar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Variar">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Variar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="11" showIcon="false" labelExpression="aql:'Si ('+self.referencia+' es '+self.operando+' que '+self.valor+')\nHacer:'">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="aql:'Mientras se cumpla('+self.referencia+' es '+self.operando+' que  '+ self.valor +' )\n Hacer:'">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="If" semanticCandidatesExpression="feature:bloques" domainClass="arduino::If">
+          <subNodeMappings name="Led" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Led">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-LED'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Led.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Buzzer" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Buzzer">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-BUZZER'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Buzzer.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Servo" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Servo">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-SERVO'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Servo.jpg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Apagar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Apagar">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Apagar.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Encender" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Encender">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Encender.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Esperar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Esperar">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.miliseg+' miliseg'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Esperar.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Variar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Variar">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.pwm+'V'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Variar.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="While" semanticCandidatesExpression="feature:bloq" domainClass="arduino::While">
+            <subNodeMappings name="Led" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Led">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-LED'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Led.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Buzzer" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Buzzer">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-BUZZER'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Buzzer.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Servo" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Servo">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-SERVO'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Servo.jpg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Apagar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Apagar">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Apagar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Encender" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Encender">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Encender.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Esperar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Esperar">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.miliseg+' miliseg'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Esperar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Variar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Variar">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.pwm+'V'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Variar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="11" showIcon="false" labelExpression="aql:'Mientras se cumpla('+self.referencia+' es '+self.operando+' que  '+ self.valor +' )\n Hacer:'">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="If" semanticCandidatesExpression="feature:bloq" domainClass="arduino::If">
+            <subNodeMappings name="Led" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Led">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-LED'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Led.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Buzzer" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Buzzer">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-BUZZER'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Buzzer.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Servo" semanticCandidatesExpression="[bactuadores/]" domainClass="arduino::Servo">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:'D'+self.pin+'-SERVO'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Servo.jpg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Apagar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Apagar">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Apagar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Encender" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Encender">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Encender.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Esperar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Esperar">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.miliseg+' miliseg'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Esperar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="Variar" semanticCandidatesExpression="[binstrucciones/]" domainClass="arduino::Variar">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.pwm+'V'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Variar.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="11" showIcon="false" labelExpression="aql:'Si ('+self.referencia+' es '+self.operando+' que '+self.valor+')\nHacer:'">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="11" showIcon="false" labelExpression="aql:'Si ('+self.referencia+' es '+self.operando+' que '+self.valor+')\nHacer:'">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </containerMappings>
+      </additionalLayers>
+      <additionalLayers name="Referencias" activeByDefault="true">
+        <edgeMappings name="Datos" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Variar']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Potenciometro'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Temperatura'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Boton'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='PIR']" targetFinderExpression="feature:datos" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Variar%20DatosSensor']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -13,7 +442,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="SensorActuador" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Borrar%20Sensor%20Actuador']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led']" targetFinderExpression="[act/]" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconectar%20Sensor%20Actuador']">
+        <edgeMappings name="SensorActuador" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Temperatura'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Potenciometro'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Boton'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='PIR']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Buzzer']" targetFinderExpression="[act/]" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Sensor%20Actuador']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
             <centerLabelStyleDescription>
@@ -29,7 +458,7 @@
             </style>
           </conditionnalStyles>
         </edgeMappings>
-        <edgeMappings name="ActuadorInstrucciones" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Borrar%20Actuador%20Instrucciones']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Variar']" targetFinderExpression="feature:instruccionactuador" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconectar%20Actuador%20Instrucciones']">
+        <edgeMappings name="ActuadorInstrucciones" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Buzzer']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Apagar']" targetFinderExpression="feature:actuadorinstruccion" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Actuador%20Instrucciones']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -37,7 +466,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="On" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Borrar%20on%20wait']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar']" targetFinderExpression="feature:esperar" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconectar%20On%20Wait']">
+        <edgeMappings name="OnEsperar" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Encender']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar']" targetFinderExpression="feature:esperar" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20On%20Wait']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -45,7 +474,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Off" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Borrar%20wait%20off']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Apagar']" targetFinderExpression="feature:apagar" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconectar%20Wait%20Off']">
+        <edgeMappings name="EsperarApagar" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Apagar']" targetFinderExpression="feature:apagar" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Wait%20Off']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -53,7 +482,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Datos" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Variar']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR']" targetFinderExpression="[datos/]">
+        <edgeMappings name="BloquesSensor" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Boton'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='PIR'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Potenciometro'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Temperatura']" targetFinderExpression="feature:bsensores" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Variar%20DatosSensor'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Bloques']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -61,16 +490,33 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <toolSections name="Edición">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Led" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Led" referenceName="actuadores"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
+        <edgeMappings name="BloquesActuador" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Servo']" targetFinderExpression="feature:bloacts" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Variar%20DatosSensor'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Bloques']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ApagarEsperar" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Apagar']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar']" targetFinderExpression="feature:esperar1" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20On%20Wait']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EsperarEncender" deletionDescription="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Eliminar']/@toolSections.0/@ownedTools[name='Eliminar']" sourceMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar']" targetMapping="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender']" targetFinderExpression="feature:encender" reconnections="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Herramientas%20Reconexion']/@toolSections.0/@ownedTools[name='Reconectar%20Wait%20Off']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Herramientas Sensores" activeByDefault="true">
+        <toolSections name="Sensores">
           <ownedTools xsi:type="tool:NodeCreationDescription" name="LDR" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='LDR']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -80,43 +526,149 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="OFF" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Apagar']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Temperatura" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Temperatura']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Apagar" referenceName="instrucciones" variableName="instance1"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Temperatura" referenceName="sensores"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ON" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Potenciometro" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Potenciometro']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Potenciometro" referenceName="sensores"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Boton" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='Boton']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Boton" referenceName="sensores"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="PIR" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Sensores']/@nodeMappings[name='PIR']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::PIR" referenceName="sensores"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="Herramientas Actuadores" activeByDefault="true">
+        <toolSections name="Actuadores">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Led" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Led'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Led']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Led" referenceName="actuadores"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Led" referenceName="bactuadores"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Buzzer" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Buzzer'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Buzzer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Buzzer" referenceName="actuadores"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Buzzer" referenceName="bactuadores"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Servo" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Actuador']/@nodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Servo'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Servo']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Servo" referenceName="actuadores"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Servo" referenceName="bactuadores"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="Herramientas Instrucciones" activeByDefault="true">
+        <toolSections name="Instrucciones">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ON" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Encender'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Encender']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Encender" referenceName="instrucciones"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Encender" referenceName="binstrucciones"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Tiempo" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Esperar" referenceName="instrucciones"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Variar" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Variar']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Variar" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Variar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Variar']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Variar" referenceName="instrucciones"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Variar" referenceName="binstrucciones"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Sensor-Actuador" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::LDR)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='SensorActuador']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="OFF" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Apagar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Apagar']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Apagar" referenceName="instrucciones" variableName="instance1"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Apagar" referenceName="binstrucciones" variableName="instance1"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Tiempo" nodeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Instrucciones']/@nodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']/@subNodeMappings[name='Esperar'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']/@subNodeMappings[name='Esperar']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Esperar" referenceName="instrucciones"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::Esperar" referenceName="binstrucciones"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="Herramientas Bloques">
+        <toolSections name="Bloques">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="While" containerMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='While'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='While']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::While" referenceName="bloques"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::While" referenceName="bloq"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="If" containerMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='If']/@subContainerMappings[name='If'] //@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Bloques']/@containerMappings[name='While']/@subContainerMappings[name='If']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::If" referenceName="bloques"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="arduino::If" referenceName="bloq"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="Herramientas Relaciones" activeByDefault="true">
+        <toolSections name="Relaciones">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Sensor-Actuador" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Sensores)  ->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='SensorActuador']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -127,18 +679,40 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Actuador-Instrucciones" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Led)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='ActuadorInstrucciones']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Actuador-Instrucciones" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Actuadores)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='ActuadorInstrucciones']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="instruccionactuador" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="actuadorinstruccion" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="On-Wait" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='On']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Bloques Sensor" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Bloques)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='BloquesSensor']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="bsensores" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Bloques Actuador" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Bloques)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='BloquesActuador']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="bloacts" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="On-Wait" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='OnEsperar']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -149,7 +723,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Wait-Off" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='Off']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Wait-Off" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='EsperarApagar']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -160,6 +734,43 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Variar -DatosSensor" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Variar)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='Datos']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="datos" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Off-Wait" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='ApagarEsperar']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="esperar1" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Wait-On" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@additionalLayers[name='Referencias']/@edgeMappings[name='EsperarEncender']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="encender" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+      <additionalLayers name="Herramientas Reconexion" activeByDefault="true">
+        <toolSections name="Reconexion">
           <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconectar Sensor Actuador">
             <source name="source"/>
             <target name="target"/>
@@ -181,7 +792,7 @@
             <element name="element"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="instruccionactuador" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="actuadorinstruccion" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
@@ -212,57 +823,6 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription" name="Borrar Actuador Instrucciones">
-            <element name="element"/>
-            <elementView name="elementView"/>
-            <containerView name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="instruccionactuador"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription" name="Borrar Sensor Actuador">
-            <element name="element"/>
-            <elementView name="elementView"/>
-            <containerView name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="act"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription" name="Borrar on wait">
-            <element name="element"/>
-            <elementView name="elementView"/>
-            <containerView name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="esperar"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DeleteElementDescription" name="Borrar wait off">
-            <element name="element"/>
-            <elementView name="elementView"/>
-            <containerView name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="apagar"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Variar -DatosSensor" precondition="aql:preTarget.differs(preSource) and preSource.oclAsType(arduino::Variar)->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='EditorArduino']/@ownedRepresentations[name='ArduinoDiagram']/@defaultLayer/@edgeMappings[name='Datos']">
-            <sourceVariable name="source"/>
-            <targetVariable name="target"/>
-            <sourceViewVariable name="sourceView"/>
-            <targetViewVariable name="targetView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="datos" valueExpression="var:target"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconectar Variar DatosSensor">
             <source name="source"/>
             <target name="target"/>
@@ -276,64 +836,64 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="Reconectar Bloques">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="bsensores" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="bloacts" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
         </toolSections>
-      </defaultLayer>
-      <additionalLayers name="Sensores" activeByDefault="true">
-        <nodeMappings name="LDR" semanticCandidatesExpression="[sensores/]" domainClass="arduino::LDR">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.pin+'A-LDR'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/LDR.png">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelFormat>bold</labelFormat>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
       </additionalLayers>
-      <additionalLayers name="Actuador" activeByDefault="true">
-        <nodeMappings name="Led" semanticCandidatesExpression="[actuadores/]" domainClass="arduino::Led">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.pin+'D-LED'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Led.png">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelFormat>bold</labelFormat>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
-      </additionalLayers>
-      <additionalLayers name="Instrucciones" activeByDefault="true">
-        <nodeMappings name="Apagar" semanticCandidatesExpression="[instrucciones/]" domainClass="arduino::Apagar">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Apagar.png">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
-        <nodeMappings name="Encender" semanticCandidatesExpression="[instrucciones/]" domainClass="arduino::Encender">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Encender.png">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
-        <nodeMappings name="Esperar" semanticCandidatesExpression="[instrucciones/]" domainClass="arduino::Esperar">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.miliseg+' miliseg'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Esperar.png">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelFormat>bold</labelFormat>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
-        <nodeMappings name="Variar" semanticCandidatesExpression="[instrucciones/]" domainClass="arduino::Variar">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" labelExpression="aql:self.pwm+'V'" labelAlignment="RIGHT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Arduino.design/icons/Variar.png">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelFormat>bold</labelFormat>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
+      <additionalLayers name="Herramientas Eliminar" activeByDefault="true">
+        <toolSections name="Eliminar">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Eliminar">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="actuadorinstruccion" elementExpression="[actuadorinstruccion/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="act" elementExpression="[act/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="esperar" elementExpression="[esperar/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="apagar" elementExpression="[apagar/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="datos" elementExpression="[datos/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="bsensores" elementExpression="[bsensores/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="bloacts" elementExpression="[bloacts/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="esperar1" elementExpression="[esperar1/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="encender" elementExpression="[encender/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Eliminar Elementos">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:RemoveElement"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="Arduino.design.Services"/>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">
     <categories name="Default Category">
-      <pages name="Sensores" labelExpression="General" domainClass="arduino::Sensores" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0"/>
-      <pages name="Actuadores" labelExpression="General" domainClass="arduino::Actuadores" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.1"/>
-      <pages name="Esperar" labelExpression="General" domainClass="arduino::Esperar" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.2"/>
-      <pages name="Variar" labelExpression="General" domainClass="arduino::Variar" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.3"/>
-      <pages name="Sketch" labelExpression="General" domainClass="arduino::Sketch" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.4"/>
+      <pages name="Sensores" labelExpression="General" domainClass="arduino::Sensores" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4"/>
+      <pages name="Actuadores" labelExpression="General" domainClass="arduino::Actuadores" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.6 //@extensions.0/@categories.0/@groups.7"/>
+      <pages name="Instrucciones" labelExpression="General" domainClass="arduino::Instrucciones" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.8"/>
+      <pages name="Variar" labelExpression="General" domainClass="arduino::Variar" semanticCandidateExpression="var:self"/>
+      <pages name="Sketch" labelExpression="General" domainClass="arduino::Sketch" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.9"/>
       <groups name="LDR" labelExpression="Propiedades" domainClass="arduino::LDR" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el LDR se conecta en uno analogico." valueExpression="feature:pin">
           <initialOperation>
@@ -346,28 +906,10 @@
               <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </style>
           </conditionalStyles>
-          <conditionalStyles preconditionExpression="aql:self.pin>5">
-            <style>
-              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-            </style>
-          </conditionalStyles>
         </controls>
-        <controls xsi:type="properties:TextDescription" name="Medicion" labelExpression="Medición" helpExpression="Se puede escribir la medición del sensor" valueExpression="feature:med">
-          <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-              <subModelOperations xsi:type="tool_1:SetValue" featureName="med" valueExpression="var:newValue"/>
-            </firstModelOperations>
-          </initialOperation>
-          <conditionalStyles preconditionExpression="aql:self.med&lt;0">
-            <style>
-              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-            </style>
-          </conditionalStyles>
-        </controls>
-        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="SensorActuador" labelExpression="Conexion sensor actuador" helpExpression="Elegir el sensor que va a estar relacionado con el actuador" referenceNameExpression="act" referenceOwnerExpression="var:self"/>
       </groups>
-      <groups name="Led" labelExpression="Propiedades" domainClass="arduino::Led" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el led se conecta en uno digital, y si se usa la variacion en uno que tenga PWM" valueExpression="feature:pin">
+      <groups name="Temperatura" labelExpression="Propiedades" domainClass="arduino::Temperatura" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el sensor de temperatura se conecta en uno analogico." valueExpression="feature:pin">
           <initialOperation>
             <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
               <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
@@ -378,13 +920,118 @@
               <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </style>
           </conditionalStyles>
-          <conditionalStyles preconditionExpression="aql:self.pin>13">
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="Temperatura" labelExpression="Temperatura" helpExpression="Se puede escribir la temperatura que el sensor medira sensor" valueExpression="feature:temperatura">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="temperatura" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.temperatura&lt;0">
             <style>
               <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </style>
           </conditionalStyles>
         </controls>
-        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ActuadorInstrucciones" labelExpression="Conexion actuador instruccion" helpExpression="Elegir la instruccion que seguira el actuador" referenceNameExpression="instruccionactuador" referenceOwnerExpression="var:self"/>
+      </groups>
+      <groups name="Potenciometro" labelExpression="Propiedades" domainClass="arduino::Potenciometro" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el Potenciometro se conecta en uno analogico." valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+      </groups>
+      <groups name="Boton" labelExpression="Propiedades" domainClass="arduino::Boton" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el Boton se conecta en uno digital." valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+      </groups>
+      <groups name="PIR" labelExpression="Propiedades" domainClass="arduino::PIR" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el sensor, el PIR se conecta en uno digital." valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+      </groups>
+      <groups name="Led" labelExpression="Propiedades" domainClass="arduino::Led" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el actuador, el Led se conecta en uno digital, y si se usa la variacion en uno que tenga PWM" valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ActuadorInstrucciones" labelExpression="Conexion actuador instruccion" helpExpression="Elegir la instruccion que seguira el actuador" referenceNameExpression="[actuadorinstruccion/]" referenceOwnerExpression="var:self"/>
+      </groups>
+      <groups name="Buzeer" labelExpression="Propiedades" domainClass="arduino::Buzzer" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el actuador, el Buzzer se conecta en uno digital, y si se usa la variacion en uno que tenga PWM" valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ActuadorInstrucciones" labelExpression="Conexion actuador instruccion" helpExpression="Elegir la instruccion que seguira el actuador" referenceNameExpression="[actuadorinstruccion/]" referenceOwnerExpression="var:self"/>
+      </groups>
+      <groups name="Servo" labelExpression="Propiedades" domainClass="arduino::Servo" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:TextDescription" name="PinText" labelExpression="Pin N°" helpExpression="Escribir el pin donde se colocara el actuador, el Servo se conecta en uno digital con cualquiera de las instrucciones" valueExpression="feature:pin">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pin" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.pin&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
+        <controls xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="ActuadorInstrucciones" labelExpression="Conexion actuador instruccion" helpExpression="Elegir la instruccion que seguira el actuador" referenceNameExpression="[actuadorinstruccion/]" referenceOwnerExpression="var:self"/>
+        <controls xsi:type="properties:TextDescription" name="Angulo Servo" labelExpression="Angulo °: " helpExpression="Escribir el angulo en grados que el Servo girará, si se usa Varias no es necesario definirlo" valueExpression="feature:angulo">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="angulo" valueExpression="var:newValue"/>
+            </firstModelOperations>
+          </initialOperation>
+          <conditionalStyles preconditionExpression="aql:self.angulo&lt;0">
+            <style>
+              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionalStyles>
+        </controls>
       </groups>
       <groups name="Tiempo" labelExpression="Propiedades" domainClass="arduino::Esperar" semanticCandidateExpression="var:self">
         <controls xsi:type="properties:TextDescription" name="Tiempo" labelExpression="Milisegundos" helpExpression="Escribir el tiempo en segundos que se desea esperar" valueExpression="feature:miliseg">
@@ -394,20 +1041,6 @@
             </firstModelOperations>
           </initialOperation>
           <conditionalStyles preconditionExpression="aql:self.miliseg&lt;0">
-            <style>
-              <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-            </style>
-          </conditionalStyles>
-        </controls>
-      </groups>
-      <groups name="Variar" labelExpression="Propiedades" domainClass="arduino::Variar" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:TextDescription" name="PWM" labelExpression="Voltaje Analogico" helpExpression="Se puede escribir el valor con el cual variar o se toma de un sensor" valueExpression="feature:pwm">
-          <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-              <subModelOperations xsi:type="tool_1:SetValue" featureName="pwm" valueExpression="var:newValue"/>
-            </firstModelOperations>
-          </initialOperation>
-          <conditionalStyles preconditionExpression="aql:self.pwm&lt;0">
             <style>
               <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             </style>

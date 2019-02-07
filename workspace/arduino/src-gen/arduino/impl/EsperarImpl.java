@@ -4,6 +4,7 @@ package arduino.impl;
 
 import arduino.Apagar;
 import arduino.ArduinoPackage;
+import arduino.Encender;
 import arduino.Esperar;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link arduino.impl.EsperarImpl#getMiliseg <em>Miliseg</em>}</li>
  *   <li>{@link arduino.impl.EsperarImpl#getApagar <em>Apagar</em>}</li>
+ *   <li>{@link arduino.impl.EsperarImpl#getEncender <em>Encender</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +57,16 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	 * @ordered
 	 */
 	protected Apagar apagar;
+
+	/**
+	 * The cached value of the '{@link #getEncender() <em>Encender</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEncender()
+	 * @generated
+	 * @ordered
+	 */
+	protected Encender encender;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,6 +153,46 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Encender getEncender() {
+		if (encender != null && encender.eIsProxy()) {
+			InternalEObject oldEncender = (InternalEObject) encender;
+			encender = (Encender) eResolveProxy(oldEncender);
+			if (encender != oldEncender) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArduinoPackage.ESPERAR__ENCENDER,
+							oldEncender, encender));
+			}
+		}
+		return encender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Encender basicGetEncender() {
+		return encender;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEncender(Encender newEncender) {
+		Encender oldEncender = encender;
+		encender = newEncender;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArduinoPackage.ESPERAR__ENCENDER, oldEncender,
+					encender));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -150,6 +202,10 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 			if (resolve)
 				return getApagar();
 			return basicGetApagar();
+		case ArduinoPackage.ESPERAR__ENCENDER:
+			if (resolve)
+				return getEncender();
+			return basicGetEncender();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +223,9 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 			return;
 		case ArduinoPackage.ESPERAR__APAGAR:
 			setApagar((Apagar) newValue);
+			return;
+		case ArduinoPackage.ESPERAR__ENCENDER:
+			setEncender((Encender) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +245,9 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 		case ArduinoPackage.ESPERAR__APAGAR:
 			setApagar((Apagar) null);
 			return;
+		case ArduinoPackage.ESPERAR__ENCENDER:
+			setEncender((Encender) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +264,8 @@ public class EsperarImpl extends InstruccionesImpl implements Esperar {
 			return miliseg != MILISEG_EDEFAULT;
 		case ArduinoPackage.ESPERAR__APAGAR:
 			return apagar != null;
+		case ArduinoPackage.ESPERAR__ENCENDER:
+			return encender != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<arduino:Sketch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.example.org/arduino" Nombre="ejemplo1">
-  <sensores xsi:type="arduino:LDR" pin="1" act="//@actuadores.0 //@actuadores.1 //@actuadores.2"/>
-  <actuadores xsi:type="arduino:Led" pin="3" instruccionactuador="//@instrucciones.0"/>
-  <actuadores xsi:type="arduino:Led" instruccionactuador="//@instrucciones.1"/>
-  <actuadores xsi:type="arduino:Led" pin="2" instruccionactuador="//@instrucciones.2"/>
-  <instrucciones xsi:type="arduino:Variar" pwm="255" datos="//@sensores.0"/>
-  <instrucciones xsi:type="arduino:Variar" datos="//@sensores.0"/>
+<arduino:Sketch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://www.example.org/arduino" Nombre="ejemplof">
+  <sensores xsi:type="arduino:LDR" act="//@actuadores.0"/>
+  <actuadores xsi:type="arduino:Led" pin="3" actuadorinstruccion="//@instrucciones.0"/>
   <instrucciones xsi:type="arduino:Variar" datos="//@sensores.0"/>
 </arduino:Sketch>

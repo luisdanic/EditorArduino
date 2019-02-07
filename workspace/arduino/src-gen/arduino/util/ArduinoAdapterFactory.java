@@ -117,6 +117,51 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseBloques(Bloques object) {
+			return createBloquesAdapter();
+		}
+
+		@Override
+		public Adapter caseIf(If object) {
+			return createIfAdapter();
+		}
+
+		@Override
+		public Adapter caseWhile(While object) {
+			return createWhileAdapter();
+		}
+
+		@Override
+		public Adapter caseTemperatura(Temperatura object) {
+			return createTemperaturaAdapter();
+		}
+
+		@Override
+		public Adapter casePotenciometro(Potenciometro object) {
+			return createPotenciometroAdapter();
+		}
+
+		@Override
+		public Adapter caseBoton(Boton object) {
+			return createBotonAdapter();
+		}
+
+		@Override
+		public Adapter casePIR(PIR object) {
+			return createPIRAdapter();
+		}
+
+		@Override
+		public Adapter caseBuzzer(Buzzer object) {
+			return createBuzzerAdapter();
+		}
+
+		@Override
+		public Adapter caseServo(Servo object) {
+			return createServoAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -272,6 +317,132 @@ public class ArduinoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEncenderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.Bloques <em>Bloques</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.Bloques
+	 * @generated
+	 */
+	public Adapter createBloquesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.If <em>If</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.If
+	 * @generated
+	 */
+	public Adapter createIfAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.While <em>While</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.While
+	 * @generated
+	 */
+	public Adapter createWhileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.Temperatura <em>Temperatura</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.Temperatura
+	 * @generated
+	 */
+	public Adapter createTemperaturaAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.Potenciometro <em>Potenciometro</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.Potenciometro
+	 * @generated
+	 */
+	public Adapter createPotenciometroAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.Boton <em>Boton</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.Boton
+	 * @generated
+	 */
+	public Adapter createBotonAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.PIR <em>PIR</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.PIR
+	 * @generated
+	 */
+	public Adapter createPIRAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.Buzzer <em>Buzzer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.Buzzer
+	 * @generated
+	 */
+	public Adapter createBuzzerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link arduino.Servo <em>Servo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see arduino.Servo
+	 * @generated
+	 */
+	public Adapter createServoAdapter() {
 		return null;
 	}
 

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link arduino.Sketch#getSensores <em>Sensores</em>}</li>
  *   <li>{@link arduino.Sketch#getActuadores <em>Actuadores</em>}</li>
  *   <li>{@link arduino.Sketch#getInstrucciones <em>Instrucciones</em>}</li>
+ *   <li>{@link arduino.Sketch#getBloques <em>Bloques</em>}</li>
  * </ul>
  *
  * @see arduino.ArduinoPackage#getSketch()
@@ -99,5 +100,21 @@ public interface Sketch extends EObject {
 	 * @generated
 	 */
 	EList<Instrucciones> getInstrucciones();
+
+	/**
+	 * Returns the value of the '<em><b>Bloques</b></em>' containment reference list.
+	 * The list contents are of type {@link arduino.Bloques}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bloques</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bloques</em>' containment reference list.
+	 * @see arduino.ArduinoPackage#getSketch_Bloques()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Bloques> getBloques();
 
 } // Sketch

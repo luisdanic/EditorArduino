@@ -91,6 +91,7 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__SENSORES);
 			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__ACTUADORES);
 			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES);
+			childrenFeatures.add(ArduinoPackage.Literals.SKETCH__BLOQUES);
 		}
 		return childrenFeatures;
 	}
@@ -160,6 +161,7 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 		case ArduinoPackage.SKETCH__SENSORES:
 		case ArduinoPackage.SKETCH__ACTUADORES:
 		case ArduinoPackage.SKETCH__INSTRUCCIONES:
+		case ArduinoPackage.SKETCH__BLOQUES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -180,8 +182,26 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 		newChildDescriptors.add(
 				createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES, ArduinoFactory.eINSTANCE.createLDR()));
 
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES,
+				ArduinoFactory.eINSTANCE.createTemperatura()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES,
+				ArduinoFactory.eINSTANCE.createPotenciometro()));
+
+		newChildDescriptors.add(
+				createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES, ArduinoFactory.eINSTANCE.createBoton()));
+
+		newChildDescriptors.add(
+				createChildParameter(ArduinoPackage.Literals.SKETCH__SENSORES, ArduinoFactory.eINSTANCE.createPIR()));
+
 		newChildDescriptors.add(
 				createChildParameter(ArduinoPackage.Literals.SKETCH__ACTUADORES, ArduinoFactory.eINSTANCE.createLed()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__ACTUADORES,
+				ArduinoFactory.eINSTANCE.createBuzzer()));
+
+		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__ACTUADORES,
+				ArduinoFactory.eINSTANCE.createServo()));
 
 		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES,
 				ArduinoFactory.eINSTANCE.createApagar()));
@@ -194,6 +214,12 @@ public class SketchItemProvider extends ItemProviderAdapter implements IEditingD
 
 		newChildDescriptors.add(createChildParameter(ArduinoPackage.Literals.SKETCH__INSTRUCCIONES,
 				ArduinoFactory.eINSTANCE.createEncender()));
+
+		newChildDescriptors.add(
+				createChildParameter(ArduinoPackage.Literals.SKETCH__BLOQUES, ArduinoFactory.eINSTANCE.createIf()));
+
+		newChildDescriptors.add(
+				createChildParameter(ArduinoPackage.Literals.SKETCH__BLOQUES, ArduinoFactory.eINSTANCE.createWhile()));
 	}
 
 	/**
